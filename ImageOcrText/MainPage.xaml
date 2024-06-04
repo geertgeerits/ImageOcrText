@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ImageOcrText"
+             x:Class="ImageOcrText.MainPage"
+             Loaded="OnPageLoaded"
+             Appearing="OnPageAppearing">
+
+    <NavigationPage.TitleView>
+        <Grid
+            RowDefinitions="Auto"
+            ColumnDefinitions="60, 140*, 42, 60"
+            BackgroundColor="#00bfff">
+
+            <ImageButton
+                x:Name="imgbtnAbout"
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="info_32p.png"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                HeightRequest="32"
+                WidthRequest="32"
+                SemanticProperties.Description="{local:Translate Info_Text}"
+                ToolTipProperties.Text="{local:Translate Info_Text}"
+                Clicked="OnPageAboutClicked">
+            </ImageButton>
+
+            <Label
+                x:Name="lblTitle"
+                Style="{StaticResource labelStyleTitleView}"
+                Grid.Row="0"
+                Grid.Column="1"
+                VerticalOptions="Center"
+                Text="{local:Translate ImageOcrText_Text}">
+            </Label>
+
+            <ImageButton
+                x:Name="imgbtnSettings"
+                Grid.Row="0"
+                Grid.Column="3"
+                Source="settings_32p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="32"
+                WidthRequest="32"
+                SemanticProperties.Description="{local:Translate Settings_Text}"
+                ToolTipProperties.Text="{local:Translate Settings_Text}"
+                Clicked="OnPageSettingsClicked">
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <Grid
+        RowDefinitions="Auto, *, Auto"
+        ColumnDefinitions="110*, 110*, 110*"
+        HorizontalOptions="Center"
+        Margin="5">
+
+        <Button
+            x:Name="BtnPickImage"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{local:Translate ButtonImage_Text}" 
+            SemanticProperties.Hint="Picks an image for OCR"
+            Clicked="OnPickImageClicked">
+        </Button>
+
+        <ImageButton
+            x:Name="imgbtnTextToSpeech"
+            Grid.Row="0"
+            Grid.Column="1"
+            Source="speaker_64p_blue_green.png"
+            HeightRequest="38"
+            WidthRequest="38"
+            IsVisible="False"
+            Clicked="OnTextToSpeechClicked">
+            <!--SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"-->
+        </ImageButton>
+
+        <Button
+            x:Name="BtnTakePicture"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="0"
+            Grid.Column="2"
+            HorizontalOptions="End"
+            Text="{local:Translate ButtonPicture_Text}"
+            SemanticProperties.Hint="Takes a picture for OCR"
+            Clicked="OnTakePictureClicked">
+        </Button>
+
+        <ScrollView
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            VerticalOptions="FillAndExpand"
+            Orientation="Vertical">
+
+            <Grid
+                RowDefinitions="300*"
+                ColumnDefinitions="300*, 5"
+                HorizontalOptions="Center">
+
+                <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Margin="5, 10, 5, 10"
+                        Stroke="Gray">
+
+                    <ScrollView>
+                            <Editor
+                                x:Name="edtOcrResult"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Fill"
+                                Margin="0"
+                                AutoSize="TextChanges"
+                                VerticalTextAlignment="Start"
+                                Text="">
+                            </Editor>
+                        </ScrollView>
+                    </Border>
+
+                </Grid>
+        </ScrollView>
+
+        <Button
+            x:Name="BtnCopyToClipboard"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="{local:Translate ButtonCopy_Text}"
+            SemanticProperties.Hint="Copies the OCR result to the clipboard"
+            Clicked="OnCopyToClipboardClicked">
+        </Button>
+
+        <Button
+            x:Name="BtnShare"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            Text="{local:Translate ButtonShare_Text}"
+            SemanticProperties.Hint="Shares the OCR result"
+            Clicked="OnShareClicked">
+        </Button>
+
+        <Button
+            x:Name="BtnClear"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="2"
+            Grid.Column="2"
+            HorizontalOptions="End"
+            Text="{local:Translate ButtonClear_Text}"
+            SemanticProperties.Hint="Clears the OCR result"
+            Clicked="OnClearClicked">
+        </Button>
+
+    </Grid>
+
+</ContentPage>

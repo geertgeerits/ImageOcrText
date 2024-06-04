@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+    </Style>
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+        <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
+        <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
+    </Style>
+
+    <Style TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <Style TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <Style TargetType="BoxView">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />
+    </Style>
+
+    <Style TargetType="Border">
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Stroke" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="5" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="MinimumHeightRequest" Value="40"/>
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+    <Style TargetType="Editor">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource Light}}" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="MinimumHeightRequest" Value="40"/>
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource Light}}" />
+        <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="MinimumHeightRequest" Value="40"/>
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="#969696" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ImageButton">
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BorderWidth" Value="0"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale" Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale" Value="0.8" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="RadioButton">
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions"  Value="Fill"/>
+        <Setter Property="MinimumHeightRequest" Value="40"/>
+        <Setter Property="Margin" Value="{OnPlatform 0, Android=0, iOS=0, WinUI='9,0,0,0'}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="Picker">
+        <Setter Property="MinimumHeightRequest" Value="40"/>
+        <Setter Property="HorizontalOptions"  Value="Fill"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightEntryBG}, Dark={StaticResource DarkEntryBG}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="Slider">
+        <Setter Property="MinimumHeightRequest" Value="40"/>
+        <Setter Property="MaximumTrackColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+    </Style>
+
+    <Style x:Key="gridStyleInfo" TargetType="Grid">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 340, Phone=340, Tablet=560, Desktop=560}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 540, Phone=540, Tablet=760, Desktop=760}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Margin" Value="{OnIdiom 5, Phone=5, Tablet=10, Desktop=10}" />
+        <Setter Property="RowSpacing" Value="0" />
+    </Style>
+
+    <Style x:Key="gridStyleGenerator" TargetType="Grid">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=280, Desktop=280}" />
+                                        <ColumnDefinition Width="{OnIdiom 200*, Phone=200*, Tablet=340, Desktop=340}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 240, Phone=240, Tablet=380, Desktop=380}" />
+                                        <ColumnDefinition Width="{OnIdiom 300, Phone=300, Tablet=440, Desktop=440}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Margin" Value="{OnIdiom 5, Phone=5, Tablet=10, Desktop=10}" />
+        <Setter Property="ColumnSpacing" Value="{OnIdiom 5, Phone=5, Tablet=15, Desktop=15}" />
+        <Setter Property="RowSpacing" Value="4" />
+    </Style>
+
+    <Style x:Key="gridStyleScanner" TargetType="Grid">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=280, Desktop=280}" />
+                                        <ColumnDefinition Width="{OnIdiom 200*, Phone=200*, Tablet=340, Desktop=340}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 240, Phone=240, Tablet=380, Desktop=380}" />
+                                        <ColumnDefinition Width="{OnIdiom 300, Phone=300, Tablet=440, Desktop=440}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Margin" Value="{OnIdiom 5, Phone=5, Tablet=10, Desktop=10}" />
+        <Setter Property="ColumnSpacing" Value="{OnIdiom 5, Phone=5, Tablet=15, Desktop=15}" />
+        <Setter Property="RowSpacing" Value="4" />
+    </Style>
+
+    <Style x:Key="gridStyleSettings" TargetType="Grid">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
+                                        <ColumnDefinition Width="{OnIdiom 110, Phone=110, Tablet=250, Desktop=250}" />
+                                        <ColumnDefinition Width="{OnIdiom 190, Phone=190, Tablet=330, Desktop=330}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="{OnIdiom 40, Phone=40, Tablet=40, Desktop=40}" />
+                                        <ColumnDefinition Width="{OnIdiom 210, Phone=210, Tablet=350, Desktop=350}" />
+                                        <ColumnDefinition Width="{OnIdiom 290, Phone=290, Tablet=430, Desktop=430}" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="ColumnSpacing" Value="{OnIdiom 5, Phone=5, Tablet=15, Desktop=15}" />
+        <Setter Property="RowSpacing" Value="2" />
+    </Style>
+
+    <Style x:Key="borderStyleDefault" TargetType="Border">
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="borderStyleGroup" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="labelStyleDefault" TargetType="Label">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="labelStyleTitleView" TargetType="Label">
+        <Setter Property="Margin" Value="4" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+    </Style>
+
+    <Style x:Key="labelStyleInfo" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="MinimumHeightRequest" Value="25"/>
+    </Style>
+
+    <Style x:Key="labelStyleExplanation" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="Padding" Value="5" />
+    </Style>
+
+    <Style x:Key="buttonStyleDefault" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="WidthRequest" Value="{OnIdiom 120, Phone=120, Tablet=270, Desktop=270}" />
+    </Style>
+
+    <Style x:Key="buttonStyleFill" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="buttonStyleHelp" TargetType="Button">
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HeightRequest" Value="38" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Text" Value="?" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="#969696" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="buttonStyleWebsite" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Start" />
+        <Setter Property="WidthRequest" Value="50" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="IsEnabled" Value="True" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="Black" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="#969696" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="imageButtonStyleCamera" TargetType="ImageButton">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="50" />
+        <Setter Property="BackgroundColor" Value="DeepSkyBlue" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="BorderColor" Value="DarkGray" />
+        <Setter Property="CornerRadius" Value="25" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+    </Style>
+
+    <Style x:Key="pickerStyleSettings" TargetType="Picker">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="sliderStyleColor" TargetType="Slider">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Margin" Value="0,0,6,0" />
+        <Setter Property="Minimum" Value="0" />
+        <Setter Property="Maximum" Value="255" />
+    </Style>
+
+</ResourceDictionary>
