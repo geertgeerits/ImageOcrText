@@ -12,7 +12,7 @@ namespace ImageOcrText
     internal static class Globals
     {
         //// Global variables
-        public static string cTheme = "1";
+        public static string cTheme;
         public static string cLanguage;
         public static bool bLanguageChanged = false;
         public static string cLanguageSpeech;

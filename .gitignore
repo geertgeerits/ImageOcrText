@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Fody - auto-generated XML schema
+FodyWeavers.xsd
+/myapp.keystore
+/Miscellaneous

@@ -178,4 +178,7 @@ Use this program entirely at your own risk.</value>
   <data name="TextToSpeechError_Text" xml:space="preserve">
     <value>Text to speech is not supported on this device.</value>
   </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Text to speech</value>
+  </data>
 </root>

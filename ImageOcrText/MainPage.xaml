@@ -32,6 +32,7 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 VerticalOptions="Center"
+                LineBreakMode="WordWrap"
                 Text="{local:Translate ImageOcrText_Text}">
             </Label>
 
@@ -53,7 +54,7 @@
 
     <Grid
         RowDefinitions="Auto, *, Auto"
-        ColumnDefinitions="110*, 110*, 110*"
+        ColumnDefinitions="130*, 100, 130*"
         HorizontalOptions="Center"
         Margin="5">
 
@@ -67,18 +68,35 @@
             Clicked="OnPickImageClicked">
         </Button>
 
-        <ImageButton
-            x:Name="imgbtnTextToSpeech"
+        <HorizontalStackLayout
             Grid.Row="0"
             Grid.Column="1"
-            Source="speaker_64p_blue_green.png"
-            HeightRequest="38"
-            WidthRequest="38"
-            IsVisible="False"
-            Clicked="OnTextToSpeechClicked">
-            <!--SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"-->
-        </ImageButton>
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="0,2,2,0"
+            Spacing="10">
+
+            <Label
+                x:Name="lblTextToSpeech"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="Center"
+                IsVisible="False"
+                Text="en-US">
+            </Label>
+
+            <ImageButton
+                x:Name="imgbtnTextToSpeech"
+                Source="speaker_64p_blue_green.png"
+                HeightRequest="38"
+                WidthRequest="38"
+                IsVisible="False"
+                SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
+                ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"
+                Clicked="OnTextToSpeechClicked">
+            </ImageButton>
+        </HorizontalStackLayout>
 
         <Button
             x:Name="BtnTakePicture"
@@ -108,7 +126,7 @@
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"
-                        Margin="5, 10, 5, 10"
+                        Margin="5, 10, 0, 10"
                         Stroke="Gray">
 
                     <ScrollView>
@@ -160,5 +178,4 @@
         </Button>
 
     </Grid>
-
 </ContentPage>

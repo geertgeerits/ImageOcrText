@@ -49,6 +49,11 @@ namespace ImageOcrText
                 lblTitle.VerticalTextAlignment = TextAlignment.Start;
                 imgbtnSettings.VerticalOptions = LayoutOptions.Start;
             }
+            //// The allignment of the text to speech label is wrong in WinUI
+            if (DeviceInfo.Platform == DevicePlatform.WinUI)
+            {
+                lblTextToSpeech.Padding = new Thickness(0, 10, 0, 0);
+            }
 
             //// Set the theme
             Globals.SetTheme();
@@ -66,6 +71,7 @@ namespace ImageOcrText
                 Globals.cLanguage = "en";
             }
 
+            //// Set the text language
             SetTextLanguage();
 
             //// Initialize text to speech and get and set the speech language
@@ -97,6 +103,9 @@ namespace ImageOcrText
             //throw new Exception("This is a test exception");
         }
 
+        /// <summary>
+        /// Initialize the OCR plugin using the Appearing event of the MainPage.xaml
+        /// </summary>
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -119,12 +128,48 @@ namespace ImageOcrText
             }
 
             // Set the speech language
-            //lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+            lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
             // Set the generator format in the picker
             //pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
         }
 
+        /// <summary>
+        /// Show license using the Loaded event of the MainPage.xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnPageLoaded(object sender, EventArgs e)
+        {
+            // Show license
+            if (Globals.bLicense == false)
+            {
+                Globals.bLicense = await DisplayAlert(OcrLang.LicenseTitle_Text, cLicense, OcrLang.Agree_Text, OcrLang.Disagree_Text);
+
+                if (Globals.bLicense)
+                {
+                    Preferences.Default.Set("SettingLicense", true);
+                }
+                else
+                {
+#if IOS
+                    //Thread.CurrentThread.Abort();  // Not allowed in iOS
+                    imgbtnAbout.IsEnabled = false;
+                    imgbtnSettings.IsEnabled = false;
+                    BtnPickImage.IsEnabled = false;
+                    imgbtnTextToSpeech.IsEnabled = false;
+                    BtnTakePicture.IsEnabled = false;
+                    BtnCopyToClipboard.IsEnabled = false;
+                    BtnShare.IsEnabled = false;
+                    BtnClear.IsEnabled = false;
+
+                    await DisplayAlert(OcrLang.LicenseTitle_Text, OcrLang.CloseApplication_Text, OcrLang.ButtonClose_Text);
+#else
+                    Application.Current.Quit();
+#endif
+                }
+            }
+        }
 
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
@@ -251,43 +296,6 @@ namespace ImageOcrText
         }
 
         /// <summary>
-        /// Show license using the Loaded event of the MainPage.xaml
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnPageLoaded(object sender, EventArgs e)
-        {
-            // Show license
-            if (Globals.bLicense == false)
-            {
-                Globals.bLicense = await Application.Current.MainPage.DisplayAlert(OcrLang.LicenseTitle_Text, cLicense, OcrLang.Agree_Text, OcrLang.Disagree_Text);
-
-                if (Globals.bLicense)
-                {
-                    Preferences.Default.Set("SettingLicense", true);
-                }
-                else
-                {
-#if IOS
-                    //Thread.CurrentThread.Abort();  // Not allowed in iOS
-                    imgbtnAbout.IsEnabled = false;
-                    imgbtnSettings.IsEnabled = false;
-                    BtnPickImage.IsEnabled = false;
-                    imgbtnTextToSpeech.IsEnabled = false;
-                    BtnTakePicture.IsEnabled = false;
-                    BtnCopyToClipboard.IsEnabled = false;
-                    BtnShare.IsEnabled = false;
-                    BtnClear.IsEnabled = false;
-
-                    await DisplayAlert(OcrLang.LicenseTitle_Text, OcrLang.CloseApplication_Text, OcrLang.ButtonClose_Text);
-#else
-                    Application.Current.Quit();
-#endif
-                }
-            }
-        }
-
-        /// <summary>
         /// Put text in the chosen language in the controls
         /// </summary>
         private void SetTextLanguage()
@@ -300,7 +308,7 @@ namespace ImageOcrText
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
-        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        /// <para>.Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;</para>
         /// </summary>
         /// <param name="cCultureName"></param>
         private async void InitializeTextToSpeech(string cCultureName)
@@ -328,7 +336,7 @@ namespace ImageOcrText
                 return;
             }
 
-            //lblTextToSpeech.IsVisible = true;
+            lblTextToSpeech.IsVisible = true;
             imgbtnTextToSpeech.IsVisible = true;
             Globals.bLanguageLocalesExist = true;
 
@@ -350,7 +358,7 @@ namespace ImageOcrText
                 SearchArrayWithSpeechLanguages(cCultureName);
             }
 
-            //lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+            lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
         }
 
         /// <summary>

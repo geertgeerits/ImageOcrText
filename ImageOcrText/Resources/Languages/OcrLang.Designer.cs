@@ -234,5 +234,14 @@ namespace ImageOcrText.Resources.Languages {
                 return ResourceManager.GetString("TextToSpeechError_Text", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text to speech.
+        /// </summary>
+        internal static string ToolTipTextToSpeech_Text {
+            get {
+                return ResourceManager.GetString("ToolTipTextToSpeech_Text", resourceCulture);
+            }
+        }
     }
 }
