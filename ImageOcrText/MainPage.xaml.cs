@@ -369,6 +369,12 @@ namespace ImageOcrText
         {
             try
             {
+                if (Globals.cLanguageLocales is null)
+                {
+                    Globals.cLanguageSpeech = cCultureName;
+                    return;
+                }
+
                 int nTotalItems = Globals.cLanguageLocales.Length;
 
                 for (int nItem = 0; nItem < nTotalItems; nItem++)

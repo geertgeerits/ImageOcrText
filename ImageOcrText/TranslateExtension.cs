@@ -3,7 +3,7 @@
     [ContentProperty(nameof(Name))]
     public sealed class TranslateExtension : IMarkupExtension<BindingBase>
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         public BindingBase ProvideValue(IServiceProvider serviceProvider)
         {

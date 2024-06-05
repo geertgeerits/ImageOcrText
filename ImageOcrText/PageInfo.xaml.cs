@@ -10,7 +10,7 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                DisplayAlert("InitializeComponent: PageAbout", ex.Message, "OK");
+                DisplayAlert("InitializeComponent: PageInfo", ex.Message, "OK");
                 return;
             }
 

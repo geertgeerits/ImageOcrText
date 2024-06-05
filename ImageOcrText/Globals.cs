@@ -3,9 +3,6 @@ global using ImageOcrText.Resources.Languages;
 global using System.Globalization;
 //global using Sentry;
 
-//// Local usings
-//using System.Text.RegularExpressions;
-
 namespace ImageOcrText
 {
     //// Global variables and methods
@@ -142,7 +139,7 @@ namespace ImageOcrText
                     //Crashes.TrackError(ex);  // Microsoft.AppCenter
                     //SentrySdk.CaptureException(ex);
 #if DEBUG
-                    await App.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                    await Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
                 }
 
