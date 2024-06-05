@@ -142,11 +142,38 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copyright.
+        /// </summary>
+        internal static string Copyright_Text {
+            get {
+                return ResourceManager.GetString("Copyright_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Convert text in an image or photo to editable text..
+        /// </summary>
+        internal static string Description_Text {
+            get {
+                return ResourceManager.GetString("Description_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disagree.
         /// </summary>
         internal static string Disagree_Text {
             get {
                 return ResourceManager.GetString("Disagree_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail:.
+        /// </summary>
+        internal static string Email_Text {
+            get {
+                return ResourceManager.GetString("Email_Text", resourceCulture);
             }
         }
         
@@ -174,6 +201,37 @@ namespace ImageOcrText.Resources.Languages {
         internal static string Info_Text {
             get {
                 return ResourceManager.GetString("Info_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text to speech: not all languages are supported that are provided in the application settings.
+        ///This option depend from device to device and the installed languages. It is possible that for some languages the translation to speech is done over the internet by the concerned services.
+        ///
+        ///Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
+        ///The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string InfoExplanation_Text {
+            get {
+                return ResourceManager.GetString("InfoExplanation_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language:.
+        /// </summary>
+        internal static string Language_Text {
+            get {
+                return ResourceManager.GetString("Language_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language speech:.
+        /// </summary>
+        internal static string LanguageSpeech_Text {
+            get {
+                return ResourceManager.GetString("LanguageSpeech_Text", resourceCulture);
             }
         }
         
@@ -218,11 +276,65 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image to Text.
+        /// </summary>
+        internal static string NameProgram_Text {
+            get {
+                return ResourceManager.GetString("NameProgram_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No personal and other data is stored or passed on to myself and others..
+        /// </summary>
+        internal static string PrivacyPolicy_Text {
+            get {
+                return ResourceManager.GetString("PrivacyPolicy_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Policy:.
+        /// </summary>
+        internal static string PrivacyPolicyTitle_Text {
+            get {
+                return ResourceManager.GetString("PrivacyPolicyTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string Settings_Text {
             get {
                 return ResourceManager.GetString("Settings_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        internal static string SettingsReset_Text {
+            get {
+                return ResourceManager.GetString("SettingsReset_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string SettingsSave_Text {
+            get {
+                return ResourceManager.GetString("SettingsSave_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save the settings when the changes are final..
+        /// </summary>
+        internal static string SettingsSaved_Text {
+            get {
+                return ResourceManager.GetString("SettingsSaved_Text", resourceCulture);
             }
         }
         
@@ -236,11 +348,146 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Theme:.
+        /// </summary>
+        internal static string Theme_Text {
+            get {
+                return ResourceManager.GetString("Theme_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        internal static string ThemeDark_Text {
+            get {
+                return ResourceManager.GetString("ThemeDark_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        internal static string ThemeLight_Text {
+            get {
+                return ResourceManager.GetString("ThemeLight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        internal static string ThemeSystem_Text {
+            get {
+                return ResourceManager.GetString("ThemeSystem_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel the changes.
+        /// </summary>
+        internal static string ToolTipCancel_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCancel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete the text.
+        /// </summary>
+        internal static string ToolTipClear_Text {
+            get {
+                return ResourceManager.GetString("ToolTipClear_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string ToolTipClose_Text {
+            get {
+                return ResourceManager.GetString("ToolTipClose_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy the text to the clipboard.
+        /// </summary>
+        internal static string ToolTipCopy_Text {
+            get {
+                return ResourceManager.GetString("ToolTipCopy_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open an image.
+        /// </summary>
+        internal static string ToolTipImage_Text {
+            get {
+                return ResourceManager.GetString("ToolTipImage_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a picture.
+        /// </summary>
+        internal static string ToolTipPicture_Text {
+            get {
+                return ResourceManager.GetString("ToolTipPicture_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset to default settings.
+        /// </summary>
+        internal static string ToolTipSettingsReset_Text {
+            get {
+                return ResourceManager.GetString("ToolTipSettingsReset_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save the settings.
+        /// </summary>
+        internal static string TooltipSettingsSaved_Text {
+            get {
+                return ResourceManager.GetString("TooltipSettingsSaved_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share the text.
+        /// </summary>
+        internal static string ToolTipShare_Text {
+            get {
+                return ResourceManager.GetString("ToolTipShare_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Text to speech.
         /// </summary>
         internal static string ToolTipTextToSpeech_Text {
             get {
                 return ResourceManager.GetString("ToolTipTextToSpeech_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version:.
+        /// </summary>
+        internal static string Version_Text {
+            get {
+                return ResourceManager.GetString("Version_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website.
+        /// </summary>
+        internal static string Website_Text {
+            get {
+                return ResourceManager.GetString("Website_Text", resourceCulture);
             }
         }
     }

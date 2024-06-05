@@ -144,8 +144,17 @@
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Please close the application.</value>
   </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Convert text in an image or photo to editable text.</value>
+  </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>Disagree</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>E-mail:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Error</value>
@@ -153,8 +162,23 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Image text to raw text</value>
   </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Text to speech: not all languages are supported that are provided in the application settings.
+This option depend from device to device and the installed languages. It is possible that for some languages the translation to speech is done over the internet by the concerned services.
+
+Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
+The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
+
+You can always contact me for any corrections.</value>
+  </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Info</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Language speech:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Language:</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
     <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
@@ -172,13 +196,76 @@ The above copyright notice and this permission notice (including the next paragr
     <value>This application may be used freely for non-commercial purposes.
 Use this program entirely at your own risk.</value>
   </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Image to Text</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>Privacy Policy:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>No personal and other data is stored or passed on to myself and others.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Save the settings when the changes are final.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="Settings_Text" xml:space="preserve">
     <value>Settings</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
     <value>Text to speech is not supported on this device.</value>
   </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Theme:</value>
+  </data>
+  <data name="ToolTipCancel_Text" xml:space="preserve">
+    <value>Cancel the changes</value>
+  </data>
+  <data name="ToolTipClear_Text" xml:space="preserve">
+    <value>Delete the text</value>
+  </data>
+  <data name="ToolTipClose_Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Copy the text to the clipboard</value>
+  </data>
+  <data name="ToolTipImage_Text" xml:space="preserve">
+    <value>Open an image</value>
+  </data>
+  <data name="ToolTipPicture_Text" xml:space="preserve">
+    <value>Take a picture</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Reset to default settings</value>
+  </data>
+  <data name="TooltipSettingsSaved_Text" xml:space="preserve">
+    <value>Save the settings</value>
+  </data>
+  <data name="ToolTipShare_Text" xml:space="preserve">
+    <value>Share the text</value>
+  </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text to speech</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Website</value>
   </data>
 </root>

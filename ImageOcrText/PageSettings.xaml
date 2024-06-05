@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resx="clr-namespace:ImageOcrText.Resources.Languages"
+             xmlns:local="clr-namespace:ImageOcrText"
              x:Class="ImageOcrText.PageSettings">
 
     <NavigationPage.TitleView>
@@ -11,4 +12,148 @@
         </Label>
     </NavigationPage.TitleView>
 
+    <Grid
+        RowDefinitions="Auto, *, Auto"
+        HorizontalOptions="Center"
+        Margin="5">
+
+        <ScrollView
+            Grid.Row="1"
+            Grid.Column="0"
+            VerticalOptions="FillAndExpand"
+            Orientation="Vertical">
+
+            <Grid
+                Style="{StaticResource gridStyleSettings}"
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2">
+
+                    <Label
+                        x:Name="lblExplanation"
+                        Style="{StaticResource labelStyleExplanation}"
+                        Text="{local:Translate SettingsSaved_Text}">
+                    </Label>
+                </Border>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="{local:Translate Language_Text}">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="1"
+                    Grid.Column="1">
+
+                    <Picker
+                        x:Name="pckLanguage"
+                        VerticalOptions="Center"
+                        MinimumWidthRequest="160"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerLanguageChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Čeština</x:String>
+                                <x:String>Dansk</x:String>
+                                <x:String>Deutsch</x:String>
+                                <x:String>English</x:String>
+                                <x:String>Español</x:String>
+                                <x:String>Français</x:String>
+                                <x:String>Italiano</x:String>
+                                <x:String>Magyar</x:String>
+                                <x:String>Nederlands</x:String>
+                                <x:String>Norsk</x:String>
+                                <x:String>Polski</x:String>
+                                <x:String>Português</x:String>
+                                <x:String>Română</x:String>
+                                <x:String>Suomi</x:String>
+                                <x:String>Svenska</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="{local:Translate LanguageSpeech_Text}">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="2"
+                    Grid.Column="1">
+
+                    <Picker
+                        x:Name="pckLanguageSpeech"
+                        VerticalOptions="Center"
+                        MinimumWidthRequest="160"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerLanguageSpeechChanged">
+                    </Picker>
+                </Border>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="{local:Translate Theme_Text}">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="3"
+                    Grid.Column="1">
+
+                    <Picker
+                        x:Name="pckTheme"
+                        VerticalOptions="Center"
+                        MinimumWidthRequest="160"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerThemeChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>System</x:String>
+                                <x:String>Light</x:String>
+                                <x:String>Dark</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+
+            </Grid>
+        </ScrollView>
+
+        <Button
+            x:Name="btnSettingsSave"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="2"
+            HorizontalOptions="Start"
+            WidthRequest="{OnIdiom 170, Phone=170, Tablet=270, Desktop=270}"
+            Text="{local:Translate SettingsSave_Text}"
+            SemanticProperties.Description="{local:Translate TooltipSettingsSaved_Text}"
+            ToolTipProperties.Text="{local:Translate TooltipSettingsSaved_Text}"
+            Clicked="OnSettingsSaveClicked">
+        </Button>
+
+        <Button
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="2"
+            HorizontalOptions="End"
+            WidthRequest="{OnIdiom 170, Phone=170, Tablet=270, Desktop=270}"
+            Text="{local:Translate SettingsReset_Text}"
+            SemanticProperties.Description="{local:Translate ToolTipSettingsReset_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipSettingsReset_Text}"
+            Clicked="OnSettingsResetClicked">
+        </Button>
+
+    </Grid>
 </ContentPage>

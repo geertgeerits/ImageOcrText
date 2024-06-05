@@ -38,6 +38,11 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
+	  <CodesignKey>Apple Development: Created via API (KL96X68Q72)</CodesignKey>
+	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -57,7 +62,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\envelope_48x24p.png" />
 	  <None Remove="Resources\Images\info_32p.png" />
+	  <None Remove="Resources\Images\internet_48x24p.png" />
 	  <None Remove="Resources\Images\settings_32p.png" />
 	  <None Remove="Resources\Images\speaker_64p_blue_green.png" />
 	  <None Remove="Resources\Images\speaker_cancel_64p_blue_red.png" />

@@ -64,7 +64,8 @@
             Grid.Row="0"
             Grid.Column="0"
             Text="{local:Translate ButtonImage_Text}" 
-            SemanticProperties.Hint="Picks an image for OCR"
+            SemanticProperties.Description="{local:Translate ToolTipImage_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipImage_Text}"
             Clicked="OnPickImageClicked">
         </Button>
 
@@ -105,7 +106,8 @@
             Grid.Column="2"
             HorizontalOptions="End"
             Text="{local:Translate ButtonPicture_Text}"
-            SemanticProperties.Hint="Takes a picture for OCR"
+            SemanticProperties.Description="{local:Translate ToolTipPicture_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipPicture_Text}"
             Clicked="OnTakePictureClicked">
         </Button>
 
@@ -151,7 +153,8 @@
             Grid.Row="2"
             Grid.Column="0"
             Text="{local:Translate ButtonCopy_Text}"
-            SemanticProperties.Hint="Copies the OCR result to the clipboard"
+            SemanticProperties.Description="{local:Translate ToolTipCopy_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipCopy_Text}"
             Clicked="OnCopyToClipboardClicked">
         </Button>
 
@@ -162,7 +165,8 @@
             Grid.Column="1"
             HorizontalOptions="Center"
             Text="{local:Translate ButtonShare_Text}"
-            SemanticProperties.Hint="Shares the OCR result"
+            SemanticProperties.Description="{local:Translate ToolTipShare_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipShare_Text}"
             Clicked="OnShareClicked">
         </Button>
 
@@ -173,7 +177,8 @@
             Grid.Column="2"
             HorizontalOptions="End"
             Text="{local:Translate ButtonClear_Text}"
-            SemanticProperties.Hint="Clears the OCR result"
+            SemanticProperties.Description="{local:Translate ToolTipClear_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipClear_Text}"
             Clicked="OnClearClicked">
         </Button>
 
