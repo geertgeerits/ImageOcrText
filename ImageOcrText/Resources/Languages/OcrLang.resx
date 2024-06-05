@@ -160,7 +160,7 @@
     <value>Error</value>
   </data>
   <data name="ImageOcrText_Text" xml:space="preserve">
-    <value>Image text to raw text</value>
+    <value>Optical Character Recognition</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Text to speech: not all languages are supported that are provided in the application settings.
@@ -209,7 +209,7 @@ Use this program entirely at your own risk.</value>
     <value>Reset</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings when the changes are final.</value>
+    <value>Save the settings after finalizing the changes.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Save</value>

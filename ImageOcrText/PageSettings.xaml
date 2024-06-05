@@ -8,7 +8,7 @@
     <NavigationPage.TitleView>
         <Label
             Style="{StaticResource labelStyleTitleView}"
-            Text="{x:Static resx:OcrLang.Settings_Text}">
+            Text="{local:Translate Settings_Text}">
         </Label>
     </NavigationPage.TitleView>
 

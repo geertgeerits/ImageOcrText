@@ -33,6 +33,7 @@
                 Grid.Column="1"
                 VerticalOptions="Center"
                 LineBreakMode="WordWrap"
+                FontSize="17"
                 Text="{local:Translate ImageOcrText_Text}">
             </Label>
 

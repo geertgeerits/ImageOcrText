@@ -12,15 +12,15 @@ namespace ImageOcrText
     internal static class Globals
     {
         //// Global variables
-        public static string cTheme;
-        public static string cLanguage;
+        public static string cTheme = "";
+        public static string cLanguage = "";
         public static bool bLanguageChanged = false;
-        public static string cLanguageSpeech;
-        public static string[] cLanguageLocales;
+        public static string cLanguageSpeech = "";
+        public static string[]? cLanguageLocales;
         public static bool bLanguageLocalesExist = false;
         public static bool bTextToSpeechIsBusy = false;
-        public static IEnumerable<Locale> locales;
-        public static CancellationTokenSource cts;
+        public static IEnumerable<Locale>? locales;
+        public static CancellationTokenSource? cts;
         public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
         public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
         public static bool bLicense;

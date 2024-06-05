@@ -33,7 +33,7 @@ namespace ImageOcrText
         {
             if (Email.Default.IsComposeSupported)
             {
-                string subject = "Rubik's Cube";
+                string subject = OcrLang.NameProgram_Text;
                 string body = "";
                 string[] recipients = ["geertgeerits@gmail.com"];
 

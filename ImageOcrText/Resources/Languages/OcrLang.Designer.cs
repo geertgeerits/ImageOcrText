@@ -187,7 +187,7 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image text to raw text.
+        ///   Looks up a localized string similar to Optical Character Recognition.
         /// </summary>
         internal static string ImageOcrText_Text {
             get {
@@ -330,7 +330,7 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save the settings when the changes are final..
+        ///   Looks up a localized string similar to Save the settings after finalizing the changes..
         /// </summary>
         internal static string SettingsSaved_Text {
             get {

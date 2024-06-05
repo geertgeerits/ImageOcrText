@@ -1,101 +1,271 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agree_Text" xml:space="preserve">
+    <value>Souhlasit</value>
+  </data>
+  <data name="ButtonCancel_Text" xml:space="preserve">
+    <value>Zrušení</value>
+  </data>
+  <data name="ButtonClear_Text" xml:space="preserve">
+    <value>Vymazat</value>
+  </data>
+  <data name="ButtonClose_Text" xml:space="preserve">
+    <value>Zavřít</value>
+  </data>
+  <data name="ButtonCopy_Text" xml:space="preserve">
+    <value>Kopii</value>
+  </data>
+  <data name="ButtonImage_Text" xml:space="preserve">
+    <value>Obraz</value>
+  </data>
+  <data name="ButtonPicture_Text" xml:space="preserve">
+    <value>Fotografie</value>
+  </data>
+  <data name="ButtonShare_Text" xml:space="preserve">
+    <value>Podíl</value>
+  </data>
+  <data name="CloseApplication_Text" xml:space="preserve">
+    <value>Zavřete aplikaci.</value>
+  </data>
+  <data name="Copyright_Text" xml:space="preserve">
+    <value>Autorská práva</value>
+  </data>
+  <data name="Description_Text" xml:space="preserve">
+    <value>Převeďte text v obrázku nebo fotografii na upravitelný text.</value>
+  </data>
+  <data name="Disagree_Text" xml:space="preserve">
+    <value>Nesouhlasit</value>
+  </data>
+  <data name="Email_Text" xml:space="preserve">
+    <value>E-mailem:</value>
+  </data>
+  <data name="ErrorTitle_Text" xml:space="preserve">
+    <value>Chyba</value>
+  </data>
+  <data name="ImageOcrText_Text" xml:space="preserve">
+    <value>Optické rozpoznávání znaků</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Převod textu na řeč: nejsou podporovány všechny jazyky, které jsou uvedeny v nastavení aplikace.
+Tato možnost závisí na zařízení a na nainstalovaných jazycích. Je možné, že u některých jazyků překlad do řeči provádějí příslušné služby přes internet.
 
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
+K překladu textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.
+Podporované jazyky jsou: čeština, dánština, holandština, angličtina, finština, francouzština, němčina, maďarština, italština, norština, polština, portugalština, rumunština, španělština a švédština.
 
-		Example:
+Pro případné opravy mě můžete vždy kontaktovat.</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informace</value>
+  </data>
+  <data name="LanguageSpeech_Text" xml:space="preserve">
+    <value>Jazyková řeč:</value>
+  </data>
+  <data name="Language_Text" xml:space="preserve">
+    <value>Jazyk:</value>
+  </data>
+  <data name="LicenseMit2_Text" xml:space="preserve">
+    <value>Software je poskytován „tak, jak je“, bez záruky jakéhokoli druhu, výslovné nebo předpokládané, včetně, ale bez omezení na záruky prodejnosti, vhodnosti pro konkrétní účel a neporušení práv. V žádném případě nenese autor a/nebo vydavatel odpovědnost za jakýkoli nárok, škody nebo jinou odpovědnost, ať už v případě smluvního jednání, deliktu nebo jinak, vyplývající z, z nebo v souvislosti se softwarem nebo používáním či jinými jednáními v software.</value>
+  </data>
+  <data name="LicenseMit_Text" xml:space="preserve">
+    <value>Licence MIT:
+Tímto se bezplatně uděluje povolení jakékoli osobě, která získá kopii tohoto softwaru a souvisejících souborů dokumentace (dále jen „Software“), nakládat se softwarem bez omezení, včetně, bez omezení, práv na používání, kopírování, úpravy, slučování publikovat, distribuovat, licencovat a/nebo prodávat kopie Softwaru a umožnit osobám, kterým je Software poskytnut, tak učinit, za následujících podmínek:
 
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+Výše uvedené oznámení o autorských právech a toto oznámení o povolení (včetně dalšího odstavce) musí být součástí všech kopií nebo podstatných částí Softwaru.</value>
+  </data>
+  <data name="LicenseTitle_Text" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="License_Text" xml:space="preserve">
+    <value>Tuto aplikaci lze volně používat pro nekomerční účely.
+Používejte tento program zcela na vlastní nebezpečí.</value>
+  </data>
+  <data name="NameProgram_Text" xml:space="preserve">
+    <value>Obrázek na text</value>
+  </data>
+  <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
+    <value>Zásady ochrany osobních údajů:</value>
+  </data>
+  <data name="PrivacyPolicy_Text" xml:space="preserve">
+    <value>Žádné osobní a jiné údaje nejsou ukládány ani předávány mně a ostatním.</value>
+  </data>
+  <data name="SettingsReset_Text" xml:space="preserve">
+    <value>Resetovat</value>
+  </data>
+  <data name="SettingsSaved_Text" xml:space="preserve">
+    <value>Po dokončení změn nastavení uložte.</value>
+  </data>
+  <data name="SettingsSave_Text" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Settings_Text" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="TextToSpeechError_Text" xml:space="preserve">
+    <value>Převod textu na řeč není na tomto zařízení podporován.</value>
+  </data>
+  <data name="ThemeDark_Text" xml:space="preserve">
+    <value>Tmavá</value>
+  </data>
+  <data name="ThemeLight_Text" xml:space="preserve">
+    <value>Světlo</value>
+  </data>
+  <data name="ThemeSystem_Text" xml:space="preserve">
+    <value>Systém</value>
+  </data>
+  <data name="Theme_Text" xml:space="preserve">
+    <value>Téma:</value>
+  </data>
+  <data name="ToolTipCancel_Text" xml:space="preserve">
+    <value>Zrušte změny</value>
+  </data>
+  <data name="ToolTipClear_Text" xml:space="preserve">
+    <value>Smažte text</value>
+  </data>
+  <data name="ToolTipClose_Text" xml:space="preserve">
+    <value>Zavřít</value>
+  </data>
+  <data name="ToolTipCopy_Text" xml:space="preserve">
+    <value>Zkopírujte text do schránky</value>
+  </data>
+  <data name="ToolTipImage_Text" xml:space="preserve">
+    <value>Otevřete obrázek</value>
+  </data>
+  <data name="ToolTipPicture_Text" xml:space="preserve">
+    <value>Vyfotit</value>
+  </data>
+  <data name="ToolTipSettingsReset_Text" xml:space="preserve">
+    <value>Obnovit výchozí nastavení</value>
+  </data>
+  <data name="TooltipSettingsSaved_Text" xml:space="preserve">
+    <value>Uložte nastavení</value>
+  </data>
+  <data name="ToolTipShare_Text" xml:space="preserve">
+    <value>Sdílejte text</value>
+  </data>
+  <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
+    <value>Text na řeč</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Verze:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Webová stránka</value>
+  </data>
 </root>

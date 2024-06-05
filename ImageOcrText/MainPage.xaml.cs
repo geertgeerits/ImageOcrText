@@ -18,7 +18,7 @@ namespace ImageOcrText
     public sealed partial class MainPage : ContentPage
     {
         //// Local variables
-        private string cLicense;
+        private string cLicense = "";
 
         public MainPage()
         {
@@ -403,7 +403,7 @@ namespace ImageOcrText
             {
                 //SentrySdk.CaptureException(ex);
 #if DEBUG
-                _ = Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
             }
         }
