@@ -160,7 +160,7 @@
     <value>Fout</value>
   </data>
   <data name="ImageOcrText_Text" xml:space="preserve">
-    <value>Optische karakter erkenning</value>
+    <value>Optische karakter herkenning</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Tekst naar spraak: niet alle talen die in de applicatie-instellingen worden aangeboden, worden ondersteund.
