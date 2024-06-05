@@ -330,7 +330,7 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save the settings after finalizing the changes..
+        ///   Looks up a localized string similar to Save the settings for a next session if necessary..
         /// </summary>
         internal static string SettingsSaved_Text {
             get {

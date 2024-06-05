@@ -209,7 +209,7 @@ Use this program entirely at your own risk.</value>
     <value>Reset</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings after finalizing the changes.</value>
+    <value>Save the settings for a next session if necessary.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Save</value>

@@ -209,7 +209,7 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
     <value>Resetovat</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Po dokončení změn nastavení uložte.</value>
+    <value>V případě potřeby uložte nastavení pro další relaci.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Uložit</value>
