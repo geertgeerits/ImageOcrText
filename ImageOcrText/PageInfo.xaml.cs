@@ -18,7 +18,7 @@ namespace ImageOcrText
             lblVersion.Text = $"{OcrLang.Version_Text} 1.0.4";
             lblCopyright.Text = $"{OcrLang.Copyright_Text} © 2024-2024 Geert Geerits";
             lblEmail.Text = $"{OcrLang.Email_Text} geertgeerits@gmail.com";
-            lblWebsite.Text = $"{OcrLang.Website_Text}: ../imageocrtext";
+            lblWebsite.Text = $"{OcrLang.Website_Text}: ../imagetotext";
             lblPrivacyPolicy.Text = $"\n{OcrLang.PrivacyPolicyTitle_Text} {OcrLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{OcrLang.LicenseTitle_Text}: {OcrLang.License_Text}";
             lblExplanation.Text = $"\n{OcrLang.InfoExplanation_Text}";
@@ -65,7 +65,7 @@ namespace ImageOcrText
         {
             try
             {
-                Uri uri = new("https://geertgeerits.wixsite.com/geertgeerits/imageocrtext");
+                Uri uri = new("https://geertgeerits.wixsite.com/geertgeerits/imagetotext");
                 BrowserLaunchOptions options = new()
                 {
                     LaunchMode = BrowserLaunchMode.SystemPreferred,
