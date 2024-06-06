@@ -65,7 +65,7 @@ namespace ImageOcrText
         {
             try
             {
-                Uri uri = new("https://geertgeerits.wixsite.com/geertgeerits/imagetotext");
+                Uri uri = new("https://geertgeerits.wixsite.com/geertgeerits/image-to-text");
                 BrowserLaunchOptions options = new()
                 {
                     LaunchMode = BrowserLaunchMode.SystemPreferred,
