@@ -118,144 +118,154 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>Enig</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Afbestille</value>
   </data>
   <data name="ButtonClear_Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>Ryd</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Luk</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
-    <value>Copy</value>
+    <value>Kopi</value>
   </data>
   <data name="ButtonImage_Text" xml:space="preserve">
-    <value>Image</value>
+    <value>Billede</value>
   </data>
   <data name="ButtonPicture_Text" xml:space="preserve">
-    <value>Picture</value>
+    <value>Foto</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Share</value>
+    <value>Del</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>Luk venligst ansøgningen.</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Ophavsret</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Convert text in an image or photo to editable text.</value>
+    <value>Konverter tekst i et billede eller foto til redigerbar tekst.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>Være uenig</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
     <value>E-mail:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>Fejl</value>
   </data>
   <data name="ImageOcrText_Text" xml:space="preserve">
-    <value>Optical Character Recognition</value>
+    <value>Optisk tegngenkendelse</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: not all languages are supported that are provided in the application settings.</value>
+    <value>Tekst til tale: Ikke alle sprog understøttes, som er angivet i applikationsindstillingerne.
+Denne mulighed afhænger fra enhed til enhed og de installerede sprog. Det er muligt, at for nogle sprog udføres oversættelsen til tale over internettet af de pågældende tjenester.
+
+Google Translate blev brugt til oversættelsen af ​​teksten. Dette er ikke en garanti for, at alle oversættelser er korrekte.
+Understøttende sprog er: tjekkisk, dansk, hollandsk, engelsk, finsk, fransk, tysk, ungarsk, italiensk, norsk, polsk, portugisisk, rumænsk, spansk og svensk.
+
+Du kan altid kontakte mig for eventuelle rettelser.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
-    <value>Info</value>
+    <value>Information</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>Sprog tale:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>Sprog:</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>Softwaren leveres 'som den er', uden garanti af nogen art, udtrykkelig eller underforstået, inklusive men ikke begrænset til garantier for salgbarhed, egnethed til et bestemt formål og ikke-krænkelse. Forfatteren og/eller udgiveren kan under ingen omstændigheder holdes ansvarlig for krav, skadeserstatninger eller andet ansvar, hvad enten det drejer sig om en kontrakt, erstatningsretligt eller på anden måde, der opstår fra, ud af eller i forbindelse med softwaren eller brugen eller anden handel med softwaren.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>MIT License:</value>
+    <value>MIT-licens:
+Tilladelse gives hermed gratis til enhver person, der anskaffer sig en kopi af denne software og tilhørende dokumentationsfiler ("Softwaren"), til at handle med Softwaren uden begrænsninger, herunder uden begrænsning rettighederne til at bruge, kopiere, ændre, flette , offentliggøre, distribuere, underlicensere og/eller sælge kopier af softwaren og tillade personer, som softwaren er udleveret til, at gøre det, underlagt følgende betingelser:
+
+Ovenstående copyright-meddelelse og denne tilladelsesmeddelelse (inklusive det næste afsnit) skal være inkluderet i alle kopier eller væsentlige dele af softwaren.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>Licens</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.</value>
+    <value>Denne applikation kan frit bruges til ikke-kommercielle formål.
+Brug dette program helt på egen risiko.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Image to Text</value>
+    <value>Billede til tekst (OCR)</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>Fortrolighedspolitik:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>Ingen personlige og andre data gemmes eller videregives til mig selv og andre.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Nulstil</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings after finalizing the changes.</value>
+    <value>Gem indstillingerne til en næste session, hvis det er nødvendigt.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Gemme</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Indstillinger</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Tekst til tale understøttes ikke på denne enhed.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Mørk</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Lys</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
     <value>System</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Tema:</value>
   </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
-    <value>Cancel the changes</value>
+    <value>Annuller ændringerne</value>
   </data>
   <data name="ToolTipClear_Text" xml:space="preserve">
-    <value>Delete the text</value>
+    <value>Slet teksten</value>
   </data>
   <data name="ToolTipClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Luk</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy the text to the clipboard</value>
+    <value>Kopier tekst til udklipsholderen</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Open an image</value>
+    <value>Åbn et billede</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
-    <value>Take a picture</value>
+    <value>Tag et foto</value>
   </data>
   <data name="ToolTipSettingsReset_Text" xml:space="preserve">
-    <value>Reset to default settings</value>
+    <value>Nulstil til standardindstillinger</value>
   </data>
   <data name="TooltipSettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings</value>
+    <value>Gem indstillingerne</value>
   </data>
   <data name="ToolTipShare_Text" xml:space="preserve">
-    <value>Share the text</value>
+    <value>Del teksten</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
-    <value>Text to speech</value>
+    <value>Tekst til tale</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Internet side</value>
   </data>
 </root>

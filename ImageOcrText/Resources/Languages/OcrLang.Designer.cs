@@ -276,7 +276,7 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image to Text.
+        ///   Looks up a localized string similar to Image to Text (OCR).
         /// </summary>
         internal static string NameProgram_Text {
             get {

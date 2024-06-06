@@ -197,7 +197,7 @@ The above copyright notice and this permission notice (including the next paragr
 Use this program entirely at your own risk.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Image to Text</value>
+    <value>Image to Text (OCR)</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Privacy Policy:</value>

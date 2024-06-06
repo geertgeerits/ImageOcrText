@@ -130,7 +130,7 @@
     <value>Zavřít</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
-    <value>Kopii</value>
+    <value>Kopie</value>
   </data>
   <data name="ButtonImage_Text" xml:space="preserve">
     <value>Obraz</value>
@@ -197,7 +197,7 @@ Výše uvedené oznámení o autorských právech a toto oznámení o povolení 
 Používejte tento program zcela na vlastní nebezpečí.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Obrázek na text</value>
+    <value>Obrázek na text (OCR)</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Zásady ochrany osobních údajů:</value>

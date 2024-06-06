@@ -2,11 +2,11 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.4
- * Date ........: 2024-06-05 (YYYY-MM-DD)
+ * Date ........: 2024-06-06 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
- * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.0.11 - https://github.com/kfrancis/ocr
+ * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.0.11 - by kfrancis - https://github.com/kfrancis/ocr
  *                NuGet Package: Xamarin.AndroidX.Fragment.Ktx - Version 1.7.0
  * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
