@@ -59,23 +59,36 @@
         HorizontalOptions="Center"
         Margin="5">
 
-        <Button
-            x:Name="BtnPickImage"
-            Style="{StaticResource buttonStyleDefault}"
+        <ImageButton
+            x:Name="imgbtnPickImage"
+            Style="{StaticResource imageButtonStyleDefault}"
             Grid.Row="0"
             Grid.Column="0"
-            Text="{local:Translate ButtonImage_Text}" 
+            HorizontalOptions="Start"
+            Source="ic_action_picture_text.png" 
             SemanticProperties.Description="{local:Translate ToolTipImage_Text}"
             ToolTipProperties.Text="{local:Translate ToolTipImage_Text}"
             Clicked="OnPickImageClicked">
-        </Button>
+        </ImageButton>
+
+        <ImageButton
+            x:Name="imgbtnTakePicture"
+            Style="{StaticResource imageButtonStyleDefault}"
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            Source="ic_action_camera.png"
+            SemanticProperties.Description="{local:Translate ToolTipPicture_Text}"
+            ToolTipProperties.Text="{local:Translate ToolTipPicture_Text}"
+            Clicked="OnTakePictureClicked">
+        </ImageButton>
 
         <HorizontalStackLayout
             Grid.Row="0"
-            Grid.Column="1"
+            Grid.Column="2"
             HorizontalOptions="End"
             VerticalOptions="End"
-            Margin="0,2,2,0"
+            Margin="0,0,25,0"
             Spacing="10">
 
             <Label
@@ -91,26 +104,15 @@
             <ImageButton
                 x:Name="imgbtnTextToSpeech"
                 Source="speaker_64p_blue_green.png"
-                HeightRequest="38"
-                WidthRequest="38"
+                VerticalOptions="Start"
+                HeightRequest="40"
+                WidthRequest="40"
                 IsVisible="False"
                 SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"
                 Clicked="OnTextToSpeechClicked">
             </ImageButton>
         </HorizontalStackLayout>
-
-        <Button
-            x:Name="BtnTakePicture"
-            Style="{StaticResource buttonStyleDefault}"
-            Grid.Row="0"
-            Grid.Column="2"
-            HorizontalOptions="End"
-            Text="{local:Translate ButtonPicture_Text}"
-            SemanticProperties.Description="{local:Translate ToolTipPicture_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipPicture_Text}"
-            Clicked="OnTakePictureClicked">
-        </Button>
 
         <ScrollView
             Grid.Row="1"
@@ -148,40 +150,40 @@
                 </Grid>
         </ScrollView>
 
-        <Button
-            x:Name="BtnCopyToClipboard"
-            Style="{StaticResource buttonStyleDefault}"
+        <ImageButton
+            x:Name="imgbtnCopyToClipboard"
+            Style="{StaticResource imageButtonStyleDefault}"
             Grid.Row="2"
             Grid.Column="0"
-            Text="{local:Translate ButtonCopy_Text}"
+            HorizontalOptions="Start"
+            Source="ic_action_copy.png"
             SemanticProperties.Description="{local:Translate ToolTipCopy_Text}"
             ToolTipProperties.Text="{local:Translate ToolTipCopy_Text}"
             Clicked="OnCopyToClipboardClicked">
-        </Button>
+        </ImageButton>
 
-        <Button
-            x:Name="BtnShare"
-            Style="{StaticResource buttonStyleDefault}"
+        <ImageButton
+            x:Name="imgbtnShare"
+            Style="{StaticResource imageButtonStyleDefault}"
             Grid.Row="2"
             Grid.Column="1"
             HorizontalOptions="Center"
-            Text="{local:Translate ButtonShare_Text}"
+            Source="ic_action_share.png"
             SemanticProperties.Description="{local:Translate ToolTipShare_Text}"
             ToolTipProperties.Text="{local:Translate ToolTipShare_Text}"
             Clicked="OnShareClicked">
-        </Button>
+        </ImageButton>
 
-        <Button
-            x:Name="BtnClear"
-            Style="{StaticResource buttonStyleDefault}"
+        <ImageButton
+            x:Name="imgbtnClear"
+            Style="{StaticResource imageButtonStyleDefault}"
             Grid.Row="2"
             Grid.Column="2"
             HorizontalOptions="End"
-            Text="{local:Translate ButtonClear_Text}"
+            Source="ic_action_trash.png"
             SemanticProperties.Description="{local:Translate ToolTipClear_Text}"
             ToolTipProperties.Text="{local:Translate ToolTipClear_Text}"
             Clicked="OnClearClicked">
-        </Button>
-
+        </ImageButton>        
     </Grid>
 </ContentPage>

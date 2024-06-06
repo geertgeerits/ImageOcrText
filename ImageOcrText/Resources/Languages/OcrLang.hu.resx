@@ -118,144 +118,154 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>Egyetért</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Megszünteti</value>
   </data>
   <data name="ButtonClear_Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>Töröl</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Zárja be</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
-    <value>Copy</value>
+    <value>Másolat</value>
   </data>
   <data name="ButtonImage_Text" xml:space="preserve">
-    <value>Image</value>
+    <value>Kép</value>
   </data>
   <data name="ButtonPicture_Text" xml:space="preserve">
-    <value>Picture</value>
+    <value>Fénykép</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Share</value>
+    <value>Ossza meg</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>Kérjük, zárja be az alkalmazást.</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Szerzői jog</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Convert text in an image or photo to editable text.</value>
+    <value>A képen vagy fényképen lévő szöveg átalakítása szerkeszthető szöveggé.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>Nem ért egyet</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>Email:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>Hiba</value>
   </data>
   <data name="ImageOcrText_Text" xml:space="preserve">
-    <value>Optical Character Recognition</value>
+    <value>Optikai karakter felismerés</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: not all languages are supported that are provided in the application settings.</value>
+    <value>Szövegfelolvasó: nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
+Ez az opció készülékenként és a telepített nyelvektől függ. Lehetséges, hogy egyes nyelvek esetében a beszédre fordítást az interneten keresztül végzik az érintett szolgálatok.
+
+A szöveg fordításához a Google Fordítót használtuk. Ez nem garancia arra, hogy minden fordítás helyes.
+A támogatott nyelvek: cseh, dán, holland, angol, finn, francia, német, magyar, olasz, norvég, lengyel, portugál, román, spanyol és svéd.
+
+Bármilyen javításért bármikor fordulhat hozzám.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
-    <value>Info</value>
+    <value>Információ</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>Nyelvi beszéd:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>Nyelv:</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>A szoftvert „adott állapotában” biztosítjuk, bármilyen kifejezett vagy hallgatólagos garancia nélkül, beleértve, de nem kizárólagosan az eladhatóságra, az adott célra való alkalmasságra és a jogsértésekre vonatkozó garanciákat. A szerző és/vagy a kiadó semmilyen esetben sem felelős semmilyen követelésért, kárért vagy egyéb felelősségért, akár szerződéses, károkozási vagy más jellegű, a szoftverből, a szoftver használatából vagy más kereskedéséből eredő, abból származó vagy azzal kapcsolatos. a szoftver.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>MIT License:</value>
+    <value>MIT licenc:
+A szoftver és a kapcsolódó dokumentációs fájlok (a "Szoftver") másolatát megszerző bármely személy számára ingyenes engedélyt adunk, hogy korlátozás nélkül kereskedjen a Szoftverrel, beleértve korlátozás nélkül a használati, másolási, módosítási, egyesítési jogokat. , közzéteszi, terjeszteni, allicencbe adni és/vagy eladni a Szoftver másolatait, és lehetővé tenni a szoftverrel ellátott személyek számára, hogy ezt megtegyék, a következő feltételekkel:
+
+A fenti szerzői jogi megjegyzést és ezt az engedélyt (beleértve a következő bekezdést is) a Szoftver minden másolata vagy jelentős része tartalmazza.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>Engedély</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.</value>
+    <value>Ez az alkalmazás szabadon felhasználható nem kereskedelmi célokra.
+Ezt a programot kizárólag saját felelősségére használja.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Image to Text</value>
+    <value>Képből szöveggé (OCR)</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>Adatvédelmi irányelvek:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>Személyes és egyéb adatokat nem tárolunk, illetve nem adunk át magamnak és másoknak.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Visszaállítás</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings after finalizing the changes.</value>
+    <value>Ha szükséges, mentse el a beállításokat egy következő munkamenethez.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Megment</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Beállítások</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Ez az eszköz nem támogatja a szövegfelolvasást.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Sötét</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Világos</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Rendszer</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Téma:</value>
   </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
-    <value>Cancel the changes</value>
+    <value>Törölje a változtatásokat</value>
   </data>
   <data name="ToolTipClear_Text" xml:space="preserve">
-    <value>Delete the text</value>
+    <value>Törölje a szöveget</value>
   </data>
   <data name="ToolTipClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Zárja be</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy the text to the clipboard</value>
+    <value>Szöveg másolása a vágólapra</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Open an image</value>
+    <value>Nyisson meg egy képet</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
-    <value>Take a picture</value>
+    <value>Fotózd le</value>
   </data>
   <data name="ToolTipSettingsReset_Text" xml:space="preserve">
-    <value>Reset to default settings</value>
+    <value>Állítsa vissza az alapértelmezett beállításokat</value>
   </data>
   <data name="TooltipSettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings</value>
+    <value>Mentse el a beállításokat</value>
   </data>
   <data name="ToolTipShare_Text" xml:space="preserve">
-    <value>Share the text</value>
+    <value>Oszd meg a szöveget</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
-    <value>Text to speech</value>
+    <value>Szöveg beszédté</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Változat:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Weboldal</value>
   </data>
 </root>

@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>Image OCR text</ApplicationTitle>
+		<ApplicationTitle>Image to Text (OCR)</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.imageocrtext</ApplicationId>

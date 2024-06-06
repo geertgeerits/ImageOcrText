@@ -189,7 +189,7 @@
         <Setter Property="RowSpacing" Value="0" />
     </Style>
 
-    <Style x:Key="gridStyleOcr" TargetType="Grid">
+    <!--<Style x:Key="gridStyleOcr" TargetType="Grid">
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup>
@@ -230,7 +230,7 @@
         <Setter Property="Margin" Value="{OnIdiom 5, Phone=5, Tablet=10, Desktop=10}" />
         <Setter Property="ColumnSpacing" Value="{OnIdiom 5, Phone=5, Tablet=15, Desktop=15}" />
         <Setter Property="RowSpacing" Value="4" />
-    </Style>
+    </Style>-->
 
     <Style x:Key="gridStyleSettings" TargetType="Grid">
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -317,6 +317,14 @@
         <Setter Property="HorizontalOptions" Value="Start" />
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="WidthRequest" Value="{OnIdiom 110, Phone=110, Tablet=270, Desktop=270}" />
+    </Style>
+
+    <Style x:Key="imageButtonStyleDefault" TargetType="ImageButton">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
     </Style>
 
 </ResourceDictionary>

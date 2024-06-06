@@ -156,12 +156,12 @@ namespace ImageOcrText
                     //Thread.CurrentThread.Abort();  // Not allowed in iOS
                     imgbtnAbout.IsEnabled = false;
                     imgbtnSettings.IsEnabled = false;
-                    BtnPickImage.IsEnabled = false;
+                    imgbtnPickImage.IsEnabled = false;
                     imgbtnTextToSpeech.IsEnabled = false;
-                    BtnTakePicture.IsEnabled = false;
-                    BtnCopyToClipboard.IsEnabled = false;
-                    BtnShare.IsEnabled = false;
-                    BtnClear.IsEnabled = false;
+                    imgbtnTakePicture.IsEnabled = false;
+                    imgbtnCopyToClipboard.IsEnabled = false;
+                    imgbtnShare.IsEnabled = false;
+                    imgbtnClear.IsEnabled = false;
 
                     await DisplayAlert(OcrLang.LicenseTitle_Text, OcrLang.CloseApplication_Text, OcrLang.ButtonClose_Text);
 #else

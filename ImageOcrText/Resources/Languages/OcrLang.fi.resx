@@ -118,144 +118,154 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>Olla samaa mieltä</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Peruuttaa</value>
   </data>
   <data name="ButtonClear_Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>Asia selvä</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Sulkea</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
-    <value>Copy</value>
+    <value>Kopio</value>
   </data>
   <data name="ButtonImage_Text" xml:space="preserve">
-    <value>Image</value>
+    <value>Kuva</value>
   </data>
   <data name="ButtonPicture_Text" xml:space="preserve">
-    <value>Picture</value>
+    <value>Valokuva</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Share</value>
+    <value>Jaa</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>Sulje sovellus.</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Tekijänoikeus</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Convert text in an image or photo to editable text.</value>
+    <value>Muunna kuvan tai valokuvan teksti muokattavaksi tekstiksi.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>Olen eri mieltä</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>Sähköposti:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>Virhe</value>
   </data>
   <data name="ImageOcrText_Text" xml:space="preserve">
-    <value>Optical Character Recognition</value>
+    <value>Optinen hahmon tunnistus</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: not all languages are supported that are provided in the application settings.</value>
+    <value>Tekstistä puheeksi: kaikkia sovellusasetuksissa olevia kieliä ei tueta.
+Tämä vaihtoehto riippuu laitteesta toiseen ja asennetuista kielistä. On mahdollista, että joillekin kielille käännös puheeksi tehdään Internetin kautta asianomaisten palvelujen toimesta.
+
+Tekstin kääntämiseen käytettiin Google Kääntäjää. Tämä ei takaa, että kaikki käännökset ovat oikein.
+Tukikielet ovat: tšekki, tanska, hollanti, englanti, suomi, ranska, saksa, unkari, italia, norja, puola, portugali, romania, espanja ja ruotsi.
+
+Voit aina ottaa minuun yhteyttä korjauksista.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
-    <value>Info</value>
+    <value>Tiedot</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>Kielen puhe:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>Kieli:</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>Ohjelmisto toimitetaan sellaisenaan, ilman minkäänlaista nimenomaista tai oletettua takuuta, mukaan lukien mutta ei rajoittuen takuut kaupallisuudesta, sopivuudesta tiettyyn tarkoitukseen ja loukkaamattomuuteen. Tekijä ja/tai julkaisija ei ole missään tapauksessa vastuussa mistään vaatimuksista, vahingoista tai muusta vastuusta, olipa kyseessä sopimus-, vahingonkorvaus- tai muu vastuu, joka johtuu ohjelmistosta, ohjelmistosta tai sen käytöstä tai muusta kaupasta tai sen yhteydessä. ohjelmisto.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>MIT License:</value>
+    <value>MIT-lisenssi:
+Täten myönnetään maksutta kenelle tahansa henkilölle, joka hankkii kopion tästä ohjelmistosta ja siihen liittyvistä dokumentaatiotiedostoista ("Ohjelmisto"), käsitellä Ohjelmistoa rajoituksetta, mukaan lukien rajoituksetta käyttö-, kopiointi-, muunnos- ja yhdistämisoikeudet. , julkaista, jakaa, alilisensoida ja/tai myydä ohjelmiston kopioita ja sallia henkilöiden, joille ohjelmisto on toimitettu, tehdä niin seuraavin ehdoin:
+
+Yllä oleva tekijänoikeusilmoitus ja tämä lupailmoitus (mukaan lukien seuraava kappale) sisällytetään kaikkiin ohjelmiston kopioihin tai merkittäviin osiin.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>Lisenssi</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.</value>
+    <value>Tätä sovellusta voidaan käyttää vapaasti ei-kaupallisiin tarkoituksiin.
+Käytä tätä ohjelmaa täysin omalla vastuullasi.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Image to Text</value>
+    <value>Kuva tekstiksi (OCR)</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>Tietosuojakäytäntö:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>Mitään henkilö- tai muita tietoja ei tallenneta tai luovuteta minulle tai muille.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Nollaa</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings after finalizing the changes.</value>
+    <value>Tallenna asetukset tarvittaessa seuraavaa istuntoa varten.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Tallentaa</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Asetukset</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Tämä laite ei tue tekstistä puheeksi.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Tumma</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Valo</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Järjestelmä</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Teema:</value>
   </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
-    <value>Cancel the changes</value>
+    <value>Peruuta muutokset</value>
   </data>
   <data name="ToolTipClear_Text" xml:space="preserve">
-    <value>Delete the text</value>
+    <value>Poista teksti</value>
   </data>
   <data name="ToolTipClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Sulje</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy the text to the clipboard</value>
+    <value>Kopioi teksti leikepöydälle</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Open an image</value>
+    <value>Avaa kuva</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
-    <value>Take a picture</value>
+    <value>Ottaa valokuva</value>
   </data>
   <data name="ToolTipSettingsReset_Text" xml:space="preserve">
-    <value>Reset to default settings</value>
+    <value>Palauta oletusasetukset</value>
   </data>
   <data name="TooltipSettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings</value>
+    <value>Tallenna asetukset</value>
   </data>
   <data name="ToolTipShare_Text" xml:space="preserve">
-    <value>Share the text</value>
+    <value>Jaa teksti</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
-    <value>Text to speech</value>
+    <value>Teksti puheeksi</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Versio:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Verkkosivusto</value>
   </data>
 </root>
