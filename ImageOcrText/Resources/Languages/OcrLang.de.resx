@@ -164,11 +164,9 @@
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Text-to-Speech: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
-
 Diese Option hängt von Gerät zu Gerät und den installierten Sprachen ab. Es ist möglich, dass die Übersetzung in Sprache für einige Sprachen über das Internet von den betreffenden Diensten durchgeführt wird.
 
 Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie dafür, dass alle Übersetzungen korrekt sind.
-
 Die unterstützten Sprachen sind: Tschechisch, Dänisch, Niederländisch, Englisch, Finnisch, Französisch, Deutsch, Ungarisch, Italienisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Spanisch und Schwedisch.
 
 Sie können mich jederzeit für Korrekturen kontaktieren.</value>

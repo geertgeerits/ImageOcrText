@@ -118,144 +118,154 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>Concordar</value>
   </data>
   <data name="ButtonCancel_Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="ButtonClear_Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>Remover</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Fechar</value>
   </data>
   <data name="ButtonCopy_Text" xml:space="preserve">
-    <value>Copy</value>
+    <value>Cópia de</value>
   </data>
   <data name="ButtonImage_Text" xml:space="preserve">
-    <value>Image</value>
+    <value>Imagem</value>
   </data>
   <data name="ButtonPicture_Text" xml:space="preserve">
-    <value>Picture</value>
+    <value>Foto</value>
   </data>
   <data name="ButtonShare_Text" xml:space="preserve">
-    <value>Share</value>
+    <value>Compartilhar</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>Feche o aplicativo.</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Direito autoral</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Convert text in an image or photo to editable text.</value>
+    <value>Converta texto de uma imagem ou foto em texto editável.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>Discordar</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
     <value>E-mail:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>Erro</value>
   </data>
   <data name="ImageOcrText_Text" xml:space="preserve">
-    <value>Optical Character Recognition</value>
+    <value>Reconhecimento Óptico de Caracteres</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: not all languages are supported that are provided in the application settings.</value>
+    <value>Texto para fala: nem todos os idiomas fornecidos nas configurações do aplicativo são suportados.
+Esta opção depende de dispositivo para dispositivo e dos idiomas instalados. É possível que, para alguns idiomas, a tradução para fala seja feita pela internet pelos serviços envolvidos.
+
+O Google Translate foi usado para a tradução do texto. Isso não é uma garantia de que todas as traduções estejam corretas.
+Os idiomas suportados são: tcheco, dinamarquês, holandês, inglês, finlandês, francês, alemão, húngaro, italiano, norueguês, polonês, português, romeno, espanhol e sueco.
+
+Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
-    <value>Info</value>
+    <value>Informação</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>Linguagem de fala:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>Língua:</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>O software é fornecido "como está", sem garantia de qualquer tipo, expressa ou implícita, incluindo, mas não se limitando às garantias de comercialização, adequação a uma finalidade específica e não violação. Em nenhuma hipótese o autor e/ou editor serão responsáveis ​​por qualquer reivindicação, danos ou outra responsabilidade, seja em uma ação contratual, ato ilícito ou de outra forma, decorrente de, de ou em conexão com o software ou o uso ou outras negociações no software.</value>
   </data>
   <data name="LicenseMit_Text" xml:space="preserve">
-    <value>MIT License:</value>
+    <value>Licença MIT:
+A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e arquivos de documentação associados (o "Software"), para lidar com o Software sem restrições, incluindo, sem limitação, os direitos de usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software, e permitir que as pessoas a quem o Software é fornecido o façam, sujeito às seguintes condições:
+
+O aviso de direitos autorais acima e este aviso de permissão (incluindo o próximo parágrafo) devem ser incluídos em todas as cópias ou partes substanciais do Software.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>Licença</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.</value>
+    <value>Este aplicativo pode ser usado livremente para fins não comerciais.
+Use este programa inteiramente por sua conta e risco.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Image to Text</value>
+    <value>Imagem para texto (OCR)</value>
   </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>Política de Privacidade:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>Nenhum dado pessoal e outros são armazenados ou transmitidos para mim e para outros.</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Redefinir</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings after finalizing the changes.</value>
+    <value>Salve as configurações para uma próxima sessão, se necessário.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Salvar</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Definições</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>A conversão de texto em fala não é compatível com este dispositivo.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Escuro</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Claro</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Sistema</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Tema:</value>
   </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
-    <value>Cancel the changes</value>
+    <value>Cancelar as alterações</value>
   </data>
   <data name="ToolTipClear_Text" xml:space="preserve">
-    <value>Delete the text</value>
+    <value>Apagar o texto</value>
   </data>
   <data name="ToolTipClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Fechar</value>
   </data>
   <data name="ToolTipCopy_Text" xml:space="preserve">
-    <value>Copy the text to the clipboard</value>
+    <value>Copie o texto para a área de transferência</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Open an image</value>
+    <value>Abra uma imagem</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
-    <value>Take a picture</value>
+    <value>Tire uma foto</value>
   </data>
   <data name="ToolTipSettingsReset_Text" xml:space="preserve">
-    <value>Reset to default settings</value>
+    <value>Redefinir para as configurações padrão</value>
   </data>
   <data name="TooltipSettingsSaved_Text" xml:space="preserve">
-    <value>Save the settings</value>
+    <value>Salvar as configurações</value>
   </data>
   <data name="ToolTipShare_Text" xml:space="preserve">
-    <value>Share the text</value>
+    <value>Compartilhe o texto</value>
   </data>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
-    <value>Text to speech</value>
+    <value>Texto para fala</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Versão:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Site</value>
   </data>
 </root>

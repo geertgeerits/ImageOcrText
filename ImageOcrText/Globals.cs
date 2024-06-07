@@ -72,41 +72,6 @@ namespace ImageOcrText
         }
 
         /// <summary>
-        /// Initialize text to speech for the barcode scanner
-        /// </summary>
-        /// <param name="cPageName"></param>
-        /// <returns></returns>
-        public static async Task<bool> InitializeTextToSpeechScannerAsync(string cPageName)
-        {
-            if (!bLanguageLocalesExist)
-            {
-                return false;
-            }
-
-            try
-            {
-                locales = await TextToSpeech.Default.GetLocalesAsync();
-            }
-            catch (Exception ex)
-            {
-                //var properties = new Dictionary<string, string> {
-                //    { "File:", "Globals.cs:" + cPageName },
-                //    { "Method:", "InitializeTextToSpeech" },
-                //    { "AppLanguage:", cLanguage },
-                //    { "AppLanguageSpeech:", cLanguageSpeech }
-                //};
-                //Crashes.TrackError(ex, properties);  // Microsoft.AppCenter
-                //SentrySdk.CaptureException(ex);
-#if DEBUG
-                await Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
-#endif
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
         /// Button text to speech event - Convert text to speech
         /// </summary>
         /// <param name="sender"></param>
@@ -136,7 +101,6 @@ namespace ImageOcrText
                 }
                 catch (Exception ex)
                 {
-                    //Crashes.TrackError(ex);  // Microsoft.AppCenter
                     //SentrySdk.CaptureException(ex);
 #if DEBUG
                     await Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);

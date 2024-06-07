@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.4
- * Date ........: 2024-06-06 (YYYY-MM-DD)
+ * Date ........: 2024-06-07 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -308,11 +308,12 @@ namespace ImageOcrText
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
-        /// <para>.Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;</para>
         /// </summary>
         /// <param name="cCultureName"></param>
         private async void InitializeTextToSpeech(string cCultureName)
         {
+            // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
+
             // Initialize text to speech
             int nTotalItems;
 
@@ -431,6 +432,5 @@ namespace ImageOcrText
             // Convert the text to speech
             _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtOcrResult.Text);
         }
-
     }
 }

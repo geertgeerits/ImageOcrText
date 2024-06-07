@@ -164,7 +164,6 @@
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Tekst naar spraak: niet alle talen die in de applicatie-instellingen worden aangeboden, worden ondersteund.
-
 Deze optie is afhankelijk van apparaat tot apparaat en de geïnstalleerde talen. Het is mogelijk dat voor sommige talen de vertaling naar spraak via internet wordt gedaan door de betreffende services.
 
 Google Translate is gebruikt voor de vertaling van de tekst. Dit is geen garantie dat alle vertalingen correct zijn.
