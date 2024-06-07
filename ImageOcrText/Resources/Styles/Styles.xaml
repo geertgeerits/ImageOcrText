@@ -189,7 +189,7 @@
         <Setter Property="RowSpacing" Value="0" />
     </Style>
 
-    <!--<Style x:Key="gridStyleOcr" TargetType="Grid">
+    <Style x:Key="gridStyleOcr" TargetType="Grid">
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup>
@@ -201,8 +201,7 @@
                             <Setter Property="ColumnDefinitions">
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 140, Phone=140, Tablet=280, Desktop=280}" />
-                                        <ColumnDefinition Width="{OnIdiom 200*, Phone=200*, Tablet=340, Desktop=340}" />
+                                        <ColumnDefinition Width="{OnIdiom 340*, Phone=340*, Tablet=560, Desktop=560}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
                             </Setter>
@@ -216,8 +215,7 @@
                             <Setter Property="ColumnDefinitions">
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 240, Phone=240, Tablet=380, Desktop=380}" />
-                                        <ColumnDefinition Width="{OnIdiom 300, Phone=300, Tablet=440, Desktop=440}" />
+                                        <ColumnDefinition Width="{OnIdiom 640*, Phone=640*, Tablet=760, Desktop=760}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
                             </Setter>
@@ -227,10 +225,8 @@
             </VisualStateGroupList>
         </Setter>
         <Setter Property="HorizontalOptions" Value="Center" />
-        <Setter Property="Margin" Value="{OnIdiom 5, Phone=5, Tablet=10, Desktop=10}" />
-        <Setter Property="ColumnSpacing" Value="{OnIdiom 5, Phone=5, Tablet=15, Desktop=15}" />
-        <Setter Property="RowSpacing" Value="4" />
-    </Style>-->
+        <Setter Property="Margin" Value="{OnIdiom 10, Phone=10, Tablet=10, Desktop=10}" />
+    </Style>
 
     <Style x:Key="gridStyleSettings" TargetType="Grid">
         <Setter Property="VisualStateManager.VisualStateGroups">
