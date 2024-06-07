@@ -34,7 +34,7 @@
                 VerticalOptions="Center"
                 LineBreakMode="WordWrap"
                 FontSize="17"
-                Text="{local:Translate ImageOcrText_Text}">
+                Text="{local:Translate NameProgram_Text}">
             </Label>
 
             <ImageButton
@@ -55,9 +55,9 @@
 
     <Grid
         RowDefinitions="Auto, *, Auto"
-        ColumnDefinitions="130*, 100, 130*"
+        ColumnDefinitions="130*, 100, 130*, 1"
         HorizontalOptions="Center"
-        Margin="0,5,5,0">
+        Margin="0,0,5,0">
 
         <ImageButton
             x:Name="imgbtnPickImage"
@@ -123,28 +123,28 @@
 
             <Grid
                 Style="{StaticResource gridStyleOcr}"
-                RowDefinitions="300*"
->
+                RowDefinitions="300*">
+
                 <Border
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="FillAndExpand"
-                        Stroke="Gray">
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Margin="10,10,15,10"
+                    Stroke="Gray">
 
                     <ScrollView>
-                            <Editor
-                                x:Name="edtOcrResult"
-                                HorizontalOptions="Fill"
-                                VerticalOptions="Fill"
-                                AutoSize="TextChanges"
-                                VerticalTextAlignment="Start"
-                                Text="">
-                            </Editor>
-                        </ScrollView>
-                    </Border>
-
-                </Grid>
+                        <Editor
+                            x:Name="edtOcrResult"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            AutoSize="TextChanges"
+                            VerticalTextAlignment="Start"
+                            Text="">
+                        </Editor>
+                    </ScrollView>
+                </Border>
+            </Grid>
         </ScrollView>
 
         <ImageButton
@@ -182,5 +182,6 @@
             ToolTipProperties.Text="{local:Translate ToolTipClear_Text}"
             Clicked="OnClearClicked">
         </ImageButton>        
+    
     </Grid>
 </ContentPage>

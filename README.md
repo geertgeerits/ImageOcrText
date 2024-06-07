@@ -1,8 +1,7 @@
 Image to Text (OCR)
 
 Convert text in an image or photo to editable text.
-It can be edited by clicking on it.
-The text can be copied, shared and read aloud.
+The text can be edited, copied, shared and read aloud.
 
 Supporting languages: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
 

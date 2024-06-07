@@ -201,7 +201,7 @@
                             <Setter Property="ColumnDefinitions">
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 340*, Phone=340*, Tablet=560, Desktop=560}" />
+                                        <ColumnDefinition Width="{OnIdiom 300*, Phone=300*, Tablet=560, Desktop=560}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
                             </Setter>
@@ -215,7 +215,7 @@
                             <Setter Property="ColumnDefinitions">
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 640*, Phone=640*, Tablet=760, Desktop=760}" />
+                                        <ColumnDefinition Width="{OnIdiom 600*, Phone=600*, Tablet=760, Desktop=760}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
                             </Setter>
@@ -225,7 +225,6 @@
             </VisualStateGroupList>
         </Setter>
         <Setter Property="HorizontalOptions" Value="Center" />
-        <Setter Property="Margin" Value="{OnIdiom 10, Phone=10, Tablet=10, Desktop=10}" />
     </Style>
 
     <Style x:Key="gridStyleSettings" TargetType="Grid">
