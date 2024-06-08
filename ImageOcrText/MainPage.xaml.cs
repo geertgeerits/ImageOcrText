@@ -50,10 +50,18 @@ namespace ImageOcrText
                 imgbtnSettings.VerticalOptions = LayoutOptions.Start;
             }
 
-            //// !!!BUG!!! in iOS. The width of the editor has to be the same for portrait and landscape view because the word wrap in not working.
+            //// !!!BUG!!! in iOS from Maui 8.0.40.
+            //// The width of the editor has to be the same for portrait and landscape view because the word wrap in not working.
             if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
-                edtOcrResult.WidthRequest = 600;
+                if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+                {
+                    edtOcrResult.WidthRequest = 340;
+                }
+                else
+                {
+                    edtOcrResult.WidthRequest = 700;
+                }
             }
             
             //// The allignment of the text to speech label is wrong in WinUI
