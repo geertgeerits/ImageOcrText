@@ -18,8 +18,8 @@ namespace ImageOcrText
         public static bool bTextToSpeechIsBusy = false;
         public static IEnumerable<Locale>? locales;
         public static CancellationTokenSource? cts;
-        public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
-        public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
+        public static string cImageTextToSpeech = "ic_action_volume_mute.png";
+        public static string cImageTextToSpeechCancel = "ic_action_volume_up.png";
         public static bool bLicense;
 
         //// Global methods
