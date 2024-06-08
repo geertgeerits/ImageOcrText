@@ -12,6 +12,7 @@
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
 
 using Plugin.Maui.OCR;
+using System.Diagnostics;
 
 namespace ImageOcrText
 {
@@ -19,12 +20,17 @@ namespace ImageOcrText
     {
         //// Local variables
         private string cLicense = "";
+        private string cOcrResult = "";
 
         public MainPage()
         {
             try
             {
                 InitializeComponent();
+#if IOS
+                //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.40 - Word wrap in editor is not working when going from landscape to portrait
+                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
+#endif
             }
             catch (Exception ex)
             {
@@ -51,16 +57,16 @@ namespace ImageOcrText
             }
 
             //// !!!BUG!!! in iOS from Maui 8.0.40.
-            //// The width of the editor has to be the same for portrait and landscape view because the word wrap in not working.
+            //// The width of the editor has to be set otherwise the editor is a vertical line
             if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
                 if (DeviceInfo.Idiom == DeviceIdiom.Phone)
                 {
-                    edtOcrResult.WidthRequest = 340;
+                    edtOcrResult.MinimumWidthRequest = 320;
                 }
                 else
                 {
-                    edtOcrResult.WidthRequest = 700;
+                    edtOcrResult.MinimumWidthRequest = 700;
                 }
             }
             
@@ -117,6 +123,34 @@ namespace ImageOcrText
             //SentrySdk.CaptureMessage("Hello Sentry");
             //throw new Exception("This is a test exception");
         }
+
+        /// <summary>
+        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.40 - Word wrap in editor is not working when going from landscape to portrait
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+        {
+#if IOS
+            var orientation = e.DisplayInfo.Orientation;
+
+            switch (orientation)
+            {
+                case DisplayOrientation.Portrait:
+                    // Handle logic for portrait orientation
+                    cOcrResult = edtOcrResult.Text;
+                    edtOcrResult.Text = "";
+                    await Task.Delay(100);
+                    edtOcrResult.Text = cOcrResult;
+                    Debug.WriteLine("Portrait");
+                    break;
+                case DisplayOrientation.Landscape:
+                    // Handle logic for landscape orientation
+                    Debug.WriteLine("Landscape");
+                    break;
+            }
+#endif
+        }   
 
         /// <summary>
         /// Initialize the OCR plugin using the Appearing event of the MainPage.xaml

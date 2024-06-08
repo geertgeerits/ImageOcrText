@@ -138,7 +138,12 @@
                     Margin="10,10,15,10"
                     Stroke="Gray">
 
-                    <ScrollView>
+                    <ScrollView
+                        x:Name="sclvOcrResult"
+                        VerticalScrollBarVisibility="Always"
+                        HorizontalScrollBarVisibility="Always"
+                        Orientation="Vertical">
+                        
                         <Editor
                             x:Name="edtOcrResult"
                             HorizontalOptions="FillAndExpand"
