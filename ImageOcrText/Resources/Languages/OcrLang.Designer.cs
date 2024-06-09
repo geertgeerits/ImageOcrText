@@ -196,6 +196,15 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No image to text possible..
+        /// </summary>
+        internal static string ImageToTextError_Text {
+            get {
+                return ResourceManager.GetString("ImageToTextError_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Info.
         /// </summary>
         internal static string Info_Text {

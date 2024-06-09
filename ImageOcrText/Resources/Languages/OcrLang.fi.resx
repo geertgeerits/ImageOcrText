@@ -162,6 +162,9 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Optinen hahmon tunnistus</value>
   </data>
+  <data name="ImageToTextError_Text" xml:space="preserve">
+    <value>Kuva tekstiksi ei ole mahdollista.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Kuva tekstiksi: tekstiä voidaan muokata, kopioida, jakaa ja lukea ääneen.
 Kaikkia kieliä ei tueta, tämä riippuu laitteesta ja asennetuista kielistä. Fontti, koko, kontrasti ja laatu ovat myös tärkeitä. Ei ole takeita siitä, että muunnettu teksti on oikea.

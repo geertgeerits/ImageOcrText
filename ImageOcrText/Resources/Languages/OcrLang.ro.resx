@@ -162,6 +162,9 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Recunoaștere optică a caracterelor</value>
   </data>
+  <data name="ImageToTextError_Text" xml:space="preserve">
+    <value>Nu este posibilă nicio imagine în text.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Imagine în text: textul poate fi editat, copiat, partajat și citit cu voce tare.
 Nu toate limbile sunt acceptate, acest lucru depinde de dispozitiv și de limbile instalate. Fontul, dimensiunea, contrastul și calitatea sunt de asemenea importante. Nu există nicio garanție că textul convertit este corect.

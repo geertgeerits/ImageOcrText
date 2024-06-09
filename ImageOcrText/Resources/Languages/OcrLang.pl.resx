@@ -162,6 +162,9 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Optyczne rozpoznawanie znaków</value>
   </data>
+  <data name="ImageToTextError_Text" xml:space="preserve">
+    <value>Nie ma możliwości zamiany obrazu na tekst.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Obraz na tekst: tekst można edytować, kopiować, udostępniać i czytać na głos.
 Nie każdy język jest obsługiwany, zależy to od urządzenia i zainstalowanych języków. Ważne są również czcionka, rozmiar, kontrast i jakość. Nie ma gwarancji, że przekonwertowany tekst jest poprawny.

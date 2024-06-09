@@ -162,6 +162,9 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Optické rozpoznávání znaků</value>
   </data>
+  <data name="ImageToTextError_Text" xml:space="preserve">
+    <value>No es posible convertir imagen a texto.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Obrázek na text: text lze upravovat, kopírovat, sdílet a číst nahlas.
 Ne každý jazyk je podporován, to závisí na zařízení a nainstalovaných jazycích. Důležité je také písmo, velikost, kontrast a kvalita. Neexistuje žádná záruka, že převedený text je správný.

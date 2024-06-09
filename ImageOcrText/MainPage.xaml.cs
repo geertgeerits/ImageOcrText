@@ -250,7 +250,7 @@ namespace ImageOcrText
 
                     if (!ocrResult.Success)
                     {
-                        await DisplayAlert("No success", "No OCR possible", "OK");
+                        await DisplayAlert(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
                         return;
                     }
 
@@ -286,7 +286,7 @@ namespace ImageOcrText
 
                     if (!ocrResult.Success)
                     {
-                        await DisplayAlert("No success", "No OCR possible", "OK");
+                        await DisplayAlert(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
                         return;
                     }
 

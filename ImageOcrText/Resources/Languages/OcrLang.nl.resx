@@ -162,6 +162,9 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Optische karakter herkenning</value>
   </data>
+  <data name="ImageToTextError_Text" xml:space="preserve">
+    <value>Geen afbeelding naar tekst mogelijk.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Afbeelding naar tekst: de tekst kan worden bewerkt, gekopieerd, gedeeld en voorgelezen.
 Niet elke taal wordt ondersteund, dit is afhankelijk van het apparaat en de geïnstalleerde talen. Het lettertype, de grootte, het contrast en de kwaliteit zijn ook belangrijk. Er is geen garantie dat de geconverteerde tekst correct is.

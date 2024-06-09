@@ -162,6 +162,9 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Optical Character Recognition</value>
   </data>
+  <data name="ImageToTextError_Text" xml:space="preserve">
+    <value>No image to text possible.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Image to text: the text can be edited, copied, shared and read aloud.
 Not every language is supported, this depends on the device and installed languages. The font, size, contrast and quality are also important. There is no guarantee that the converted text is correct.

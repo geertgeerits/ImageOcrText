@@ -162,6 +162,9 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Optisk tegngenkendelse</value>
   </data>
+  <data name="ImageToTextError_Text" xml:space="preserve">
+    <value>Intet billede til tekst muligt.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Billede til tekst: teksten kan redigeres, kopieres, deles og læses højt.
 Ikke alle sprog understøttes, dette afhænger af enheden og de installerede sprog. Skrifttype, størrelse, kontrast og kvalitet er også vigtige. Der er ingen garanti for, at den konverterede tekst er korrekt.

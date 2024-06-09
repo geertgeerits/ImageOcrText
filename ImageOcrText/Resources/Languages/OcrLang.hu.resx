@@ -162,6 +162,9 @@
   <data name="ImageOcrText_Text" xml:space="preserve">
     <value>Optikai karakter felismerés</value>
   </data>
+  <data name="ImageToTextError_Text" xml:space="preserve">
+    <value>Képből szöveg nem lehetséges.</value>
+  </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Kép szöveggé: a szöveg szerkeszthető, másolható, megosztható és felolvasható.
 Nem minden nyelv támogatott, ez az eszköztől és a telepített nyelvektől függ. A betűtípus, a méret, a kontraszt és a minőség is fontos. Nincs garancia arra, hogy a konvertált szöveg helyes.
