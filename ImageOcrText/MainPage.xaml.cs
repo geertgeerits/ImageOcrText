@@ -304,8 +304,23 @@ namespace ImageOcrText
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnCopyToClipboardClicked(object sender, EventArgs e) =>
-            await Clipboard.Default.SetTextAsync(edtOcrResult.Text);
+        private async void OnCopyToClipboardClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (edtOcrResult.Text != "")
+                {
+                    await Clipboard.Default.SetTextAsync(edtOcrResult.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                //SentrySdk.CaptureException(ex);
+#if DEBUG
+                await Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+#endif
+            }
+        }
 
         /// <summary>
         /// Click event: Share the text
