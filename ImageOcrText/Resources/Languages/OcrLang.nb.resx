@@ -163,7 +163,10 @@
     <value>Optisk karaktergjenkjennelse</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Tekst til tale: ikke alle språk støttes som er gitt i applikasjonsinnstillingene.
+    <value>Bilde til tekst: teksten kan redigeres, kopieres, deles og leses opp.
+Ikke alle språk støttes, dette avhenger av enheten og installerte språk. Font, størrelse, kontrast og kvalitet er også viktig. Det er ingen garanti for at den konverterte teksten er korrekt.
+
+Tekst til tale: ikke alle språk støttes som er gitt i applikasjonsinnstillingene.
 Dette alternativet avhenger fra enhet til enhet og de installerte språkene. Det er mulig at for noen språk blir oversettelsen til tale gjort over internett av de berørte tjenestene.
 
 Google Translate ble brukt til oversettelsen av teksten. Dette er ikke en garanti for at alle oversettelser er korrekte.

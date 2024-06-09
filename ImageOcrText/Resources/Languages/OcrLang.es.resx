@@ -163,7 +163,10 @@
     <value>Reconocimiento óptico de caracteres (OCR)</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Texto a voz: no todos los idiomas que se ofrecen en la configuración de la aplicación son compatibles.
+    <value>Imagen a texto: el texto se puede editar, copiar, compartir y leer en voz alta.
+No todos los idiomas son compatibles, esto depende del dispositivo y de los idiomas instalados. La fuente, el tamaño, el contraste y la calidad también son importantes. No hay garantía de que el texto convertido sea correcto.
+
+Texto a voz: no todos los idiomas que se ofrecen en la configuración de la aplicación son compatibles.
 Esta opción depende del dispositivo y de los idiomas instalados. Es posible que, en el caso de algunos idiomas, la traducción a voz se realice a través de Internet mediante los servicios correspondientes.
 
 Se utilizó Google Translate para la traducción del texto. Esto no garantiza que todas las traducciones sean correctas.

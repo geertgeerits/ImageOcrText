@@ -163,7 +163,10 @@
     <value>Optical Character Recognition</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text to speech: not all languages are supported that are provided in the application settings.
+    <value>Image to text: the text can be edited, copied, shared and read aloud.
+Not every language is supported, this depends on the device and installed languages. The font, size, contrast and quality are also important. There is no guarantee that the converted text is correct.
+
+Text to speech: not all languages are supported that are provided in the application settings.
 This option depend from device to device and the installed languages. It is possible that for some languages the translation to speech is done over the internet by the concerned services.
 
 Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.

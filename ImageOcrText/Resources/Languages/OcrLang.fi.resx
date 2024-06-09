@@ -163,7 +163,10 @@
     <value>Optinen hahmon tunnistus</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Tekstistä puheeksi: kaikkia sovellusasetuksissa olevia kieliä ei tueta.
+    <value>Kuva tekstiksi: tekstiä voidaan muokata, kopioida, jakaa ja lukea ääneen.
+Kaikkia kieliä ei tueta, tämä riippuu laitteesta ja asennetuista kielistä. Fontti, koko, kontrasti ja laatu ovat myös tärkeitä. Ei ole takeita siitä, että muunnettu teksti on oikea.
+
+Tekstistä puheeksi: kaikkia sovellusasetuksissa olevia kieliä ei tueta.
 Tämä vaihtoehto riippuu laitteesta toiseen ja asennetuista kielistä. On mahdollista, että joillekin kielille käännös puheeksi tehdään Internetin kautta asianomaisten palvelujen toimesta.
 
 Tekstin kääntämiseen käytettiin Google Kääntäjää. Tämä ei takaa, että kaikki käännökset ovat oikein.

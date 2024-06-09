@@ -163,7 +163,10 @@
     <value>Optikai karakter felismerés</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Szövegfelolvasó: nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
+    <value>Kép szöveggé: a szöveg szerkeszthető, másolható, megosztható és felolvasható.
+Nem minden nyelv támogatott, ez az eszköztől és a telepített nyelvektől függ. A betűtípus, a méret, a kontraszt és a minőség is fontos. Nincs garancia arra, hogy a konvertált szöveg helyes.
+
+Szövegfelolvasó: nem minden nyelv támogatott, amely az alkalmazás beállításaiban található.
 Ez az opció készülékenként és a telepített nyelvektől függ. Lehetséges, hogy egyes nyelvek esetében a beszédre fordítást az interneten keresztül végzik az érintett szolgálatok.
 
 A szöveg fordításához a Google Fordítót használtuk. Ez nem garancia arra, hogy minden fordítás helyes.

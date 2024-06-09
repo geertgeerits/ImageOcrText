@@ -163,7 +163,10 @@
     <value>Optyczne rozpoznawanie znaków</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Tekst na mowę: nie wszystkie języki, które są dostępne w ustawieniach aplikacji, są obsługiwane.
+    <value>Obraz na tekst: tekst można edytować, kopiować, udostępniać i czytać na głos.
+Nie każdy język jest obsługiwany, zależy to od urządzenia i zainstalowanych języków. Ważne są również czcionka, rozmiar, kontrast i jakość. Nie ma gwarancji, że przekonwertowany tekst jest poprawny.
+
+Tekst na mowę: nie wszystkie języki, które są dostępne w ustawieniach aplikacji, są obsługiwane.
 Ta opcja zależy od urządzenia i zainstalowanych języków. Możliwe, że w przypadku niektórych języków tłumaczenie na mowę jest wykonywane przez odpowiednie usługi przez Internet.
 
 Do tłumaczenia tekstu użyto Tłumacza Google. Nie gwarantuje to, że wszystkie tłumaczenia są poprawne.

@@ -163,7 +163,10 @@
     <value>Optisk teckenigenkänning</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text till tal: inte alla språk som finns i programinställningarna stöds.
+    <value>Bild till text: texten kan redigeras, kopieras, delas och läsas upp.
+Alla språk stöds inte, detta beror på enheten och installerade språk. Teckensnitt, storlek, kontrast och kvalitet är också viktiga. Det finns ingen garanti för att den konverterade texten är korrekt.
+
+Text till tal: inte alla språk som finns i programinställningarna stöds.
 Detta alternativ beror från enhet till enhet och de installerade språken. Det är möjligt att för vissa språk görs översättningen till tal över internet av de berörda tjänsterna.
 
 Google Translate användes för översättningen av texten. Detta är inte en garanti för att alla översättningar är korrekta.

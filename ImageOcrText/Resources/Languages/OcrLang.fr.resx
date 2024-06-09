@@ -163,7 +163,10 @@
     <value>Reconnaissance optique de caractères</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Traduction de texte en parole : toutes les langues fournies dans les paramètres de l'application ne sont pas prises en charge.
+    <value>Image en texte : le texte peut être édité, copié, partagé et lu à voix haute.
+Toutes les langues ne sont pas prises en charge, cela dépend de l'appareil et des langues installées. La police, la taille, le contraste et la qualité sont également importants. Il n'y a aucune garantie que le texte converti soit correct.
+
+Traduction de texte en parole : toutes les langues fournies dans les paramètres de l'application ne sont pas prises en charge.
 Cette option dépend de l'appareil et des langues installées. Il est possible que pour certaines langues, la traduction en parole soit effectuée via Internet par les services concernés.
 
 Google Translate a été utilisé pour la traduction du texte. Cela ne garantit pas que toutes les traductions soient correctes.

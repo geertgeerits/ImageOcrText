@@ -57,7 +57,7 @@
         RowDefinitions="Auto, *, Auto"
         ColumnDefinitions="130*, 100, 130*, 1"
         HorizontalOptions="Center"
-        Margin="0,0,5,5">
+        Margin="0,0,4,5">
 
         <ImageButton
             x:Name="imgbtnPickImage"
@@ -91,7 +91,7 @@
             HorizontalOptions="End"
             VerticalOptions="End"
             Margin="0,0,25,0"
-            Spacing="10">
+            Spacing="2">
 
             <Label
                 x:Name="lblTextToSpeech"
@@ -105,13 +105,13 @@
 
             <ImageButton
                 x:Name="imgbtnTextToSpeech"
-                Source="ic_action_volume_mute.png"
+                Style="{StaticResource imageButtonStyleDefault}"
                 VerticalOptions="Start"
-                HeightRequest="40"
-                WidthRequest="40"
-                IsVisible="False"
+                WidthRequest="50"
+                Source="ic_action_volume_mute.png"
                 SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"
+                IsVisible="False"
                 Clicked="OnTextToSpeechClicked">
             </ImageButton>
         </HorizontalStackLayout>

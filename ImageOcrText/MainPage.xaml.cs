@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.4
- * Date ........: 2024-06-08 (YYYY-MM-DD)
+ * Date ........: 2024-06-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -12,7 +12,6 @@
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
 
 using Plugin.Maui.OCR;
-using System.Diagnostics;
 
 namespace ImageOcrText
 {
@@ -20,7 +19,6 @@ namespace ImageOcrText
     {
         //// Local variables
         private string cLicense = "";
-        private string cOcrResult = "";
 
         public MainPage()
         {
@@ -124,6 +122,7 @@ namespace ImageOcrText
             //throw new Exception("This is a test exception");
         }
 
+#if IOS
         /// <summary>
         /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.40 - Word wrap in editor is not working when going from landscape to portrait
         /// </summary>
@@ -131,14 +130,13 @@ namespace ImageOcrText
         /// <param name="e"></param>
         private async void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
         {
-#if IOS
             var orientation = e.DisplayInfo.Orientation;
 
             switch (orientation)
             {
                 case DisplayOrientation.Portrait:
                     // Handle logic for portrait orientation
-                    cOcrResult = edtOcrResult.Text;
+                    string cOcrResult = edtOcrResult.Text;
                     edtOcrResult.Text = "";
                     await Task.Delay(100);
                     edtOcrResult.Text = cOcrResult;
@@ -149,9 +147,8 @@ namespace ImageOcrText
                     Debug.WriteLine("Landscape");
                     break;
             }
+        }
 #endif
-        }   
-
         /// <summary>
         /// Initialize the OCR plugin using the Appearing event of the MainPage.xaml
         /// </summary>
@@ -163,7 +160,7 @@ namespace ImageOcrText
         }
 
         /// <summary>
-        /// Set text and speech language and the generator format using the Appearing event of the MainPage.xaml
+        /// Set text and speech language using the Appearing event of the MainPage.xaml
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -178,9 +175,6 @@ namespace ImageOcrText
 
             // Set the speech language
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
-
-            // Set the generator format in the picker
-            //pckFormatCodeGenerator.SelectedIndex = Globals.nFormatGeneratorIndex;
         }
 
         /// <summary>
@@ -252,7 +246,6 @@ namespace ImageOcrText
                     var imageAsBytes = new byte[imageAsStream.Length];
                     _ = await imageAsStream.ReadAsync(imageAsBytes);
 
-                    //var ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes);
                     OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, tryHard: true);
 
                     if (!ocrResult.Success)
@@ -261,7 +254,6 @@ namespace ImageOcrText
                         return;
                     }
 
-                    //await DisplayAlert("OCR Result", ocrResult.AllText, "OK");
                     edtOcrResult.Text = ocrResult.AllText;
                 }
             }
@@ -298,7 +290,6 @@ namespace ImageOcrText
                         return;
                     }
 
-                    //await DisplayAlert("OCR Result", ocrResult.AllText, "OK");
                     edtOcrResult.Text = ocrResult.AllText;
                 }
             }

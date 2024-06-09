@@ -163,7 +163,10 @@
     <value>Recunoaștere optică a caracterelor</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text în vorbire: nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
+    <value>Imagine în text: textul poate fi editat, copiat, partajat și citit cu voce tare.
+Nu toate limbile sunt acceptate, acest lucru depinde de dispozitiv și de limbile instalate. Fontul, dimensiunea, contrastul și calitatea sunt de asemenea importante. Nu există nicio garanție că textul convertit este corect.
+
+Text în vorbire: nu sunt acceptate toate limbile care sunt furnizate în setările aplicației.
 Această opțiune depinde de la dispozitiv la dispozitiv și de limbile instalate. Este posibil ca, pentru unele limbi, traducerea în vorbire să se facă prin internet de către serviciile respective.
 
 Google Translate a fost folosit pentru traducerea textului. Aceasta nu este o garanție că toate traducerile sunt corecte.

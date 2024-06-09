@@ -163,7 +163,9 @@
     <value>Riconoscimento ottico dei caratteri</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Testo in voce: non sono supportate tutte le lingue fornite nelle impostazioni dell'applicazione.
+    <value>Immagine in testo: il testo può essere modificato, copiato, condiviso e letto ad alta voce. Non tutte le lingue sono supportate, questo dipende dal dispositivo e dalle lingue installate. Anche il font, la dimensione, il contrasto e la qualità sono importanti. Non vi è alcuna garanzia che il testo convertito sia corretto.
+
+Testo in voce: non sono supportate tutte le lingue fornite nelle impostazioni dell'applicazione.
 Questa opzione dipende dal dispositivo al dispositivo e dalle lingue installate. È possibile che per alcune lingue la traduzione in voce venga effettuata tramite Internet dai servizi interessati.
 
 Per la traduzione del testo è stato utilizzato Google Translate. Ciò non garantisce che tutte le traduzioni siano corrette.

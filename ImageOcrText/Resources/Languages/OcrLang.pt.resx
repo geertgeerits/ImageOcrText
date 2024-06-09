@@ -163,7 +163,10 @@
     <value>Reconhecimento Óptico de Caracteres</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Texto para fala: nem todos os idiomas fornecidos nas configurações do aplicativo são suportados.
+    <value>Imagem para texto: o texto pode ser editado, copiado, compartilhado e lido em voz alta.
+Nem todos os idiomas são suportados, isso depende do dispositivo e dos idiomas instalados. A fonte, o tamanho, o contraste e a qualidade também são importantes. Não há garantia de que o texto convertido esteja correto.
+
+Texto para fala: nem todos os idiomas fornecidos nas configurações do aplicativo são suportados.
 Esta opção depende de dispositivo para dispositivo e dos idiomas instalados. É possível que, para alguns idiomas, a tradução para fala seja feita pela internet pelos serviços envolvidos.
 
 O Google Translate foi usado para a tradução do texto. Isso não é uma garantia de que todas as traduções estejam corretas.

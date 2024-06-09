@@ -163,7 +163,10 @@
     <value>Optické rozpoznávání znaků</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Převod textu na řeč: nejsou podporovány všechny jazyky, které jsou uvedeny v nastavení aplikace.
+    <value>Obrázek na text: text lze upravovat, kopírovat, sdílet a číst nahlas.
+Ne každý jazyk je podporován, to závisí na zařízení a nainstalovaných jazycích. Důležité je také písmo, velikost, kontrast a kvalita. Neexistuje žádná záruka, že převedený text je správný.
+
+Převod textu na řeč: nejsou podporovány všechny jazyky, které jsou uvedeny v nastavení aplikace.
 Tato možnost závisí na zařízení a na nainstalovaných jazycích. Je možné, že u některých jazyků překlad do řeči provádějí příslušné služby přes internet.
 
 K překladu textu byl použit Google Translate. To nezaručuje, že všechny překlady jsou správné.

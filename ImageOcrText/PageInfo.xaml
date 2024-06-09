@@ -21,7 +21,7 @@
                     <Label
                         Style="{StaticResource labelStyleInfo}"
                         Text="{x:Static resx:OcrLang.NameProgram_Text}"
-                        FontSize="16">
+                        FontSize="18">
                     </Label>
 
                     <Label

@@ -1,6 +1,7 @@
 ﻿//// Global usings
 global using ImageOcrText.Resources.Languages;
 global using System.Globalization;
+global using System.Diagnostics;
 //global using Sentry;
 
 namespace ImageOcrText

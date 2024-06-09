@@ -266,7 +266,7 @@
         </Setter>
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="ColumnSpacing" Value="{OnIdiom 5, Phone=5, Tablet=15, Desktop=15}" />
-        <Setter Property="RowSpacing" Value="2" />
+        <Setter Property="RowSpacing" Value="10" />
     </Style>
 
     <Style x:Key="borderStyleDefault" TargetType="Border">

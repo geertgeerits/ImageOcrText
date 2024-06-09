@@ -163,7 +163,10 @@
     <value>Optische Zeichenerkennung</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
-    <value>Text-to-Speech: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
+    <value>Bild zu Text: Der Text kann bearbeitet, kopiert, geteilt und vorgelesen werden.
+Nicht jede Sprache wird unterstützt, dies hängt vom Gerät und den installierten Sprachen ab. Auch Schriftart, Größe, Kontrast und Qualität sind wichtig. Es gibt keine Garantie, dass der konvertierte Text korrekt ist.
+
+Text-to-Speech: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
 Diese Option hängt von Gerät zu Gerät und den installierten Sprachen ab. Es ist möglich, dass die Übersetzung in Sprache für einige Sprachen über das Internet von den betreffenden Diensten durchgeführt wird.
 
 Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie dafür, dass alle Übersetzungen korrekt sind.

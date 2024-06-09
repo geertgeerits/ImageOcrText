@@ -205,11 +205,11 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Text to speech: not all languages are supported that are provided in the application settings.
-        ///This option depend from device to device and the installed languages. It is possible that for some languages the translation to speech is done over the internet by the concerned services.
+        ///   Looks up a localized string similar to Image to text: the text can be edited, copied, shared and read aloud.
+        ///Not every language is supported, this depends on the device and installed languages. The font, size, contrast and quality are also important. There is no guarantee that the converted text is correct.
         ///
-        ///Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-        ///The supporting languages are: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian,  [rest of string was truncated]&quot;;.
+        ///Text to speech: not all languages are supported that are provided in the application settings.
+        ///This option depend from device to device and the installed languages. It is possible that for some languages the translation to speech is done [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InfoExplanation_Text {
             get {
