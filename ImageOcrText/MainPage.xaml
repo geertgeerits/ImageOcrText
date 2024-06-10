@@ -120,7 +120,6 @@
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="3"
-            VerticalOptions="FillAndExpand"
             Orientation="Vertical">
 
             <!--<Grid
@@ -139,9 +138,6 @@
                     Stroke="Gray">
 
                     <ScrollView
-                        x:Name="sclvOcrResult"
-                        VerticalScrollBarVisibility="Always"
-                        HorizontalScrollBarVisibility="Always"
                         Orientation="Vertical">
                         
                         <Editor
