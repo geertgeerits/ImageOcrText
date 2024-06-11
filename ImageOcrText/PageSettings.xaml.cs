@@ -231,7 +231,7 @@ namespace ImageOcrText
 
             if (selectedIndex != -1)
             {
-                Globals.nLanguageOcr = selectedIndex;
+                Globals.nLanguageOcrIndex = selectedIndex;
             }
         }
 
@@ -299,7 +299,7 @@ namespace ImageOcrText
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
-                Preferences.Default.Remove("SettingLanguageOcr");
+                Preferences.Default.Remove("SettingLanguageOcrIndex");
             }
 
             // Wait 500 milliseconds otherwise the settings are not saved in Android.

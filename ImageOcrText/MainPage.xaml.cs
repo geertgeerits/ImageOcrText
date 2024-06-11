@@ -7,7 +7,7 @@
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
  * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.0.11 - by kfrancis - https://github.com/kfrancis/ocr
- *                NuGet Package: Xamarin.AndroidX.Fragment.Ktx - Version 1.7.0
+ *                NuGet Package: Xamarin.AndroidX.Fragment.Ktx - Version 1.7.0.1
  * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
 
@@ -43,7 +43,7 @@ namespace ImageOcrText
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
-            Globals.nLanguageOcr = Preferences.Default.Get("SettingLanguageOcr", 0);
+            Globals.nLanguageOcrIndex = Preferences.Default.Get("SettingLanguageOcrIndex", 0);
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
             //// The height of the title bar is lower when an iPhone is in horizontal position
@@ -111,6 +111,9 @@ namespace ImageOcrText
 
             //// Initialize text to speech
             InitializeTextToSpeech(cCultureName);
+
+            //// Set the OCR language
+            
 
             //// Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
@@ -277,7 +280,19 @@ namespace ImageOcrText
 
             try
             {
+                string cLanguageOcr = "";
+                
+                if (Globals.nLanguageOcrIndex > 0)
+                {
+                    cLanguageOcr = Globals.supportedLanguages[Globals.nLanguageOcrIndex];
+                }
+
                 var pickResult = await MediaPicker.Default.PickPhotoAsync();
+
+                var options = new OcrOptions.Builder()
+                .SetLanguage(cLanguageOcr)
+                .SetTryHard(true)
+                .Build();
 
                 if (pickResult != null)
                 {
@@ -285,7 +300,8 @@ namespace ImageOcrText
                     var imageAsBytes = new byte[imageAsStream.Length];
                     _ = await imageAsStream.ReadAsync(imageAsBytes);
 
-                    OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, tryHard: true);
+                    //OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, tryHard: true);
+                    OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
                     if (!ocrResult.Success)
                     {
@@ -320,7 +336,7 @@ namespace ImageOcrText
                     using var imageAsStream = await pickResult.OpenReadAsync();
                     var imageAsBytes = new byte[imageAsStream.Length];
                     await imageAsStream.ReadAsync(imageAsBytes);
-
+                    
                     var ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, tryHard: true);
 
                     if (!ocrResult.Success)
@@ -373,7 +389,7 @@ namespace ImageOcrText
                 await Share.Default.RequestAsync(new ShareTextRequest
                 {
                     Text = edtOcrResult.Text,
-                    Title = "Share text"
+                    Title = OcrLang.NameProgram_Text
                 });
             }
         }

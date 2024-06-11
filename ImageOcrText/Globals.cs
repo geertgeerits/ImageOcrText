@@ -17,7 +17,7 @@ namespace ImageOcrText
         public static string[]? cLanguageLocales;
         public static bool bLanguageLocalesExist = false;
         public static bool bTextToSpeechIsBusy = false;
-        public static int nLanguageOcr = 0;
+        public static int nLanguageOcrIndex = 0;
         public static List<string> supportedLanguages = [];
         public static IEnumerable<Locale>? locales;
         public static CancellationTokenSource? cts;

@@ -62,10 +62,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="ClassOcrOptions.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Resources\Images\envelope_48x24p.png" />
 	  <None Remove="Resources\Images\info_32p.png" />
 	  <None Remove="Resources\Images\internet_48x24p.png" />
@@ -80,7 +76,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.0.11" />
 		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-			<Version>1.7.0</Version>
+			<Version>1.7.0.1</Version>
 		</PackageReference>
 
 	</ItemGroup>
