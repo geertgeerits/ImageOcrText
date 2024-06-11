@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.4
- * Date ........: 2024-06-10 (YYYY-MM-DD)
+ * Date ........: 2024-06-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -19,6 +19,7 @@ namespace ImageOcrText
     {
         //// Local variables
         private string cLicense = "";
+        private List<string>? supportedLanguages;
 
         public MainPage()
         {
@@ -157,6 +158,41 @@ namespace ImageOcrText
             base.OnAppearing();
 
             await OcrPlugin.Default.InitAsync();
+#if !ANDROID
+            // Initialize supported languages
+            InitializeSupportedLanguages();
+#endif
+        }
+
+        /// <summary>
+        /// Initialize supported OCR languages for the OCR plugin
+        /// </summary>
+        private async void InitializeSupportedLanguages()
+        {
+            try
+            {
+                supportedLanguages = OcrPlugin.Default.SupportedLanguages.ToList();
+
+                if (supportedLanguages.Count > 0)
+                {
+                    foreach (var language in supportedLanguages)
+                    {
+                        Debug.WriteLine(language);
+                    }
+                }
+                else
+                {
+#if DEBUG
+                    await DisplayAlert("Error", "No supported languages found", "OK");
+#endif
+                }
+            }
+            catch (Exception ex)
+            {
+#if DEBUG
+                await DisplayAlert("Error", ex.Message, "OK");
+#endif
+            }          
         }
 
         /// <summary>

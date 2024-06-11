@@ -122,11 +122,9 @@
             Grid.ColumnSpan="3"
             Orientation="Vertical">
 
-            <!--<Grid
-                Style="{StaticResource gridStyleOcr}"-->
-            
             <Grid
-                RowDefinitions="300*"
+                RowDefinitions="*"
+                ColumnDefinitions="*"
                 HorizontalOptions="Center">
 
                 <Border
