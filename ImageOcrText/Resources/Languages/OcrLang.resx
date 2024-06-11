@@ -180,6 +180,12 @@ You can always contact me for any corrections.</value>
   <data name="Info_Text" xml:space="preserve">
     <value>Info</value>
   </data>
+  <data name="LanguageOcrAll_Text" xml:space="preserve">
+    <value>All supported languages</value>
+  </data>
+  <data name="LanguageOcr_Text" xml:space="preserve">
+    <value>Language image to text:</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Language speech:</value>
   </data>

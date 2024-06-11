@@ -180,6 +180,12 @@ Du kan altid kontakte mig for eventuelle rettelser.</value>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="LanguageOcrAll_Text" xml:space="preserve">
+    <value>Alle understøttede sprog</value>
+  </data>
+  <data name="LanguageOcr_Text" xml:space="preserve">
+    <value>Sprog billede til tekst:</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Sprog tale:</value>
   </data>

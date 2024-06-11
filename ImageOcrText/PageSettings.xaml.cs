@@ -45,6 +45,9 @@ namespace ImageOcrText
             //// Fill the picker with the speech languages and set the saved language in the picker
             FillPickerWithSpeechLanguages();
 
+            //// Fill the picker with the OCR languages and set the saved language in the picker
+            FillPickerWithOcrLanguages();
+
             // Start the stopWatch for resetting all the settings
             stopWatch.Start();
         }
@@ -166,6 +169,40 @@ namespace ImageOcrText
             }
         }
 
+        private void FillPickerWithOcrLanguages()
+        {
+            // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
+
+            // If there are no locales then return
+            bool bIsSetSelectedIndex = false;
+
+            if (!Globals.bLanguageLocalesExist)
+            {
+                pckLanguageSpeech.IsEnabled = false;
+                return;
+            }
+
+            // Put the sorted locales from the array in the picker and select the saved language
+            int nTotalItems = Globals.supportedLanguages.Count;
+
+            for (int nItem = 0; nItem < nTotalItems; nItem++)
+            {
+                pckLanguageOcr.Items.Add(Globals.supportedLanguages[nItem]);
+
+                //if (Globals.nLanguageOcr == Globals.supportedLanguages[nItem])
+                //{
+                //    pckLanguageOcr.SelectedIndex = nItem;
+                //    bIsSetSelectedIndex = true;
+                //}
+            }
+
+            // If the language is not found set the picker to the first item
+            if (!bIsSetSelectedIndex)
+            {
+                pckLanguageOcr.SelectedIndex = 0;
+            }
+        }
+
         /// <summary>
         /// Picker speech language clicked event
         /// </summary>
@@ -179,6 +216,22 @@ namespace ImageOcrText
             if (selectedIndex != -1)
             {
                 Globals.cLanguageSpeech = picker.Items[selectedIndex];
+            }
+        }
+
+        /// <summary>
+        /// Picker OCR language clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnPickerLanguageOcrChanged(object sender, EventArgs e)
+        {
+            Picker picker = (Picker)sender;
+            int selectedIndex = picker.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                Globals.nLanguageOcr = selectedIndex;
             }
         }
 
@@ -246,6 +299,7 @@ namespace ImageOcrText
                 Preferences.Default.Remove("SettingTheme");
                 Preferences.Default.Remove("SettingLanguage");
                 Preferences.Default.Remove("SettingLanguageSpeech");
+                Preferences.Default.Remove("SettingLanguageOcr");
             }
 
             // Wait 500 milliseconds otherwise the settings are not saved in Android.

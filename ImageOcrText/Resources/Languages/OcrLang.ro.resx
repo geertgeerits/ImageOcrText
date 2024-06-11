@@ -180,6 +180,12 @@ Mă puteți contacta oricând pentru orice corecturi.</value>
   <data name="Info_Text" xml:space="preserve">
     <value>Informație</value>
   </data>
+  <data name="LanguageOcrAll_Text" xml:space="preserve">
+    <value>Toate limbile acceptate</value>
+  </data>
+  <data name="LanguageOcr_Text" xml:space="preserve">
+    <value>Limba imagine în text:</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Vorbirea limbajului:</value>
   </data>

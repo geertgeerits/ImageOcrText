@@ -236,6 +236,24 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language image to text:.
+        /// </summary>
+        internal static string LanguageOcr_Text {
+            get {
+                return ResourceManager.GetString("LanguageOcr_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All supported languages.
+        /// </summary>
+        internal static string LanguageOcrAll_Text {
+            get {
+                return ResourceManager.GetString("LanguageOcrAll_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language speech:.
         /// </summary>
         internal static string LanguageSpeech_Text {

@@ -19,7 +19,6 @@ namespace ImageOcrText
     {
         //// Local variables
         private string cLicense = "";
-        private List<string>? supportedLanguages;
 
         public MainPage()
         {
@@ -44,6 +43,7 @@ namespace ImageOcrText
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
+            Globals.nLanguageOcr = Preferences.Default.Get("SettingLanguageOcr", 0);
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
             //// The height of the title bar is lower when an iPhone is in horizontal position
@@ -171,11 +171,14 @@ namespace ImageOcrText
         {
             try
             {
-                supportedLanguages = OcrPlugin.Default.SupportedLanguages.ToList();
+                Globals.supportedLanguages = OcrPlugin.Default.SupportedLanguages.ToList();
 
-                if (supportedLanguages.Count > 0)
+                // Insert the item at the beginning
+                Globals.supportedLanguages.Insert(0, OcrLang.LanguageOcrAll_Text);
+
+                if (Globals.supportedLanguages.Count > 0)
                 {
-                    foreach (var language in supportedLanguages)
+                    foreach (var language in Globals.supportedLanguages)
                     {
                         Debug.WriteLine(language);
                     }

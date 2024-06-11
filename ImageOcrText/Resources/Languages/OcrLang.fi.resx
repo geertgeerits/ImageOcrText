@@ -180,6 +180,12 @@ Voit aina ottaa minuun yhteyttä korjauksista.</value>
   <data name="Info_Text" xml:space="preserve">
     <value>Tiedot</value>
   </data>
+  <data name="LanguageOcrAll_Text" xml:space="preserve">
+    <value>Kaikki tuetut kielet</value>
+  </data>
+  <data name="LanguageOcr_Text" xml:space="preserve">
+    <value>Kielikuva tekstiksi:</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Kielen puhe:</value>
   </data>

@@ -24,7 +24,7 @@
 
             <Grid
                 Style="{StaticResource gridStyleSettings}"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto">
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -104,12 +104,33 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="3"
                     Grid.Column="0"
-                    Text="{local:Translate Theme_Text}">
+                    Text="{local:Translate LanguageOcr_Text}">
                 </Label>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="3"
+                    Grid.Column="1">
+
+                    <Picker
+                        x:Name="pckLanguageOcr"
+                        VerticalOptions="Center"
+                        MinimumWidthRequest="160"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerLanguageOcrChanged">
+                    </Picker>
+                </Border>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="{local:Translate Theme_Text}">
+                </Label>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="4"
                     Grid.Column="1">
 
                     <Picker

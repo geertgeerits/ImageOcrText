@@ -180,6 +180,12 @@ U kunt altijd contact met mij opnemen voor eventuele correcties.</value>
   <data name="Info_Text" xml:space="preserve">
     <value>Informatie</value>
   </data>
+  <data name="LanguageOcrAll_Text" xml:space="preserve">
+    <value>Alle ondersteunde talen</value>
+  </data>
+  <data name="LanguageOcr_Text" xml:space="preserve">
+    <value>Taal afbeelding naar tekst:</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Taal spraak:</value>
   </data>

@@ -180,6 +180,12 @@ Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="LanguageOcrAll_Text" xml:space="preserve">
+    <value>Alle unterstützten Sprachen</value>
+  </data>
+  <data name="LanguageOcr_Text" xml:space="preserve">
+    <value>Sprache Bild zu Text:</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Sprache Rede:</value>
   </data>

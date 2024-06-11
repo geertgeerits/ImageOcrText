@@ -179,6 +179,12 @@ Puoi sempre contattarmi per eventuali correzioni.</value>
   <data name="Info_Text" xml:space="preserve">
     <value>Informazione</value>
   </data>
+  <data name="LanguageOcrAll_Text" xml:space="preserve">
+    <value>Tutte lingue supportate</value>
+  </data>
+  <data name="LanguageOcr_Text" xml:space="preserve">
+    <value>Lingua immagine in testo:</value>
+  </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Discorso in lingua:</value>
   </data>
