@@ -180,7 +180,7 @@ Puoi sempre contattarmi per eventuali correzioni.</value>
     <value>Informazione</value>
   </data>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
-    <value>Tutte lingue supportate</value>
+    <value>Più lingue</value>
   </data>
   <data name="LanguageOcrError_Text" xml:space="preserve">
     <value>Non sono state trovate lingue che supportano l'OCR.</value>

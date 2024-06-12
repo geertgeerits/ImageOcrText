@@ -181,7 +181,7 @@ Siempre puedes contactarme para cualquier corrección.</value>
     <value>Información</value>
   </data>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
-    <value>Todos los idiomas admitidos</value>
+    <value>Múltiples idiomas</value>
   </data>
   <data name="LanguageOcrError_Text" xml:space="preserve">
     <value>No se encontraron idiomas compatibles con OCR.</value>

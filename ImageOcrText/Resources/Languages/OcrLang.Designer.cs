@@ -245,7 +245,7 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All supported languages.
+        ///   Looks up a localized string similar to Multiple languages.
         /// </summary>
         internal static string LanguageOcrAll_Text {
             get {

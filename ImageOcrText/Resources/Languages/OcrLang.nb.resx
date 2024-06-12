@@ -181,7 +181,7 @@ Du kan alltid kontakte meg for eventuelle rettelser.</value>
     <value>Informasjon</value>
   </data>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
-    <value>Alle støttede språk</value>
+    <value>Flere språk</value>
   </data>
   <data name="LanguageOcrError_Text" xml:space="preserve">
     <value>Finner ingen støttespråk for OCR.</value>

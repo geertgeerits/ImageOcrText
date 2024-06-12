@@ -181,7 +181,7 @@ Du kan alltid kontakta mig för eventuella korrigeringar.</value>
     <value>Information</value>
   </data>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
-    <value>Alla språk som stöds</value>
+    <value>Flera språk</value>
   </data>
   <data name="LanguageOcrError_Text" xml:space="preserve">
     <value>Inga stödspråk för OCR hittades.</value>

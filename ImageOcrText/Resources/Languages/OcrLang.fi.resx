@@ -181,7 +181,7 @@ Voit aina ottaa minuun yhteyttä korjauksista.</value>
     <value>Tiedot</value>
   </data>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
-    <value>Kaikki tuetut kielet</value>
+    <value>Useita kieliä</value>
   </data>
   <data name="LanguageOcrError_Text" xml:space="preserve">
     <value>OCR:lle ei löytynyt tuettuja kieliä.</value>

@@ -181,7 +181,7 @@ Zawsze możesz skontaktować się ze mną w celu dokonania wszelkich korekt.</va
     <value>Informacje</value>
   </data>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
-    <value>Wszystkie obsługiwane języki</value>
+    <value>Wiele języków</value>
   </data>
   <data name="LanguageOcrError_Text" xml:space="preserve">
     <value>Nie znaleziono języków obsługujących OCR.</value>

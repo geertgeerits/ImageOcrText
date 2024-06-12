@@ -181,7 +181,7 @@ Mă puteți contacta oricând pentru orice corecturi.</value>
     <value>Informație</value>
   </data>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
-    <value>Toate limbile acceptate</value>
+    <value>Limbi multiple</value>
   </data>
   <data name="LanguageOcrError_Text" xml:space="preserve">
     <value>Nu s-au găsit limbi compatibile pentru OCR.</value>
