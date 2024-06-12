@@ -59,38 +59,55 @@
         HorizontalOptions="Center"
         Margin="0,0,4,5">
 
-        <ImageButton
-            x:Name="imgbtnPickImage"
-            Style="{StaticResource imageButtonStyleDefault}"
+        <HorizontalStackLayout
             Grid.Row="0"
             Grid.Column="0"
+            Grid.ColumnSpan="2"
             HorizontalOptions="Start"
-            Margin="0,6,0,0"
-            Source="ic_action_picture_text.png" 
-            SemanticProperties.Description="{local:Translate ToolTipImage_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipImage_Text}"
-            Clicked="OnPickImageClicked">
-        </ImageButton>
+            VerticalOptions="End"
+            Margin="20,0,0,0"
+            Spacing="2">
 
-        <ImageButton
-            x:Name="imgbtnTakePicture"
-            Style="{StaticResource imageButtonStyleDefault}"
-            Grid.Row="0"
-            Grid.Column="1"
-            HorizontalOptions="Center"
-            Margin="0,6,0,0"
-            Source="ic_action_camera.png"
-            SemanticProperties.Description="{local:Translate ToolTipPicture_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipPicture_Text}"
-            Clicked="OnTakePictureClicked">
-        </ImageButton>
+            <ImageButton
+                x:Name="imgbtnPickImage"
+                Style="{StaticResource imageButtonStyleDefault}"
+                HorizontalOptions="Start"
+                WidthRequest="50"
+                Margin="0,6,0,0"
+                Source="ic_action_picture_text.png" 
+                SemanticProperties.Description="{local:Translate ToolTipImage_Text}"
+                ToolTipProperties.Text="{local:Translate ToolTipImage_Text}"
+                Clicked="OnPickImageClicked">
+            </ImageButton>
 
+            <ImageButton
+                x:Name="imgbtnTakePicture"
+                Style="{StaticResource imageButtonStyleDefault}"
+                HorizontalOptions="Center"
+                WidthRequest="50"
+                Margin="0,6,0,0"
+                Source="ic_action_camera.png"
+                SemanticProperties.Description="{local:Translate ToolTipPicture_Text}"
+                ToolTipProperties.Text="{local:Translate ToolTipPicture_Text}"
+                Clicked="OnTakePictureClicked">
+            </ImageButton>
+
+            <Label
+                x:Name="lblLanguageOcr"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                HorizontalTextAlignment="Start"
+                VerticalTextAlignment="Center"
+                Text="">
+            </Label>
+        </HorizontalStackLayout>
+        
         <HorizontalStackLayout
             Grid.Row="0"
             Grid.Column="2"
             HorizontalOptions="End"
             VerticalOptions="End"
-            Margin="0,0,25,0"
+            Margin="0,0,20,0"
             Spacing="2">
 
             <Label

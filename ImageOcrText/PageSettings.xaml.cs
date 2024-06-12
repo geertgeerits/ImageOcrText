@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace ImageOcrText
+﻿namespace ImageOcrText
 {
     public sealed partial class PageSettings : ContentPage
     {
@@ -169,38 +167,20 @@ namespace ImageOcrText
             }
         }
 
+        /// <summary>
+        /// Fill the picker with the OCR languages from the list
+        /// </summary>
         private void FillPickerWithOcrLanguages()
         {
-            // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
-
-            // If there are no locales then return
-            bool bIsSetSelectedIndex = false;
-
-            if (!Globals.bLanguageLocalesExist)
-            {
-                pckLanguageSpeech.IsEnabled = false;
-                return;
-            }
-
             // Put the sorted locales from the array in the picker and select the saved language
             int nTotalItems = Globals.supportedLanguages.Count;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
             {
                 pckLanguageOcr.Items.Add(Globals.supportedLanguages[nItem]);
-
-                //if (Globals.nLanguageOcr == Globals.supportedLanguages[nItem])
-                //{
-                //    pckLanguageOcr.SelectedIndex = nItem;
-                //    bIsSetSelectedIndex = true;
-                //}
             }
 
-            // If the language is not found set the picker to the first item
-            if (!bIsSetSelectedIndex)
-            {
-                pckLanguageOcr.SelectedIndex = 0;
-            }
+            pckLanguageOcr.SelectedIndex = Globals.nLanguageOcrIndex;
         }
 
         /// <summary>
@@ -232,7 +212,15 @@ namespace ImageOcrText
             if (selectedIndex != -1)
             {
                 Globals.nLanguageOcrIndex = selectedIndex;
+                Globals.cLanguageOcr = Globals.supportedLanguages[Globals.nLanguageOcrIndex];
             }
+
+            if (selectedIndex == 0)
+            {
+                Globals.cLanguageOcr = "";
+            }
+
+            //DisplayAlert("Settings: LanguageOcr", Globals.cLanguageOcr, "OK");  // For testing
         }
 
         /// <summary>
@@ -269,6 +257,7 @@ namespace ImageOcrText
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
             Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
             Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
+            Preferences.Default.Set("SettingLanguageOcrIndex", Globals.nLanguageOcrIndex);
 
             // Wait 500 milliseconds otherwise the settings are not saved in Android
             Task.Delay(500).Wait();

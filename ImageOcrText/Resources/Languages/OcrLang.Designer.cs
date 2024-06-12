@@ -254,6 +254,15 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No supporting languages ​​for OCR found..
+        /// </summary>
+        internal static string LanguageOcrError_Text {
+            get {
+                return ResourceManager.GetString("LanguageOcrError_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language speech:.
         /// </summary>
         internal static string LanguageSpeech_Text {

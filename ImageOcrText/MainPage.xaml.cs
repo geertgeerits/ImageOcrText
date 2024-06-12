@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.4
- * Date ........: 2024-06-11 (YYYY-MM-DD)
+ * Date ........: 2024-06-12 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -112,9 +112,6 @@ namespace ImageOcrText
             //// Initialize text to speech
             InitializeTextToSpeech(cCultureName);
 
-            //// Set the OCR language
-            
-
             //// Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
 
@@ -160,27 +157,43 @@ namespace ImageOcrText
         {
             base.OnAppearing();
 
+            // Initialize the OCR plugin
             await OcrPlugin.Default.InitAsync();
 #if !ANDROID
-            // Initialize supported languages
-            InitializeSupportedLanguages();
+            // Initialize supported languages OCR
+            InitializeSupportedLanguagesOcr();
+
+            // Set the language for the OCR plugin
+            if (Globals.nLanguageOcrIndex > 0 && Globals.nLanguageOcrIndex <= Globals.supportedLanguages.Count)
+            {
+                Globals.cLanguageOcr = Globals.supportedLanguages[Globals.nLanguageOcrIndex];
+            }
 #endif
+            // Insert the item 'All supported languages' at the beginning if the list is empty
+            if (Globals.supportedLanguages.Count == 0)
+            {
+                Globals.supportedLanguages.Insert(0, OcrLang.LanguageOcrAll_Text);
+                Globals.cLanguageOcr = "";
+                Globals.nLanguageOcrIndex = 0;
+            }
+
+            lblLanguageOcr.Text = Globals.cLanguageOcr;
         }
 
         /// <summary>
         /// Initialize supported OCR languages for the OCR plugin
         /// </summary>
-        private async void InitializeSupportedLanguages()
+        private async void InitializeSupportedLanguagesOcr()
         {
             try
             {
                 Globals.supportedLanguages = OcrPlugin.Default.SupportedLanguages.ToList();
 
-                // Insert the item at the beginning
-                Globals.supportedLanguages.Insert(0, OcrLang.LanguageOcrAll_Text);
-
                 if (Globals.supportedLanguages.Count > 0)
                 {
+                    // Insert the item 'All supported languages' at the beginning
+                    Globals.supportedLanguages.Insert(0, OcrLang.LanguageOcrAll_Text);
+
                     foreach (var language in Globals.supportedLanguages)
                     {
                         Debug.WriteLine(language);
@@ -189,7 +202,7 @@ namespace ImageOcrText
                 else
                 {
 #if DEBUG
-                    await DisplayAlert("Error", "No supported languages found", "OK");
+                    await DisplayAlert(OcrLang.ErrorTitle_Text, OcrLang.LanguageOcrError_Text, OcrLang.ButtonClose_Text);
 #endif
                 }
             }
@@ -198,7 +211,7 @@ namespace ImageOcrText
 #if DEBUG
                 await DisplayAlert("Error", ex.Message, "OK");
 #endif
-            }          
+            }
         }
 
         /// <summary>
@@ -278,19 +291,14 @@ namespace ImageOcrText
         {
             imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
 
+            //DisplayAlert("OnPickImageClicked", Globals.cLanguageOcr, "OK");  // For testing
+
             try
             {
-                string cLanguageOcr = "";
-                
-                if (Globals.nLanguageOcrIndex > 0)
-                {
-                    cLanguageOcr = Globals.supportedLanguages[Globals.nLanguageOcrIndex];
-                }
-
                 var pickResult = await MediaPicker.Default.PickPhotoAsync();
 
                 var options = new OcrOptions.Builder()
-                .SetLanguage(cLanguageOcr)
+                .SetLanguage(Globals.cLanguageOcr)
                 .SetTryHard(true)
                 .Build();
 
@@ -331,13 +339,19 @@ namespace ImageOcrText
             {
                 var pickResult = await MediaPicker.Default.CapturePhotoAsync();
 
+                var options = new OcrOptions.Builder()
+                .SetLanguage(Globals.cLanguageOcr)
+                .SetTryHard(true)
+                .Build();
+
                 if (pickResult != null)
                 {
                     using var imageAsStream = await pickResult.OpenReadAsync();
                     var imageAsBytes = new byte[imageAsStream.Length];
                     await imageAsStream.ReadAsync(imageAsBytes);
                     
-                    var ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, tryHard: true);
+                    //var ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, tryHard: true);
+                    var ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
                     if (!ocrResult.Success)
                     {

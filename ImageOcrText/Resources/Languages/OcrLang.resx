@@ -183,6 +183,9 @@ You can always contact me for any corrections.</value>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
     <value>All supported languages</value>
   </data>
+  <data name="LanguageOcrError_Text" xml:space="preserve">
+    <value>No supporting languages ​​for OCR found.</value>
+  </data>
   <data name="LanguageOcr_Text" xml:space="preserve">
     <value>Language image to text:</value>
   </data>
