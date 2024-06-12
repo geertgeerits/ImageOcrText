@@ -105,6 +105,11 @@
                         break;
                     }
                 }
+
+                // Set the OCR language
+                Globals.supportedLanguages[0] = OcrLang.LanguageOcrAll_Text;
+                pckLanguageOcr.Items.Clear();
+                FillPickerWithOcrLanguages();
             }
         }
 
@@ -113,6 +118,7 @@
         /// </summary>
         private void SetLanguage()
         {
+            // Set the current theme in the picker
             List<string> ThemeList =
             [
                 OcrLang.ThemeSystem_Text,
@@ -121,7 +127,6 @@
             ];
             pckTheme.ItemsSource = ThemeList;
 
-            // Set the current theme in the picker
             pckTheme.SelectedIndex = Globals.cTheme switch
             {
                 "Light" => 1,       // Light
