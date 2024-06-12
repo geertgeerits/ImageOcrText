@@ -183,6 +183,9 @@ U kunt altijd contact met mij opnemen voor eventuele correcties.</value>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
     <value>Alle ondersteunde talen</value>
   </data>
+  <data name="LanguageOcrError_Text" xml:space="preserve">
+    <value>Er zijn geen ondersteunende talen voor OCR gevonden.</value>
+  </data>
   <data name="LanguageOcr_Text" xml:space="preserve">
     <value>Taal afbeelding naar tekst:</value>
   </data>

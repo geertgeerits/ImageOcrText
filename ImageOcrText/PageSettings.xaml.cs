@@ -172,7 +172,7 @@
         /// </summary>
         private void FillPickerWithOcrLanguages()
         {
-            // Put the sorted locales from the array in the picker and select the saved language
+            // Put OCR languages from the list in the picker and select the saved OCR language
             int nTotalItems = Globals.supportedLanguages.Count;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
@@ -212,7 +212,7 @@
             if (selectedIndex != -1)
             {
                 Globals.nLanguageOcrIndex = selectedIndex;
-                Globals.cLanguageOcr = Globals.supportedLanguages[Globals.nLanguageOcrIndex];
+                Globals.cLanguageOcr = Globals.supportedLanguages[selectedIndex];
             }
 
             if (selectedIndex == 0)
@@ -220,7 +220,7 @@
                 Globals.cLanguageOcr = "";
             }
 
-            //DisplayAlert("Settings: LanguageOcr", Globals.cLanguageOcr, "OK");  // For testing
+            Debug.WriteLine("Settings OnPickerLanguageOcrChanged: LanguageOcr: " + Globals.cLanguageOcr);  // For testing
         }
 
         /// <summary>

@@ -62,6 +62,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="ClassOcrOptions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\envelope_48x24p.png" />
 	  <None Remove="Resources\Images\info_32p.png" />
 	  <None Remove="Resources\Images\internet_48x24p.png" />

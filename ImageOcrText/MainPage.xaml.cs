@@ -112,6 +112,9 @@ namespace ImageOcrText
             //// Initialize text to speech
             InitializeTextToSpeech(cCultureName);
 
+            //// Set the language for the OCR plugin to 'All supported languages', nessary after a reset of the application
+            Globals.cLanguageOcr = "";
+
             //// Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
 
@@ -172,9 +175,9 @@ namespace ImageOcrText
             // Insert the item 'All supported languages' at the beginning if the list is empty
             if (Globals.supportedLanguages.Count == 0)
             {
-                Globals.supportedLanguages.Insert(0, OcrLang.LanguageOcrAll_Text);
-                Globals.cLanguageOcr = "";
+                Globals.supportedLanguages.Add(OcrLang.LanguageOcrAll_Text);
                 Globals.nLanguageOcrIndex = 0;
+                Globals.cLanguageOcr = "";
             }
 
             lblLanguageOcr.Text = Globals.cLanguageOcr;
@@ -187,13 +190,18 @@ namespace ImageOcrText
         {
             try
             {
+                // Get the supported languages for the OCR plugin
                 Globals.supportedLanguages = OcrPlugin.Default.SupportedLanguages.ToList();
+
+                // Sort the list of supported languages
+                Globals.supportedLanguages.Sort();
 
                 if (Globals.supportedLanguages.Count > 0)
                 {
                     // Insert the item 'All supported languages' at the beginning
                     Globals.supportedLanguages.Insert(0, OcrLang.LanguageOcrAll_Text);
 
+                    // For testing
                     foreach (var language in Globals.supportedLanguages)
                     {
                         Debug.WriteLine(language);
@@ -291,7 +299,7 @@ namespace ImageOcrText
         {
             imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
 
-            //DisplayAlert("OnPickImageClicked", Globals.cLanguageOcr, "OK");  // For testing
+            Debug.WriteLine("Mainpage OnPickImageClicked: " + Globals.cLanguageOcr);  // For testing
 
             try
             {
@@ -308,7 +316,6 @@ namespace ImageOcrText
                     var imageAsBytes = new byte[imageAsStream.Length];
                     _ = await imageAsStream.ReadAsync(imageAsBytes);
 
-                    //OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, tryHard: true);
                     OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
                     if (!ocrResult.Success)
@@ -350,7 +357,6 @@ namespace ImageOcrText
                     var imageAsBytes = new byte[imageAsStream.Length];
                     await imageAsStream.ReadAsync(imageAsBytes);
                     
-                    //var ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, tryHard: true);
                     var ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
                     if (!ocrResult.Success)

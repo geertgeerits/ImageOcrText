@@ -183,6 +183,9 @@ Pro případné opravy mě můžete vždy kontaktovat.</value>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
     <value>Všechny podporované jazyky</value>
   </data>
+  <data name="LanguageOcrError_Text" xml:space="preserve">
+    <value>Nebyly nalezeny žádné podpůrné jazyky pro OCR.</value>
+  </data>
   <data name="LanguageOcr_Text" xml:space="preserve">
     <value>Jazyk obrázku na text:</value>
   </data>

@@ -183,6 +183,9 @@ Du kan alltid kontakte meg for eventuelle rettelser.</value>
   <data name="LanguageOcrAll_Text" xml:space="preserve">
     <value>Alle støttede språk</value>
   </data>
+  <data name="LanguageOcrError_Text" xml:space="preserve">
+    <value>Finner ingen støttespråk for OCR.</value>
+  </data>
   <data name="LanguageOcr_Text" xml:space="preserve">
     <value>Språk bilde til tekst:</value>
   </data>

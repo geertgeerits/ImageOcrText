@@ -55,9 +55,9 @@
 
     <Grid
         RowDefinitions="Auto, *, Auto"
-        ColumnDefinitions="130*, 100, 130*, 1"
+        ColumnDefinitions="130, 100*, 130"
         HorizontalOptions="Center"
-        Margin="0,0,4,5">
+        Margin="0,0,1,5">
 
         <HorizontalStackLayout
             Grid.Row="0"
@@ -65,14 +65,12 @@
             Grid.ColumnSpan="2"
             HorizontalOptions="Start"
             VerticalOptions="End"
-            Margin="20,0,0,0"
-            Spacing="2">
+            Margin="10,0,0,0">
 
             <ImageButton
                 x:Name="imgbtnPickImage"
                 Style="{StaticResource imageButtonStyleDefault}"
                 HorizontalOptions="Start"
-                WidthRequest="50"
                 Margin="0,6,0,0"
                 Source="ic_action_picture_text.png" 
                 SemanticProperties.Description="{local:Translate ToolTipImage_Text}"
@@ -84,7 +82,6 @@
                 x:Name="imgbtnTakePicture"
                 Style="{StaticResource imageButtonStyleDefault}"
                 HorizontalOptions="Center"
-                WidthRequest="50"
                 Margin="0,6,0,0"
                 Source="ic_action_camera.png"
                 SemanticProperties.Description="{local:Translate ToolTipPicture_Text}"
@@ -98,6 +95,7 @@
                 VerticalOptions="End"
                 HorizontalTextAlignment="Start"
                 VerticalTextAlignment="Center"
+                Margin="0,0,0,6"
                 Text="">
             </Label>
         </HorizontalStackLayout>
@@ -107,8 +105,7 @@
             Grid.Column="2"
             HorizontalOptions="End"
             VerticalOptions="End"
-            Margin="0,0,20,0"
-            Spacing="2">
+            Margin="0,0,10,0">
 
             <Label
                 x:Name="lblTextToSpeech"
@@ -124,7 +121,6 @@
                 x:Name="imgbtnTextToSpeech"
                 Style="{StaticResource imageButtonStyleDefault}"
                 VerticalOptions="Start"
-                WidthRequest="50"
                 Source="ic_action_volume_mute.png"
                 SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"
@@ -134,6 +130,7 @@
         </HorizontalStackLayout>
 
         <ScrollView
+            x:Name="scrvOcrResult"
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="3"
@@ -149,7 +146,7 @@
                     Grid.Column="0"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
-                    Margin="10,10,15,10"
+                    Margin="10,5,10,5"
                     Stroke="Gray">
 
                     <ScrollView
@@ -159,9 +156,9 @@
                             x:Name="edtOcrResult"
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="FillAndExpand"
-                            AutoSize="TextChanges"
                             VerticalTextAlignment="Start"
-                            Text="">
+                            Text=""
+                            AutoSize="TextChanges">
                         </Editor>
                     </ScrollView>
                 </Border>
@@ -174,6 +171,7 @@
             Grid.Row="2"
             Grid.Column="0"
             HorizontalOptions="Start"
+            Margin="10,0,0,0"
             Source="ic_action_copy.png"
             SemanticProperties.Description="{local:Translate ToolTipCopy_Text}"
             ToolTipProperties.Text="{local:Translate ToolTipCopy_Text}"
@@ -198,6 +196,7 @@
             Grid.Row="2"
             Grid.Column="2"
             HorizontalOptions="End"
+            Margin="0,0,10,0"
             Source="ic_action_trash.png"
             SemanticProperties.Description="{local:Translate ToolTipClear_Text}"
             ToolTipProperties.Text="{local:Translate ToolTipClear_Text}"
