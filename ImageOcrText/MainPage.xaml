@@ -9,7 +9,7 @@
     <NavigationPage.TitleView>
         <Grid
             RowDefinitions="Auto"
-            ColumnDefinitions="60, 140*, 42, 60"
+            ColumnDefinitions="50, 140*, 50, 50"
             BackgroundColor="#00bfff">
 
             <ImageButton
@@ -17,7 +17,7 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Source="info_32p.png"
-                HorizontalOptions="Start"
+                HorizontalOptions="End"
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
@@ -33,9 +33,20 @@
                 Grid.Column="1"
                 VerticalOptions="Center"
                 LineBreakMode="WordWrap"
-                FontSize="17"
+                FontSize="18"
                 Text="{local:Translate NameProgram_Text}">
             </Label>
+
+            <ActivityIndicator
+                x:Name="activityIndicator"
+                Grid.Row="0"
+                Grid.Column="2"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Margin="0,6,0,0"
+                Color="DarkBlue"
+                IsRunning="False">
+            </ActivityIndicator>
 
             <ImageButton
                 x:Name="imgbtnSettings"

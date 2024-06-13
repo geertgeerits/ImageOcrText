@@ -107,7 +107,7 @@
                 }
 
                 // Set the OCR language
-                Globals.supportedLanguages[0] = OcrLang.LanguageOcrAll_Text;
+                Globals.supportedLanguagesOcr[0] = OcrLang.LanguageOcrAll_Text;
                 pckLanguageOcr.Items.Clear();
                 FillPickerWithOcrLanguages();
             }
@@ -178,11 +178,11 @@
         private void FillPickerWithOcrLanguages()
         {
             // Put OCR languages from the list in the picker and select the saved OCR language
-            int nTotalItems = Globals.supportedLanguages.Count;
+            int nTotalItems = Globals.supportedLanguagesOcr.Count;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
             {
-                pckLanguageOcr.Items.Add(Globals.supportedLanguages[nItem]);
+                pckLanguageOcr.Items.Add(Globals.supportedLanguagesOcr[nItem]);
             }
 
             pckLanguageOcr.SelectedIndex = Globals.nLanguageOcrIndex;
@@ -217,7 +217,7 @@
             if (selectedIndex != -1)
             {
                 Globals.nLanguageOcrIndex = selectedIndex;
-                Globals.cLanguageOcr = Globals.supportedLanguages[selectedIndex];
+                Globals.cLanguageOcr = Globals.supportedLanguagesOcr[selectedIndex];
             }
 
             if (selectedIndex == 0)
@@ -279,6 +279,9 @@
         /// <param name="e"></param>
         private void OnSettingsResetClicked(object sender, EventArgs e)
         {
+            // Clear the list with the OCR languages
+            Globals.supportedLanguagesOcr.Clear();
+
             // Get the elapsed time in milli seconds
             stopWatch.Stop();
 

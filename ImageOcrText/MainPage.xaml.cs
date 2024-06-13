@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.4
- * Date ........: 2024-06-12 (YYYY-MM-DD)
+ * Date ........: 2024-06-13 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -68,10 +68,11 @@ namespace ImageOcrText
                     edtOcrResult.MinimumWidthRequest = 700;
                 }
             }
-            
-            //// The allignment of the text to speech label is wrong in WinUI
+
+            //// !!!BUG!!! in Windows - The vertical allignment of the language labels is wrong in WinUI
             if (DeviceInfo.Platform == DevicePlatform.WinUI)
             {
+                lblLanguageOcr.Padding = new Thickness(0, 10, 0, 0);
                 lblTextToSpeech.Padding = new Thickness(0, 10, 0, 0);
             }
 
@@ -164,26 +165,26 @@ namespace ImageOcrText
             await OcrPlugin.Default.InitAsync();
 #if !ANDROID
             // Initialize supported languages OCR
-            if (Globals.supportedLanguages.Count == 0)
+            if (Globals.supportedLanguagesOcr.Count == 0)
             {
                 InitializeSupportedLanguagesOcr();
             }
 
             // Set the language for the OCR plugin
-            if (Globals.nLanguageOcrIndex > Globals.supportedLanguages.Count)
+            if (Globals.nLanguageOcrIndex > Globals.supportedLanguagesOcr.Count)
             {
                 Globals.nLanguageOcrIndex = 0;
             }
 
-            if (Globals.nLanguageOcrIndex > 0 && Globals.nLanguageOcrIndex <= Globals.supportedLanguages.Count)
+            if (Globals.nLanguageOcrIndex > 0 && Globals.nLanguageOcrIndex <= Globals.supportedLanguagesOcr.Count)
             {
-                Globals.cLanguageOcr = Globals.supportedLanguages[Globals.nLanguageOcrIndex];
+                Globals.cLanguageOcr = Globals.supportedLanguagesOcr[Globals.nLanguageOcrIndex];
             }
 #endif
             // Insert the item 'All supported languages' at the beginning if the list is empty
-            if (Globals.supportedLanguages.Count == 0)
+            if (Globals.supportedLanguagesOcr.Count == 0)
             {
-                Globals.supportedLanguages.Add(OcrLang.LanguageOcrAll_Text);
+                Globals.supportedLanguagesOcr.Add(OcrLang.LanguageOcrAll_Text);
                 Globals.nLanguageOcrIndex = 0;
                 Globals.cLanguageOcr = "";
             }
@@ -199,18 +200,18 @@ namespace ImageOcrText
             try
             {
                 // Get the supported languages for the OCR plugin
-                Globals.supportedLanguages = OcrPlugin.Default.SupportedLanguages.ToList();
+                Globals.supportedLanguagesOcr = OcrPlugin.Default.SupportedLanguages.ToList();
 
                 // Sort the list of supported languages
-                Globals.supportedLanguages.Sort();
+                Globals.supportedLanguagesOcr.Sort();
 
-                if (Globals.supportedLanguages.Count > 0)
+                if (Globals.supportedLanguagesOcr.Count > 0)
                 {
                     // Insert the item 'All supported languages' at the beginning
-                    Globals.supportedLanguages.Insert(0, OcrLang.LanguageOcrAll_Text);
+                    Globals.supportedLanguagesOcr.Insert(0, OcrLang.LanguageOcrAll_Text);
 #if DEBUG
                     // For testing
-                    foreach (string language in Globals.supportedLanguages)
+                    foreach (string language in Globals.supportedLanguagesOcr)
                     {
                         Debug.WriteLine(language);
                     }
@@ -306,6 +307,8 @@ namespace ImageOcrText
         /// <param name="e"></param>
         private async void OnPickImageClicked(object sender, EventArgs e)
         {
+            activityIndicator.IsRunning = true;
+
             imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
 
             Debug.WriteLine("Mainpage OnPickImageClicked: " + Globals.cLanguageOcr);  // For testing
@@ -340,6 +343,8 @@ namespace ImageOcrText
             {
                 await DisplayAlert("Error", ex.Message, "OK");
             }
+
+            activityIndicator.IsRunning = false;
         }
 
         /// <summary>
@@ -349,6 +354,8 @@ namespace ImageOcrText
         /// <param name="e"></param>
         private async void OnTakePictureClicked(object sender, EventArgs e)
         {
+            activityIndicator.IsRunning = true;
+
             imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
 
             try
@@ -381,6 +388,8 @@ namespace ImageOcrText
             {
                 await DisplayAlert("Error", ex.Message, "OK");
             }
+
+            activityIndicator.IsRunning = false;
         }
 
         /// <summary>
