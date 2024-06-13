@@ -17,7 +17,7 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Source="info_32p.png"
-                HorizontalOptions="End"
+                HorizontalOptions="Start"
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
@@ -31,8 +31,6 @@
                 Style="{StaticResource labelStyleTitleView}"
                 Grid.Row="0"
                 Grid.Column="1"
-                VerticalOptions="Center"
-                LineBreakMode="WordWrap"
                 FontSize="18"
                 Text="{local:Translate NameProgram_Text}">
             </Label>

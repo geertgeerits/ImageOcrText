@@ -26,7 +26,9 @@ namespace ImageOcrText
             {
                 InitializeComponent();
 #if IOS
-                //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Word wrap in editor is not working when going from landscape to portrait
+                //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+                //// Word wrap in editor is not working when going from landscape to portrait
+                //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
                 DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
 #endif
             }
@@ -55,10 +57,13 @@ namespace ImageOcrText
                 imgbtnSettings.VerticalOptions = LayoutOptions.Start;
             }
 
-            //// !!!BUG!!! in iOS from Maui 8.0.21+?
-            //// The width of the editor has to be set otherwise the editor is a vertical line
+            //// Set the info button to the Center position in the title bar for iOS
             if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
+                imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
+
+                // !!!BUG!!! in iOS from Maui 8.0.21+?
+                // The width of the editor has to be set otherwise the editor is a vertical line
                 if (DeviceInfo.Idiom == DeviceIdiom.Phone)
                 {
                     edtOcrResult.MinimumWidthRequest = 320;
@@ -129,7 +134,9 @@ namespace ImageOcrText
 
 #if IOS
         /// <summary>
-        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+? - Word wrap in editor is not working when going from landscape to portrait
+        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+        /// Word wrap in editor is not working when going from landscape to portrait
+        /// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
