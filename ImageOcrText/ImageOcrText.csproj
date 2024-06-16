@@ -36,11 +36,45 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<Copyright>Geert Geerits</Copyright>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
-	  <CodesignKey>Apple Development: Created via API (KL96X68Q72)</CodesignKey>
-	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+		<ProvisioningType>automatic</ProvisioningType>
+		<CodesignKey>Apple Development: Created via API (KL96X68Q72)</CodesignKey>
+		<CodesignProvision></CodesignProvision>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+	  <ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	  <ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
+	  <ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	  <ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
+	  <ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
+	  <ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -119,4 +153,28 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+		<AndroidKeyStore>True</AndroidKeyStore>
+		<AndroidSigningKeyStore>..\myapp.keystore</AndroidSigningKeyStore>
+		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass></AndroidSigningKeyPass>
+		<AndroidSigningStorePass></AndroidSigningStorePass>
+		<ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
+		<ApplicationVersion>4</ApplicationVersion>
+		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+		<!-- Only needed when you have a need for entitlements -->
+		<!-- <CodesignEntitlement>Entitlements.plist</CodesignEntitlement> -->
+		<CodesignKey>Apple Distribution: Geert Geerits (S6CWMSSJ54)</CodesignKey>
+		<CodesignProvision>provisioningprofile01iOSimageocrtext</CodesignProvision>
+		<ArchiveOnBuild>true</ArchiveOnBuild>
+		<TcpPort>58181</TcpPort>
+
+		<ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
+		<ApplicationVersion>4</ApplicationVersion>
+		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
+	</PropertyGroup>
 </Project>
