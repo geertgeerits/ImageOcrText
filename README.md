@@ -9,7 +9,7 @@ The program was tested on a Samsung Galaxy A3 and S21 phone, iPhone 7 and 14, iP
 
 Link on Google Play Store:
 
-Link on Apple App Store:
+Link on Apple App Store: https://apps.apple.com/app/image-to-text-ocr/id6504452434
 
 
 
