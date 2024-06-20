@@ -245,6 +245,12 @@ La suddetta nota di copyright e questa nota di autorizzazione (incluso il paragr
   <data name="Theme_Text" xml:space="preserve">
     <value>Tema:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Invia una e-mail all'autore di questa applicazione</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Aprire il sito Web di questa applicazione</value>
+  </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
     <value>Annulla le modifiche</value>
   </data>

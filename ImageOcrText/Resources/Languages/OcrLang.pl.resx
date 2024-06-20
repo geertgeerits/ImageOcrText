@@ -247,6 +247,12 @@ Używaj tego programu całkowicie na własne ryzyko.</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Temat:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Wyślij e-mail do autora tej aplikacji</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Otwórz stronę internetową tej aplikacji</value>
+  </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
     <value>Anuluj zmiany</value>
   </data>

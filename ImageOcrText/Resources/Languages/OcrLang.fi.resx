@@ -247,6 +247,12 @@ Käytä tätä ohjelmaa täysin omalla vastuullasi.</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Teema:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Lähetä sähköposti tämän sovelluksen kirjoittajalle</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Avaa tämän sovelluksen verkkosivusto</value>
+  </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
     <value>Peruuta muutokset</value>
   </data>

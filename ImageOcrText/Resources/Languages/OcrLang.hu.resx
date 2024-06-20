@@ -247,6 +247,12 @@ Ezt a programot kizárólag saját felelősségére használja.</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Téma:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Küldjön e-mailt az alkalmazás szerzőjének</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Nyissa meg az alkalmazás webhelyét</value>
+  </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
     <value>Törölje a változtatásokat</value>
   </data>

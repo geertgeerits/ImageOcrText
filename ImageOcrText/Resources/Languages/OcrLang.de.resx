@@ -247,6 +247,12 @@ Die Nutzung dieses Programms erfolgt ausschließlich auf Ihr eigenes Risiko.</va
   <data name="Theme_Text" xml:space="preserve">
     <value>Thema:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Senden Sie eine E-Mail an den Autor dieser Anwendung</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Öffnen Sie die Website dieser Anwendung</value>
+  </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
     <value>Die Änderungen verwerfen</value>
   </data>

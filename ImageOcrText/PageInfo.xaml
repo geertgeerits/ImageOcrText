@@ -51,6 +51,8 @@
                             VerticalOptions="Center"
                             HeightRequest="24"
                             WidthRequest="48"
+                            SemanticProperties.Description="{x:Static resx:OcrLang.ToolTipAppEmail_Text}"
+                            ToolTipProperties.Text="{x:Static resx:OcrLang.ToolTipAppEmail_Text}"
                             Clicked="OnBtnEmailLinkClicked">
                         </ImageButton>
                     </HorizontalStackLayout>
@@ -67,6 +69,8 @@
                             VerticalOptions="Center"
                             HeightRequest="24"
                             WidthRequest="48"
+                            SemanticProperties.Description="{x:Static resx:OcrLang.ToolTipAppWebsite_Text}"
+                            ToolTipProperties.Text="{x:Static resx:OcrLang.ToolTipAppWebsite_Text}"
                             Clicked="OnBtnWebsiteLinkClicked">
                         </ImageButton>
                     </HorizontalStackLayout>

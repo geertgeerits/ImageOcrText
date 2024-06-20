@@ -247,6 +247,12 @@ Utilizați acest program în întregime pe propriul risc.</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Temă:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Trimiteți un e-mail autorului acestei aplicații</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Deschide site-ul acestei aplicații</value>
+  </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
     <value>Anulați modificările</value>
   </data>

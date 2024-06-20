@@ -247,6 +247,12 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Téma:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Pošlete e-mail autorovi této aplikace</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Otevřete webovou stránku této aplikace</value>
+  </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
     <value>Zrušte změny</value>
   </data>

@@ -247,6 +247,12 @@ Brug dette program helt på egen risiko.</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Tema:</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Send en e-mail til forfatteren af denne ansøgning</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Åbn webstedet for denne applikation</value>
+  </data>
   <data name="ToolTipCancel_Text" xml:space="preserve">
     <value>Annuller ændringerne</value>
   </data>

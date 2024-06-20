@@ -15,7 +15,7 @@ namespace ImageOcrText
             }
 
             //// Put text in the chosen language in the controls and variables
-            lblVersion.Text = $"{OcrLang.Version_Text} 1.0.6";
+            lblVersion.Text = $"{OcrLang.Version_Text} 1.0.7";
             lblCopyright.Text = $"{OcrLang.Copyright_Text} © 2024-2024 Geert Geerits";
             lblEmail.Text = $"{OcrLang.Email_Text} geertgeerits@gmail.com";
             lblWebsite.Text = $"{OcrLang.Website_Text}: ../imagetotext";
