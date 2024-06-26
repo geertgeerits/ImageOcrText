@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.7
- * Date ........: 2024-06-24 (YYYY-MM-DD)
+ * Date ........: 2024-06-26 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -118,7 +118,7 @@ namespace ImageOcrText
             //// Initialize text to speech
             InitializeTextToSpeech(cCultureName);
 
-            //// Set the language for the OCR plugin to 'All supported languages', nessary after a reset of the application
+            //// Set the language for the OCR plugin to 'All supported languages', necessary after a reset of the application
             Globals.cLanguageOcr = "";
 
             //// Clear the clipboard
@@ -172,7 +172,6 @@ namespace ImageOcrText
             await OcrPlugin.Default.InitAsync();
 #if !ANDROID
             // Error 'The method or operation is not implemented' when trying to get the supported languages for OCR in Android
-            // For Android the supported OCR languages are initialized in the method InitializeTextToSpeech()
             
             // Initialize supported languages OCR
             if (Globals.supportedLanguagesOcr.Count == 0)
@@ -518,26 +517,6 @@ namespace ImageOcrText
             }
 
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
-
-//#if ANDROID
-//            // Set the speech language into the OCR language
-//            // Error 'The method or operation is not implemented' when trying to get the supported languages for OCR in Android
-//            // Some languages are not supported by the OCR plugin
-            
-//            Debug.WriteLine("cLanguageLocales " + Convert.ToString(Globals.cLanguageLocales.Length));  // For testing
-            
-//            if (Globals.cLanguageLocales.Length > 0)
-//            {
-//                Globals.supportedLanguagesOcr.Clear();
-//                foreach (Locale l in Globals.locales)
-//                {
-//                    Globals.supportedLanguagesOcr.Add($"{l.Language}-{l.Country}");
-//                    nItem++;
-//                }
-//                Globals.supportedLanguagesOcr.Sort();
-//                Globals.supportedLanguagesOcr.Insert(0, OcrLang.LanguageOcrAll_Text);
-//            }
-//#endif
         }
 
         /// <summary>
