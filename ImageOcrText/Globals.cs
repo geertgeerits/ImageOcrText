@@ -97,7 +97,7 @@ namespace ImageOcrText
 
                     SpeechOptions options = new()
                     {
-                        Locale = locales.Single(l => $"{l.Language}-{l.Country} {l.Name}" == cLanguageSpeech)
+                        Locale = locales?.Single(l => $"{l.Language}-{l.Country} {l.Name}" == cLanguageSpeech)
                     };
 
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
