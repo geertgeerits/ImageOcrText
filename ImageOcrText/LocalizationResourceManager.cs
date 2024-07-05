@@ -14,7 +14,7 @@ namespace ImageOcrText
         public object this[string resourceKey]
             => OcrLang.ResourceManager.GetObject(resourceKey, OcrLang.Culture) ?? Array.Empty<byte>();
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public void SetCulture(CultureInfo culture)
         {
