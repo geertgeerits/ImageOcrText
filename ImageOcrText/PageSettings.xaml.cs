@@ -309,7 +309,7 @@
             Task.Delay(500).Wait();
 
             // Restart the application
-            //Application.Current.MainPage = new AppShell();
+            //Application.Current!.MainPage = new AppShell();
             Application.Current!.MainPage = new NavigationPage(new MainPage());
         }
     }
