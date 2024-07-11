@@ -33,7 +33,7 @@ namespace ImageOcrText
         /// </summary>
         public static void SetTheme()
         {
-            Application.Current.UserAppTheme = cTheme switch
+            Application.Current!.UserAppTheme = cTheme switch
             {
                 "Light" => AppTheme.Light,
                 "Dark" => AppTheme.Dark,
@@ -107,7 +107,7 @@ namespace ImageOcrText
                 {
                     //SentrySdk.CaptureException(ex);
 #if DEBUG
-                    await Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                    await Application.Current!.MainPage!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
                 }
 

@@ -275,7 +275,7 @@
 
             // Restart the application
             //Application.Current.MainPage = new AppShell();
-            Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current!.MainPage = new NavigationPage(new MainPage());
         }
 
         /// <summary>
@@ -310,7 +310,7 @@
 
             // Restart the application
             //Application.Current.MainPage = new AppShell();
-            Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current!.MainPage = new NavigationPage(new MainPage());
         }
     }
 }

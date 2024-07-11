@@ -29,7 +29,7 @@ namespace ImageOcrText
                 //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
                 //// Word wrap in editor is not working when going from landscape to portrait
                 //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
-                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
+                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 #endif
             }
             catch (Exception ex)
@@ -290,7 +290,7 @@ namespace ImageOcrText
 
                     await DisplayAlert(OcrLang.LicenseTitle_Text, OcrLang.CloseApplication_Text, OcrLang.ButtonClose_Text);
 #else
-                    Application.Current.Quit();
+                    Application.Current?.Quit();
 #endif
                 }
             }
@@ -419,7 +419,7 @@ namespace ImageOcrText
             {
                 //SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                await Application.Current!.MainPage!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
             }
         }
@@ -567,7 +567,7 @@ namespace ImageOcrText
             {
                 //SentrySdk.CaptureException(ex);
 #if DEBUG
-                Application.Current.MainPage.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                Application.Current!.MainPage!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
             }
         }
