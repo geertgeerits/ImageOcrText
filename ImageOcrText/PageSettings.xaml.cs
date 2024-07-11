@@ -95,14 +95,17 @@
                 SetLanguage();
 
                 // Search the new language in the cLanguageLocales array and select the new speech language
-                int nTotalItems = Globals.cLanguageLocales.Length;
-
-                for (int nItem = 0; nItem < nTotalItems; nItem++)
+                if (Globals.cLanguageLocales is not null)
                 {
-                    if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
+                    int nTotalItems = Globals.cLanguageLocales.Length;
+
+                    for (int nItem = 0; nItem < nTotalItems; nItem++)
                     {
-                        pckLanguageSpeech.SelectedIndex = nItem;
-                        break;
+                        if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
+                        {
+                            pckLanguageSpeech.SelectedIndex = nItem;
+                            break;
+                        }
                     }
                 }
 
@@ -152,16 +155,19 @@
             }
 
             // Put the sorted locales from the array in the picker and select the saved language
-            int nTotalItems = Globals.cLanguageLocales.Length;
-
-            for (int nItem = 0; nItem < nTotalItems; nItem++)
+            if (Globals.cLanguageLocales is not null)
             {
-                pckLanguageSpeech.Items.Add(Globals.cLanguageLocales[nItem]);
+                int nTotalItems = Globals.cLanguageLocales.Length;
 
-                if (Globals.cLanguageSpeech == Globals.cLanguageLocales[nItem])
+                for (int nItem = 0; nItem < nTotalItems; nItem++)
                 {
-                    pckLanguageSpeech.SelectedIndex = nItem;
-                    bIsSetSelectedIndex = true;
+                    pckLanguageSpeech.Items.Add(Globals.cLanguageLocales[nItem]);
+
+                    if (Globals.cLanguageSpeech == Globals.cLanguageLocales[nItem])
+                    {
+                        pckLanguageSpeech.SelectedIndex = nItem;
+                        bIsSetSelectedIndex = true;
+                    }
                 }
             }
 
