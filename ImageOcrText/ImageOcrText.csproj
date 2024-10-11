@@ -27,8 +27,8 @@
 		<ApplicationId>com.companyname.imageocrtext</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0.7</ApplicationDisplayVersion>
-		<ApplicationVersion>7</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.8</ApplicationDisplayVersion>
+		<ApplicationVersion>8</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">13.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
@@ -42,7 +42,7 @@
 	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
 		<ProvisioningType>automatic</ProvisioningType>
 		<CodesignKey>Apple Development: Created via API (KL96X68Q72)</CodesignKey>
-		<CodesignProvision></CodesignProvision>
+		<CodesignProvision>VS: com.geertgeerits.imageocrtext Development</CodesignProvision>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
@@ -109,9 +109,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.70" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.70" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.91" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.0.12" />
 		<!--<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 			<Version>1.7.0.2</Version>
@@ -158,8 +158,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.7</ApplicationDisplayVersion>
-		<ApplicationVersion>7</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.8</ApplicationDisplayVersion>
+		<ApplicationVersion>8</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
 	</PropertyGroup>
 
@@ -172,8 +172,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.7</ApplicationDisplayVersion>
-		<ApplicationVersion>7</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.8</ApplicationDisplayVersion>
+		<ApplicationVersion>8</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
 	</PropertyGroup>
 </Project>

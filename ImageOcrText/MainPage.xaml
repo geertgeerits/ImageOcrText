@@ -65,7 +65,7 @@
     <Grid
         RowDefinitions="Auto, *, Auto"
         ColumnDefinitions="130, 100*, 130"
-        HorizontalOptions="Center"
+        HorizontalOptions="Fill"
         Margin="0,0,1,5">
 
         <HorizontalStackLayout
@@ -148,13 +148,13 @@
             <Grid
                 RowDefinitions="*"
                 ColumnDefinitions="*"
-                HorizontalOptions="Center">
+                HorizontalOptions="Fill">
 
                 <Border
                     Grid.Row="0"
                     Grid.Column="0"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
                     Margin="10,5,10,5"
                     Stroke="Gray">
 
@@ -163,8 +163,8 @@
                         
                         <Editor
                             x:Name="edtOcrResult"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
                             VerticalTextAlignment="Start"
                             Text=""
                             AutoSize="TextChanges">

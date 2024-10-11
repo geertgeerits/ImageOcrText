@@ -1,8 +1,8 @@
 ﻿/* Program .....: ImageOcrText.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
- * Version .....: 1.0.7
- * Date ........: 2024-07-16 (YYYY-MM-DD)
+ * Version .....: 1.0.8
+ * Date ........: 2024-10-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -25,12 +25,6 @@ namespace ImageOcrText
             try
             {
                 InitializeComponent();
-#if IOS
-                //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-                //// Word wrap in editor is not working when going from landscape to portrait
-                //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
-                DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
-#endif
             }
             catch (Exception ex)
             {
@@ -40,7 +34,13 @@ namespace ImageOcrText
 #endif
                 return;
             }
-
+#if IOS
+            //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+            //// Word wrap in editor is not working when going from landscape to portrait
+            //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges
+            edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
+            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+#endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -136,29 +136,18 @@ namespace ImageOcrText
         /// <summary>
         /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
         /// Word wrap in editor is not working when going from landscape to portrait
-        /// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait
+        /// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
         {
-            DisplayOrientation orientation = e.DisplayInfo.Orientation;
-
-            switch (orientation)
-            {
-                case DisplayOrientation.Portrait:
-                    // Handle logic for portrait orientation
-                    string cOcrResult = edtOcrResult.Text;
-                    edtOcrResult.Text = "";
-                    await Task.Delay(100);
-                    edtOcrResult.Text = cOcrResult;
-                    Debug.WriteLine("Portrait");
-                    break;
-                case DisplayOrientation.Landscape:
-                    // Handle logic for landscape orientation
-                    Debug.WriteLine("Landscape");
-                    break;
-            }
+            edtOcrResult.IsVisible = false;
+            Task.Delay(100).Wait();
+            edtOcrResult.HorizontalOptions = LayoutOptions.Center;
+            edtOcrResult.HorizontalOptions = LayoutOptions.Fill;
+            Task.Delay(300).Wait();
+            edtOcrResult.IsVisible = true;
         }
 #endif
         /// <summary>
