@@ -107,7 +107,7 @@ namespace ImageOcrText
                 {
                     //SentrySdk.CaptureException(ex);
 #if DEBUG
-                    await Application.Current!.MainPage!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
                 }
 

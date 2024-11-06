@@ -2,11 +2,11 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.8
- * Date ........: 2024-10-17 (YYYY-MM-DD)
- * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
+ * Date ........: 2024-11-06 (YYYY-MM-DD)
+ * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
- * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.0.12 - by kfrancis - https://github.com/kfrancis/ocr
+ * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.0.15 - by kfrancis - https://github.com/kfrancis/ocr
  *                (NuGet Package: Xamarin.AndroidX.Fragment.Ktx - Version 1.7.0.2)
  * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
@@ -369,7 +369,7 @@ namespace ImageOcrText
                 {
                     using Stream imageAsStream = await pickResult.OpenReadAsync();
                     byte[] imageAsBytes = new byte[imageAsStream.Length];
-                    await imageAsStream.ReadAsync(imageAsBytes);
+                    await imageAsStream.ReadExactlyAsync(imageAsBytes);
 
                     OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
@@ -408,7 +408,7 @@ namespace ImageOcrText
             {
                 //SentrySdk.CaptureException(ex);
 #if DEBUG
-                await Application.Current!.MainPage!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
             }
         }
@@ -556,7 +556,7 @@ namespace ImageOcrText
             {
                 //SentrySdk.CaptureException(ex);
 #if DEBUG
-                Application.Current!.MainPage!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
             }
         }
