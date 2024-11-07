@@ -1,6 +1,7 @@
 ﻿namespace ImageOcrText
 {
     [ContentProperty(nameof(Name))]
+    [AcceptEmptyServiceProvider]
     public sealed class TranslateExtension : IMarkupExtension<BindingBase>
     {
         public string? Name { get; set; }

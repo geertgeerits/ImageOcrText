@@ -14,7 +14,7 @@
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
 		<OutputType>Exe</OutputType>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<!--<AllowUnsafeBlocks>true</AllowUnsafeBlocks>-->
 		<RootNamespace>ImageOcrText</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
