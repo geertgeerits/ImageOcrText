@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.8
- * Date ........: 2024-11-07 (YYYY-MM-DD)
+ * Date ........: 2024-11-08 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -576,6 +576,9 @@ namespace ImageOcrText
             }
 
             // Convert the text to speech
+            /* CsWinRT1030 Type 'Microsoft.Maui.Controls.ImageButton' implements generic WinRT interfaces which requires generated
+               code using unsafe for trimming and AOT compatibility if passed across the WinRT ABI.
+               Project needs to be updated with '<AllowUnsafeBlocks>true</AllowUnsafeBlocks>'.ImageOcrText(net9.0 - windows10.0.19041.0) */
             _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtOcrResult.Text);
         }
     }
