@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.8
- * Date ........: 2024-11-08 (YYYY-MM-DD)
+ * Date ........: 2024-11-10 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -28,7 +28,6 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                //SentrySdk.CaptureException(ex);
 #if DEBUG
                 DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
 #endif
@@ -126,10 +125,6 @@ namespace ImageOcrText
 
             //// Set focus to the editor
             edtOcrResult.Focus();
-
-            //// Test for crashes Sentry
-            //SentrySdk.CaptureMessage("Hello Sentry");
-            //throw new Exception("This is a test exception");
         }
 
 #if IOS
@@ -406,7 +401,6 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                //SentrySdk.CaptureException(ex);
 #if DEBUG
                 await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
@@ -476,7 +470,6 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                //SentrySdk.CaptureException(ex);
 #if DEBUG
                 await DisplayAlert(OcrLang.ErrorTitle_Text, $"{ex.Message}\n\n{OcrLang.TextToSpeechError_Text}", OcrLang.ButtonClose_Text);
 #endif
@@ -554,7 +547,6 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                //SentrySdk.CaptureException(ex);
 #if DEBUG
                 Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif

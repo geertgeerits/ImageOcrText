@@ -2,7 +2,6 @@
 global using ImageOcrText.Resources.Languages;
 global using System.Globalization;
 global using System.Diagnostics;
-//global using Sentry;
 
 namespace ImageOcrText
 {
@@ -105,7 +104,6 @@ namespace ImageOcrText
                 }
                 catch (Exception ex)
                 {
-                    //SentrySdk.CaptureException(ex);
 #if DEBUG
                     await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
