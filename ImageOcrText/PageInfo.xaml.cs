@@ -13,7 +13,10 @@ namespace ImageOcrText
                 DisplayAlert("InitializeComponent: PageInfo", ex.Message, "OK");
                 return;
             }
-
+#if WINDOWS
+            // Set the margins of the title for windows
+            lblTitlePage.Margin = new Thickness(40, 5, 0, 0);
+#endif
             //// Put text in the chosen language in the controls and variables
             lblVersion.Text = $"{OcrLang.Version_Text} 1.0.8";
             lblCopyright.Text = $"{OcrLang.Copyright_Text} © 2024-2024 Geert Geerits";

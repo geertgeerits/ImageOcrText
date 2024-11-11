@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.8
- * Date ........: 2024-11-10 (YYYY-MM-DD)
+ * Date ........: 2024-11-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -33,6 +33,17 @@ namespace ImageOcrText
 #endif
                 return;
             }
+#if WINDOWS
+            // !!!BUG!!! in Windows - Set the ColumnDefinitions for the TitleView because XAML 140* does not work in Windows
+            grdTitleView.ColumnDefinitions.Clear();
+            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
+            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(675) });
+            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) });
+            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
+            
+            lblTitle.Margin = new Thickness(0, 10, 0, 0);
+            imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
+#endif
 #if IOS
             //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
             //// Word wrap in editor is not working when going from landscape to portrait

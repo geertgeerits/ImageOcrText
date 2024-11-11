@@ -16,7 +16,10 @@
                 DisplayAlert("InitializeComponent: PageSettings", ex.Message, "OK");
                 return;
             }
-
+#if WINDOWS
+            // Set the margins of the title for windows
+            lblTitlePage.Margin = new Thickness(40, 5, 0, 0);
+#endif
             //// Put text in the chosen language in the controls and variables
             SetLanguage();
 
