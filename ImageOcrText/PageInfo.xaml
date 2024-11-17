@@ -4,13 +4,13 @@
              xmlns:resx="clr-namespace:ImageOcrText.Resources.Languages"
              x:Class="ImageOcrText.PageInfo">
 
-    <NavigationPage.TitleView>
+    <Shell.TitleView>
         <Label
             x:Name="lblTitlePage"
             Style="{StaticResource labelStyleTitleView}"
             Text="{x:Static resx:OcrLang.Info_Text}">
         </Label>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <ScrollView>
         <StackLayout>

@@ -4,13 +4,13 @@
              xmlns:local="clr-namespace:ImageOcrText"
              x:Class="ImageOcrText.PageSettings">
 
-    <NavigationPage.TitleView>
+    <Shell.TitleView>
         <Label
             x:Name="lblTitlePage"
             Style="{StaticResource labelStyleTitleView}"
             Text="{local:Translate Settings_Text}">
         </Label>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <Grid
         RowDefinitions="Auto, *, Auto"

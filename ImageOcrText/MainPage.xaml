@@ -6,16 +6,14 @@
              Loaded="OnPageLoaded"
              Appearing="OnPageAppearing">
 
-    <NavigationPage.TitleView>
+    <Shell.TitleView>
         <Grid
             x:Name="grdTitleView"
             RowDefinitions="Auto"
-            ColumnDefinitions="50, 140*, 50, 50"
-            BackgroundColor="#00bfff">
+            ColumnDefinitions="50, 140*, 50, 50">
 
             <ImageButton
                 x:Name="imgbtnAbout"
-                Grid.Row="0"
                 Grid.Column="0"
                 Source="info_32p.png"
                 HorizontalOptions="Start"
@@ -30,7 +28,6 @@
             <Label
                 x:Name="lblTitle"
                 Style="{StaticResource labelStyleTitleView}"
-                Grid.Row="0"
                 Grid.Column="1"
                 FontSize="18"
                 Text="{local:Translate NameProgram_Text}">
@@ -38,7 +35,6 @@
 
             <ActivityIndicator
                 x:Name="activityIndicator"
-                Grid.Row="0"
                 Grid.Column="2"
                 VerticalOptions="Start"
                 HorizontalOptions="Center"
@@ -49,7 +45,6 @@
 
             <ImageButton
                 x:Name="imgbtnSettings"
-                Grid.Row="0"
                 Grid.Column="3"
                 Source="settings_32p.png"
                 HorizontalOptions="Center"
@@ -61,7 +56,7 @@
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
         </Grid>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <Grid
         RowDefinitions="Auto, *, Auto"

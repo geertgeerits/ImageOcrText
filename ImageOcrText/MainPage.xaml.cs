@@ -34,15 +34,9 @@ namespace ImageOcrText
                 return;
             }
 #if WINDOWS
-            // !!!BUG!!! in Windows - Set the ColumnDefinitions for the TitleView because XAML 140* does not work in Windows
-            grdTitleView.ColumnDefinitions.Clear();
-            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
-            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(675) });
-            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) });
-            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
-            
-            lblTitle.Margin = new Thickness(0, 10, 0, 0);
-            imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
+            //// Workaround for a !!!BUG!!! in Windows - The allignments are wrong in WinUI
+            imgbtnAbout.Margin = new Thickness(20, 0, 0, 0);
+            lblTitle.Margin = new Thickness(20, 10, 0, 0);
 #endif
 #if IOS
             //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
