@@ -34,7 +34,7 @@ namespace ImageOcrText
                 return;
             }
 #if WINDOWS
-            //// Workaround for a !!!BUG!!! in Windows - The allignments are wrong in WinUI
+            //// Set the margins for the controls in the title bar for Windows
             imgbtnAbout.Margin = new Thickness(20, 0, 0, 0);
             lblTitle.Margin = new Thickness(20, 10, 0, 0);
 #endif

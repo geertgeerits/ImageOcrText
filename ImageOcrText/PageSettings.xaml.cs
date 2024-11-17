@@ -17,8 +17,8 @@
                 return;
             }
 #if WINDOWS
-            // Set the margins of the title for windows
-            lblTitlePage.Margin = new Thickness(40, 5, 0, 0);
+            //// Set the margins for the controls in the title bar for Windows
+            lblTitlePage.Margin = new Thickness(70, 5, 0, 0);
 #endif
             //// Put text in the chosen language in the controls and variables
             SetLanguage();
