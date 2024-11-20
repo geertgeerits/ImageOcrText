@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.8
- * Date ........: 2024-11-17 (YYYY-MM-DD)
+ * Date ........: 2024-11-20 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -42,7 +42,7 @@ namespace ImageOcrText
             //// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
             //// Word wrap in editor is not working when going from landscape to portrait
             //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges
-            edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
+            //edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
             DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 #endif
             //// Get the saved settings

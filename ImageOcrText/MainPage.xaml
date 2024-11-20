@@ -134,42 +134,35 @@
             </ImageButton>
         </HorizontalStackLayout>
 
-        <ScrollView
-            x:Name="scrvOcrResult"
+        <StackLayout
             Grid.Row="1"
             Grid.Column="0"
-            Grid.ColumnSpan="3"
-            Orientation="Vertical">
+            Grid.ColumnSpan="3">
 
-            <Grid
-                RowDefinitions="*"
-                ColumnDefinitions="*"
-                HorizontalOptions="Fill">
+            <Border
+                Style="{StaticResource borderStyleDefault}"
+                HorizontalOptions="Fill"
+                VerticalOptions="FillAndExpand"
+                Margin="10,5,10,5"
+                Stroke="Gray">
 
-                <Border
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"
-                    Margin="10,5,10,5"
-                    Stroke="Gray">
+                <ScrollView
+                    Orientation="Vertical"
+                    VerticalScrollBarVisibility="Default">
 
-                    <ScrollView
-                        Orientation="Vertical">
-                        
-                        <Editor
-                            x:Name="edtOcrResult"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
-                            VerticalTextAlignment="Start"
-                            Text=""
-                            AutoSize="TextChanges">
-                        </Editor>
-                    </ScrollView>
-                </Border>
-            </Grid>
-        </ScrollView>
-
+                    <Editor
+                        x:Name="edtOcrResult"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        VerticalTextAlignment="Start"
+                        MinimumHeightRequest="600"
+                        MinimumWidthRequest="300"
+                        Text="">
+                    </Editor>
+                </ScrollView>
+            </Border>
+        </StackLayout>
+        
         <ImageButton
             x:Name="imgbtnCopyToClipboard"
             Style="{StaticResource imageButtonStyleDefault}"
