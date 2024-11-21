@@ -131,24 +131,24 @@ namespace ImageOcrText
             edtOcrResult.Focus();
         }
 
-#if IOS
-        /// <summary>
-        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-        /// Word wrap in editor is not working when going from landscape to portrait
-        /// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
-        {
-            edtOcrResult.IsVisible = false;
-            Task.Delay(100).Wait();
-            edtOcrResult.HorizontalOptions = LayoutOptions.Center;
-            edtOcrResult.HorizontalOptions = LayoutOptions.Fill;
-            Task.Delay(300).Wait();
-            edtOcrResult.IsVisible = true;
-        }
-#endif
+//#if IOS
+//        /// <summary>
+//        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+//        /// Word wrap in editor is not working when going from landscape to portrait
+//        /// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges
+//        /// </summary>
+//        /// <param name="sender"></param>
+//        /// <param name="e"></param>
+//        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+//        {
+//            edtOcrResult.IsVisible = false;
+//            Task.Delay(100).Wait();
+//            edtOcrResult.HorizontalOptions = LayoutOptions.Center;
+//            edtOcrResult.HorizontalOptions = LayoutOptions.Fill;
+//            Task.Delay(300).Wait();
+//            edtOcrResult.IsVisible = true;
+//        }
+//#endif
         /// <summary>
         /// Initialize the OCR plugin using the Appearing event of the MainPage.xaml
         /// </summary>
