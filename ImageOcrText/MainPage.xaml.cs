@@ -42,8 +42,7 @@ namespace ImageOcrText
             //// Workaround for the !!!BUG!!! in iOS on iPAD (works on iPhone 7) from Maui 8.0.21+?
             //// Word wrap in editor is not working when going from landscape to portrait
             //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges
-            //edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
-            DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+            //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 #endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
