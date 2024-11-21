@@ -157,7 +157,7 @@
                 </Editor>
             </ScrollView>
         </Grid>
-        
+
         <ImageButton
             x:Name="imgbtnCopyToClipboard"
             Style="{StaticResource imageButtonStyleDefault}"
