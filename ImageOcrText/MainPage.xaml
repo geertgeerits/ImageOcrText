@@ -134,34 +134,37 @@
             </ImageButton>
         </HorizontalStackLayout>
 
-        <StackLayout
+        <!--// https://stackoverflow.com/questions/72839872/expandable-editor-in-scrollview-cutting-text-in-maui-->
+        <Grid
             Grid.Row="1"
             Grid.Column="0"
-            Grid.ColumnSpan="3">
+            Grid.ColumnSpan="3"
+            RowDefinitions="100*"
+            ColumnDefinitions="100*"
+            Margin="10,5,10,5">
 
-            <Border
+            <!--<Border
                 Style="{StaticResource borderStyleDefault}"
                 HorizontalOptions="Fill"
-                VerticalOptions="FillAndExpand"
-                Margin="10,5,10,5"
-                Stroke="Gray">
+                VerticalOptions="Start"
+                Stroke="Gray">-->
 
-                <ScrollView
-                    Orientation="Vertical"
-                    VerticalScrollBarVisibility="Default">
+            <ScrollView
+                Grid.Column="0"
+                HorizontalOptions="Fill"
+                VerticalScrollBarVisibility="Default">
 
-                    <Editor
-                        x:Name="edtOcrResult"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="FillAndExpand"
-                        VerticalTextAlignment="Start"
-                        MinimumHeightRequest="600"
-                        MinimumWidthRequest="300"
-                        Text="">
-                    </Editor>
-                </ScrollView>
-            </Border>
-        </StackLayout>
+                <Editor
+                    x:Name="edtOcrResult"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    AutoSize="TextChanges"
+                    Text="">
+                </Editor>
+                
+            </ScrollView>
+            <!--</Border>-->
+        </Grid>
         
         <ImageButton
             x:Name="imgbtnCopyToClipboard"
