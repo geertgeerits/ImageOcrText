@@ -39,6 +39,9 @@ namespace ImageOcrText
             lblTitle.Margin = new Thickness(20, 10, 0, 0);
 #endif
 #if IOS
+            //// AutoSize has to be disabled for iOS
+            edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
+
             //// Workaround for the !!!BUG!!! in iOS on iPAD (works on iPhone 7) from Maui 8.0.21+?
             //// Word wrap in editor is not working when going from landscape to portrait
             //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges

@@ -148,11 +148,14 @@
                 RowDefinitions="100*"
                 ColumnDefinitions="100*">
 
-                <ScrollView>
+                <ScrollView
+                    VerticalScrollBarVisibility="Always">
+
                     <Editor
                         x:Name="edtOcrResult"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"
+                        AutoSize="TextChanges"
                         Text="">
                     </Editor>
                 </ScrollView>
