@@ -134,30 +134,31 @@
             </ImageButton>
         </HorizontalStackLayout>
 
-        <!--// https://stackoverflow.com/questions/72839872/expandable-editor-in-scrollview-cutting-text-in-maui
-        // 'AutoSize="TextChanges"' must be set in the Editor and do not use 'HeightRequest' in the Editor-->
-        <Grid
+        <!--// https://stackoverflow.com/questions/72839872/expandable-editor-in-scrollview-cutting-text-in-maui-->
+        <Border
+            Style="{StaticResource borderStyleDefault}"
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="3"
-            RowDefinitions="100*"
-            ColumnDefinitions="100*"
-            Margin="10,5,10,5">
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            Margin="{OnIdiom 5, Phone='10,5,10,5', Tablet='10,5,10,5', Desktop='10,0,10,0'}">
 
-            <ScrollView
-                HorizontalOptions="Fill"
-                VerticalScrollBarVisibility="Default">
+            <Grid
+                RowDefinitions="100*"
+                ColumnDefinitions="100*">
 
-                <Editor
-                    x:Name="edtOcrResult"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    AutoSize="TextChanges"
-                    Text="">
-                </Editor>
-            </ScrollView>
-        </Grid>
-
+                <ScrollView>
+                    <Editor
+                        x:Name="edtOcrResult"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Text="">
+                    </Editor>
+                </ScrollView>
+            </Grid>
+        </Border>
+        
         <ImageButton
             x:Name="imgbtnCopyToClipboard"
             Style="{StaticResource imageButtonStyleDefault}"
