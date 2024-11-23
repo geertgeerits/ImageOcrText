@@ -153,8 +153,8 @@
 
                     <Editor
                         x:Name="edtOcrResult"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
                         AutoSize="TextChanges"
                         Text="">
                     </Editor>

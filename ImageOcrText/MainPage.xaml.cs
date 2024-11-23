@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.8
- * Date ........: 2024-11-21 (YYYY-MM-DD)
+ * Date ........: 2024-11-23 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -41,11 +41,6 @@ namespace ImageOcrText
 #if IOS
             //// AutoSize has to be disabled for iOS
             edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
-
-            //// Workaround for the !!!BUG!!! in iOS on iPAD (works on iPhone 7) from Maui 8.0.21+?
-            //// Word wrap in editor is not working when going from landscape to portrait
-            //// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges
-            //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
 #endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -134,24 +129,6 @@ namespace ImageOcrText
             edtOcrResult.Focus();
         }
 
-//#if IOS
-//        /// <summary>
-//        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-//        /// Word wrap in editor is not working when going from landscape to portrait
-//        /// Vertical scrollbar is set to horizontal scrollbar when going from landscape to portrait when the editor AutoSize is set to TextChanges
-//        /// </summary>
-//        /// <param name="sender"></param>
-//        /// <param name="e"></param>
-//        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
-//        {
-//            edtOcrResult.IsVisible = false;
-//            Task.Delay(100).Wait();
-//            edtOcrResult.HorizontalOptions = LayoutOptions.Center;
-//            edtOcrResult.HorizontalOptions = LayoutOptions.Fill;
-//            Task.Delay(300).Wait();
-//            edtOcrResult.IsVisible = true;
-//        }
-//#endif
         /// <summary>
         /// Initialize the OCR plugin using the Appearing event of the MainPage.xaml
         /// </summary>
