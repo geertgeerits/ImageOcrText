@@ -20,7 +20,6 @@
         <ScrollView
             Grid.Row="1"
             Grid.Column="0"
-            VerticalOptions="FillAndExpand"
             Orientation="Vertical">
 
             <Grid
