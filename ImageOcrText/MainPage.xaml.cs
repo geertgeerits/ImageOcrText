@@ -2,16 +2,20 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.8
- * Date ........: 2024-11-24 (YYYY-MM-DD)
+ * Date ........: 2024-11-25 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
- * Note ........: 
+ * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
  * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.0.15 - by kfrancis - https://github.com/kfrancis/ocr
  *                (NuGet Package: Xamarin.AndroidX.Fragment.Ktx - Version 1.7.0.2)
  * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
 
 using Plugin.Maui.OCR;
+//#if IOS
+//using UIKit;
+//using Microsoft.Maui.Platform;
+//#endif
 
 namespace ImageOcrText
 {
@@ -41,6 +45,13 @@ namespace ImageOcrText
 #if IOS
             //// AutoSize has to be disabled for iOS
             edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
+
+            //// Workaround for the !!!BUG!!! in iOS
+            //// VerticalOptions in editor is not working when going from portrait to landscape
+            //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
+
+            //// Disable the default behavior of automatically scrolling the view when the keyboard appears
+            //DisconnectKeyboardAutoScroll();
 #endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
@@ -74,6 +85,7 @@ namespace ImageOcrText
                     edtOcrResult.MinimumWidthRequest = 700;
                 }
             }
+
 
             //// !!!BUG!!! in Windows - The vertical allignment of the language labels is wrong in WinUI
             if (DeviceInfo.Platform == DevicePlatform.WinUI)
@@ -128,6 +140,41 @@ namespace ImageOcrText
             //// Set focus to the editor
             edtOcrResult.Focus();
         }
+
+//#if IOS
+//        /// <summary>
+//        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
+//        /// VerticalOptions in editor is not working when going from portrait to landscape
+//        /// </summary>
+//        /// <param name="sender"></param>
+//        /// <param name="e"></param>
+//        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+//        {
+//            //if (edtOcrResult.IsSoftInputShowing())
+//            //{
+//            //    await edtOcrResult.HideSoftInputAsync(System.Threading.CancellationToken.None);
+//            //}
+
+//            edtOcrResult.IsVisible = false;
+//            edtOcrResult.VerticalOptions = LayoutOptions.Center;
+//            Task.Delay(100).Wait();
+//            edtOcrResult.HorizontalOptions = LayoutOptions.Fill;
+//            edtOcrResult.VerticalOptions = LayoutOptions.Fill;
+//            Task.Delay(200).Wait();
+//            edtOcrResult.IsVisible = true;
+//        }
+
+//        /// <summary>
+//        /// Disable the default behavior of automatically scrolling the view when the keyboard appears
+//        /// </summary>
+//        private void DisconnectKeyboardAutoScroll()
+//        {
+//            if (Handler?.PlatformView is UIView)
+//            {
+//                KeyboardAutoManagerScroll.Disconnect();
+//            }
+//        }
+//#endif
 
         /// <summary>
         /// Initialize the OCR plugin using the Appearing event of the MainPage.xaml

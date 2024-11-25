@@ -145,8 +145,8 @@
             Margin="{OnIdiom 5, Phone='10,5,10,5', Tablet='10,5,10,5', Desktop='10,0,10,0'}">
 
             <Grid
-                RowDefinitions="100*"
-                ColumnDefinitions="100*">
+                RowDefinitions="*"
+                ColumnDefinitions="*">
 
                 <ScrollView
                     VerticalScrollBarVisibility="Always">
