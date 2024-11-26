@@ -181,9 +181,8 @@ namespace ImageOcrText
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
-            // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
 #if IOS
+            // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
             AppDelegate.CurrentPage = "MainPage";
 #endif
             // Initialize the OCR plugin
@@ -220,7 +219,7 @@ namespace ImageOcrText
         }
 
         /// <summary>
-        /// // AppDelegate: Prevent the screen from rotating to landscape mode
+        /// // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
         /// </summary>
         protected override void OnDisappearing()
         {
