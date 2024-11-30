@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:ImageOcrText"
              x:Class="ImageOcrText.MainPage"
              Loaded="OnPageLoaded"
-             Appearing="OnPageAppearing">
+             Appearing="OnPageAppearing"
+             Disappearing="OnPageDisappearing">
 
     <Shell.TitleView>
         <Grid

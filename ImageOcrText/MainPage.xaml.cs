@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2024
  * Version .....: 1.0.8
- * Date ........: 2024-11-29 (YYYY-MM-DD)
+ * Date ........: 2024-11-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -285,6 +285,20 @@ namespace ImageOcrText
 
             // Set the speech language
             lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+        }
+
+        /// <summary>
+        ///  On page disappearing event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnPageDisappearing(object sender, EventArgs e)
+        {
+            // Hide the soft keyboard when the page disappears
+            if (edtOcrResult.IsSoftInputShowing())
+            {
+                await edtOcrResult.HideSoftInputAsync(System.Threading.CancellationToken.None);
+            }
         }
 
         /// <summary>
