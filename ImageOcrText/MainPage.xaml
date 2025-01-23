@@ -42,7 +42,6 @@
                 HorizontalOptions="Center"
                 BackgroundColor="Transparent"
                 Color="DarkBlue"
-                Scale="{OnPlatform Default='1', Android='1', iOS='2', WinUI='1'}"
                 IsRunning="False">
             </ActivityIndicator>
 

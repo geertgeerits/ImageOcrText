@@ -46,6 +46,9 @@ namespace ImageOcrText
             //// AutoSize has to be disabled for iOS
             edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
 
+            //// Set the scale of the activity indicator for iOS
+            activityIndicator.Scale = 2;
+
             //// Workaround for the !!!BUG!!! in iOS
             //// VerticalOptions in editor is not working when going from portrait to landscape
             //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
