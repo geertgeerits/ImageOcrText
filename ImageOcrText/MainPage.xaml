@@ -37,10 +37,12 @@
             <ActivityIndicator
                 x:Name="activityIndicator"
                 Grid.Column="2"
+                Margin="0,6,0,0"
                 VerticalOptions="Start"
                 HorizontalOptions="Center"
-                Margin="0,6,0,0"
+                BackgroundColor="Transparent"
                 Color="DarkBlue"
+                Scale="{OnPlatform Default='1', Android='1', iOS='2', WinUI='1'}"
                 IsRunning="False">
             </ActivityIndicator>
 

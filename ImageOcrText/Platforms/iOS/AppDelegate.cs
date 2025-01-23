@@ -12,6 +12,7 @@ namespace ImageOcrText
 
         /// <summary>
         /// Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
+        /// Open the iOS Info.plist and set the 'Universal and iPad and iPhone Device Orientation' ONLY to 'Portrait'
         /// </summary>
         /// <param name="application"></param>
         /// <param name="forWindow"></param>
