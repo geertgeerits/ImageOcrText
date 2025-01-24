@@ -40,7 +40,6 @@
                 Margin="0,6,0,0"
                 VerticalOptions="Start"
                 HorizontalOptions="Center"
-                BackgroundColor="Transparent"
                 Color="DarkBlue"
                 IsRunning="False">
             </ActivityIndicator>
