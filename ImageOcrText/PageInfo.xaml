@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resx="clr-namespace:ImageOcrText.Resources.Languages"
+             xmlns:link="clr-namespace:ImageOcrText"
              x:Class="ImageOcrText.PageInfo">
 
     <Shell.TitleView>
@@ -13,7 +14,7 @@
     </Shell.TitleView>
 
     <ScrollView>
-        <StackLayout>
+        <VerticalStackLayout>
             <Grid
                 Style="{StaticResource gridStyleInfo}"
                 RowDefinitions="Auto">
@@ -40,66 +41,56 @@
                         Style="{StaticResource labelStyleInfo}">
                     </Label>
 
-                    <HorizontalStackLayout>
-                        <Label
-                            x:Name="lblEmail"
-                            Style="{StaticResource labelStyleInfo}">
-                        </Label>
+                    <Label
+                        Style="{StaticResource labelStyleInfo}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static resx:OcrLang.Email_Text}"
+                                      FontFamily="OpenSansRegular"
+                                      FontAttributes="Bold"
+                                      FontSize="16" />
+                                <link:HyperlinkSpan Text="geertgeerits@gmail.com"
+                                                    Url="mailto:geertgeerits@gmail.com" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
-                        <ImageButton
-                            Source="envelope_48x24p.png"                         
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            HeightRequest="24"
-                            WidthRequest="48"
-                            SemanticProperties.Description="{x:Static resx:OcrLang.ToolTipAppEmail_Text}"
-                            ToolTipProperties.Text="{x:Static resx:OcrLang.ToolTipAppEmail_Text}"
-                            Clicked="OnBtnEmailLinkClicked">
-                        </ImageButton>
-                    </HorizontalStackLayout>
+                    <Label
+                        Style="{StaticResource labelStyleInfo}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static resx:OcrLang.Website_Text}"
+                                      FontFamily="OpenSansRegular"
+                                      FontAttributes="Bold"
+                                      FontSize="16" />
+                                <link:HyperlinkSpan Text="../image-to-text"
+                                                    Url="https://geertgeerits.wixsite.com/geertgeerits/image-to-text" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
-                    <HorizontalStackLayout>
-                        <Label
-                            x:Name="lblWebsite"
-                            Style="{StaticResource labelStyleInfo}">
-                        </Label>
+                    <Label
+                        x:Name="lblPrivacyPolicy"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
 
-                        <ImageButton
-                            Source="internet_48x24p.png"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            HeightRequest="24"
-                            WidthRequest="48"
-                            SemanticProperties.Description="{x:Static resx:OcrLang.ToolTipAppWebsite_Text}"
-                            ToolTipProperties.Text="{x:Static resx:OcrLang.ToolTipAppWebsite_Text}"
-                            Clicked="OnBtnWebsiteLinkClicked">
-                        </ImageButton>
-                    </HorizontalStackLayout>
+                    <Label
+                        x:Name="lblLicense"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
 
-                    <VerticalStackLayout>
-                        <Label
-                            x:Name="lblPrivacyPolicy"
-                            Style="{StaticResource labelStyleInfo}">
-                        </Label>
+                    <Label
+                        Style="{StaticResource labelStyleInfo}"
+                        Text="{x:Static resx:OcrLang.LicenseMit2_Text}">
+                    </Label>
 
-                        <Label
-                            x:Name="lblLicense"
-                            Style="{StaticResource labelStyleInfo}">
-                        </Label>
-
-                        <Label
-                            Style="{StaticResource labelStyleInfo}"
-                            Text="{x:Static resx:OcrLang.LicenseMit2_Text}">
-                        </Label>
-
-                        <Label
-                            x:Name="lblExplanation"
-                            Style="{StaticResource labelStyleInfo}">
-                        </Label>
-                    </VerticalStackLayout>
+                    <Label
+                        x:Name="lblExplanation"
+                        Style="{StaticResource labelStyleInfo}">
+                    </Label>
                 </VerticalStackLayout>
 
             </Grid>
-        </StackLayout>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

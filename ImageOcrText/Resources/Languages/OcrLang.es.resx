@@ -154,7 +154,7 @@
     <value>No acordado</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>Correo electrónico:</value>
+    <value>Correo electrónico: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Error</value>
@@ -287,6 +287,6 @@ Utilice este programa bajo su propio riesgo.</value>
     <value>Versión:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Sitio web</value>
+    <value>Sitio web: </value>
   </data>
 </root>

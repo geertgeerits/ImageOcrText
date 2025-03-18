@@ -154,7 +154,7 @@
     <value>Nem ért egyet</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Email: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Hiba</value>
@@ -287,6 +287,6 @@ Ezt a programot kizárólag saját felelősségére használja.</value>
     <value>Változat:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Weboldal</value>
+    <value>Weboldal: </value>
   </data>
 </root>

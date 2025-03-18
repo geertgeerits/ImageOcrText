@@ -154,7 +154,7 @@
     <value>Nesouhlasit</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mailem:</value>
+    <value>E-mailem: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Chyba</value>
@@ -287,6 +287,6 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
     <value>Verze:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Webová stránka</value>
+    <value>Webová stránka: </value>
   </data>
 </root>

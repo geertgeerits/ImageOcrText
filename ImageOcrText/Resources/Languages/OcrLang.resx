@@ -154,7 +154,7 @@
     <value>Disagree</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>E-mail: </value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Error</value>
@@ -287,6 +287,6 @@ Use this program entirely at your own risk.</value>
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Website: </value>
   </data>
 </root>
