@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2025
  * Version .....: 1.0.8
- * Date ........: 2025-01-24 (YYYY-MM-DD)
+ * Date ........: 2025-03-18 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -99,12 +99,12 @@ namespace ImageOcrText
             //// Set the theme
             Globals.SetTheme();
 
-            //// Get and set the system OS user language
+            //// Get and set the user interface language
             try
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
                 {
-                    Globals.cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+                    Globals.cLanguage = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
                 }
             }
             catch (Exception)
@@ -112,7 +112,6 @@ namespace ImageOcrText
                 Globals.cLanguage = "en";
             }
 
-            //// Set the text language
             SetTextLanguage();
 
             //// Initialize text to speech and get and set the speech language
@@ -122,7 +121,7 @@ namespace ImageOcrText
             {
                 if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
                 {
-                    cCultureName = Thread.CurrentThread.CurrentCulture.Name;
+                    cCultureName = Thread.CurrentThread.CurrentUICulture.Name;
                 }
             }
             catch (Exception)
@@ -130,7 +129,6 @@ namespace ImageOcrText
                 cCultureName = "en-US";
             }
 
-            //// Initialize text to speech
             InitializeTextToSpeech(cCultureName);
 
             //// Set the language for the OCR plugin to 'All supported languages', necessary after a reset of the application
@@ -509,12 +507,11 @@ namespace ImageOcrText
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
+        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
         /// </summary>
         /// <param name="cCultureName"></param>
         private async void InitializeTextToSpeech(string cCultureName)
         {
-            // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
-
             // Initialize text to speech
             int nTotalItems;
 
@@ -570,32 +567,32 @@ namespace ImageOcrText
         {
             try
             {
-                if (Globals.cLanguageLocales is null)
+                if (Globals.cLanguageLocales is not null)
                 {
-                    Globals.cLanguageSpeech = cCultureName;
-                    return;
-                }
+                    int nTotalItems = Globals.cLanguageLocales.Length;
 
-                int nTotalItems = Globals.cLanguageLocales.Length;
-
-                for (int nItem = 0; nItem < nTotalItems; nItem++)
-                {
-                    if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
+                    if (!string.IsNullOrEmpty(cCultureName))
                     {
-                        Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                        break;
-                    }
-                }
-
-                // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
-                if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-                {
-                    for (int nItem = 0; nItem < nTotalItems; nItem++)
-                    {
-                        if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
+                        for (int nItem = 0; nItem < nTotalItems; nItem++)
                         {
-                            Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                            break;
+                            if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
+                            {
+                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
+                                break;
+                            }
+                        }
+                    }
+
+                    // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
+                    if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
+                    {
+                        for (int nItem = 0; nItem < nTotalItems; nItem++)
+                        {
+                            if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
+                            {
+                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
+                                break;
+                            }
                         }
                     }
                 }
@@ -603,7 +600,7 @@ namespace ImageOcrText
                 // If the language is still not found use the first language in the array
                 if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
                 {
-                    Globals.cLanguageSpeech = Globals.cLanguageLocales[0];
+                    Globals.cLanguageSpeech = Globals.cLanguageLocales![0];
                 }
             }
             catch (Exception ex)

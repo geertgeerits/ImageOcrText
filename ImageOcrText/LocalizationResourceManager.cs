@@ -6,7 +6,7 @@ namespace ImageOcrText
     {
         private LocalizationResourceManager()
         {
-            OcrLang.Culture = CultureInfo.CurrentCulture;
+            OcrLang.Culture = CultureInfo.CurrentUICulture;
         }
 
         public static LocalizationResourceManager Instance { get; } = new();
