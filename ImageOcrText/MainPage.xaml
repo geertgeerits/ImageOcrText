@@ -127,7 +127,7 @@
                 x:Name="imgbtnTextToSpeech"
                 Style="{StaticResource imageButtonStyleDefault}"
                 VerticalOptions="Start"
-                Source="ic_action_volume_mute.png"
+                Source="ic_action_volume_up.png"
                 SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"
                 IsVisible="False"
