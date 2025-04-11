@@ -237,7 +237,7 @@ namespace ImageOcrText
             try
             {
                 // Get the supported languages for the OCR plugin
-                Globals.supportedLanguagesOcr = OcrPlugin.Default.SupportedLanguages.ToList();
+                Globals.supportedLanguagesOcr = [.. OcrPlugin.Default.SupportedLanguages];
 
                 // Sort the list of supported languages
                 Globals.supportedLanguagesOcr.Sort();
