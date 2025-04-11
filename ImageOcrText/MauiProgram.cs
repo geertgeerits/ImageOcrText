@@ -37,22 +37,14 @@ namespace ImageOcrText
 
                  static bool ProcessEvent(string eventName, string? type = null)
                  {
-                     //System.Diagnostics.Debug.WriteLine($"Lifecycle event: {eventName}{(type == null ? string.Empty : $" ({type})")}");
+                     //System.Diagnostics.Debug.WriteLine($"Lifecycle event: {eventName}{(type is null ? string.Empty : $" ({type})")}");
 
-                     // Cancel speech if a cancellation token exists & hasn't been already requested.
-                     if (Globals.bTextToSpeechIsBusy)
-                     {
-                         if (Globals.cts?.IsCancellationRequested ?? true)
-                             return true;
-
-                         Globals.cts.Cancel();
-                         Globals.bTextToSpeechIsBusy = false;
-                     }
+                     // Cancel speech
+                     ClassSpeech.CancelTextToSpeech();
 
                      return true;
                  }
              });
-
 
 #if DEBUG
             builder.Logging.AddDebug();

@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2025
  * Version .....: 1.0.8
- * Date ........: 2025-03-19 (YYYY-MM-DD)
+ * Date ........: 2025-04-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -12,10 +12,6 @@
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
 
 using Plugin.Maui.OCR;
-//#if IOS
-//using UIKit;
-//using Microsoft.Maui.Platform;
-//#endif
 
 namespace ImageOcrText
 {
@@ -99,37 +95,36 @@ namespace ImageOcrText
             //// Set the theme
             Globals.SetTheme();
 
-            //// Get and set the user interface language
+            //// Get and set the user interface language after a first start or reset of the application
             try
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
                 {
                     Globals.cLanguage = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+
+                    // Chinese needs the language code as zh-CN and zh-TW
+                    if (Globals.cLanguage == "zh")
+                    {
+                        Globals.cLanguage = Thread.CurrentThread.CurrentUICulture.Name;
+                    }
                 }
             }
             catch (Exception)
             {
                 Globals.cLanguage = "en";
             }
+            finally
+            {
+                // Save the UI language
+                Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
+                Debug.WriteLine("MainPage - Globals.cLanguage: " + Globals.cLanguage);
+            }
 
+            //// Set the text language
             SetTextLanguage();
 
             //// Initialize text to speech and get and set the speech language
-            string cCultureName = "";
-
-            try
-            {
-                if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-                {
-                    cCultureName = Thread.CurrentThread.CurrentUICulture.Name;
-                }
-            }
-            catch (Exception)
-            {
-                cCultureName = "en-US";
-            }
-
-            InitializeTextToSpeech(cCultureName);
+            InitializeTextToSpeechAsync();
 
             //// Set the language for the OCR plugin to 'All supported languages', necessary after a reset of the application
             Globals.cLanguageOcr = "";
@@ -141,40 +136,45 @@ namespace ImageOcrText
             edtOcrResult.Focus();
         }
 
-        //#if IOS
-        //        /// <summary>
-        //        /// Workaround for the !!!BUG!!! in iOS from Maui 8.0.21+?
-        //        /// VerticalOptions in editor is not working when going from portrait to landscape
-        //        /// </summary>
-        //        /// <param name="sender"></param>
-        //        /// <param name="e"></param>
-        //        private void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
-        //        {
-        //            //if (edtOcrResult.IsSoftInputShowing())
-        //            //{
-        //            //    await edtOcrResult.HideSoftInputAsync(System.Threading.CancellationToken.None);
-        //            //}
+        /// <summary>
+        /// Initialize text to speech and get and set the speech language
+        /// Must be called in the constructor of the MainPage and not in the ClassSpeech.cs
+        /// The InitializeTextToSpeechAsync method is called asynchronously after the UI components are initialized
+        /// Once the asynchronous operation completes, the Globals.bTextToSpeechAvailable value is checked, and the UI is updated accordingly
+        /// </summary>
+        private async void InitializeTextToSpeechAsync()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
+                {
+                    Globals.cLanguageSpeech = Thread.CurrentThread.CurrentUICulture.Name;
+                }
+            }
+            catch (Exception)
+            {
+                Globals.cLanguageSpeech = "en-US";
+            }
 
-        //            edtOcrResult.IsVisible = false;
-        //            edtOcrResult.VerticalOptions = LayoutOptions.Center;
-        //            Task.Delay(100).Wait();
-        //            edtOcrResult.HorizontalOptions = LayoutOptions.Fill;
-        //            edtOcrResult.VerticalOptions = LayoutOptions.Fill;
-        //            Task.Delay(200).Wait();
-        //            edtOcrResult.IsVisible = true;
-        //        }
+            // Initialize text to speech
+            Globals.bTextToSpeechAvailable = await ClassSpeech.InitializeTextToSpeechAsync();
 
-        //        /// <summary>
-        //        /// Disable the default behavior of automatically scrolling the view when the keyboard appears
-        //        /// </summary>
-        //        private void DisconnectKeyboardAutoScroll()
-        //        {
-        //            if (Handler?.PlatformView is UIView)
-        //            {
-        //                KeyboardAutoManagerScroll.Disconnect();
-        //            }
-        //        }
-        //#endif
+            if (Globals.bTextToSpeechAvailable)
+            {
+                lblTextToSpeech.IsVisible = true;
+                imgbtnTextToSpeech.IsVisible = true;
+                lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+
+                // Search the selected language in the cLanguageLocales array
+                ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
+
+                // Save the speech language
+                Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
+            }
+
+            Debug.WriteLine("MainPage - Globals.bTextToSpeechAvailable: " + Globals.bTextToSpeechAvailable);
+            Debug.WriteLine("MainPage - Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
+        }
 
         /// <summary>
         /// Initialize the OCR plugin using the Appearing event of the MainPage.xaml
@@ -342,13 +342,13 @@ namespace ImageOcrText
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             await Navigation.PushAsync(new PageInfo());
         }
 
         private async void OnPageSettingsClicked(object sender, EventArgs e)
         {
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             await Navigation.PushAsync(new PageSettings());
         }
 
@@ -361,7 +361,7 @@ namespace ImageOcrText
         {
             activityIndicator.IsRunning = true;
 
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
 
             Debug.WriteLine("Mainpage OnPickImageClicked: " + Globals.cLanguageOcr);  // For testing
 
@@ -408,7 +408,7 @@ namespace ImageOcrText
         {
             activityIndicator.IsRunning = true;
 
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
 
             try
             {
@@ -490,7 +490,7 @@ namespace ImageOcrText
         /// <param name="e"></param>
         private void OnClearClicked(object sender, EventArgs e)
         {
-            imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             edtOcrResult.Text = "";
         }
 
@@ -500,115 +500,9 @@ namespace ImageOcrText
         private void SetTextLanguage()
         {
             // Set the current UI culture of the selected language
-            Globals.SetCultureSelectedLanguage();
+            Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
             cLicense = $"{OcrLang.License_Text}\n\n{OcrLang.LicenseMit2_Text}";
-        }
-
-        /// <summary>
-        /// Initialize text to speech and fill the the array with the speech languages
-        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
-        /// </summary>
-        /// <param name="cCultureName"></param>
-        private async void InitializeTextToSpeech(string cCultureName)
-        {
-            // Initialize text to speech
-            int nTotalItems;
-
-            try
-            {
-                Globals.locales = await TextToSpeech.Default.GetLocalesAsync();
-
-                nTotalItems = Globals.locales.Count();
-
-                if (nTotalItems == 0)
-                {
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-#if DEBUG
-                await DisplayAlert(OcrLang.ErrorTitle_Text, $"{ex.Message}\n\n{OcrLang.TextToSpeechError_Text}", OcrLang.ButtonClose_Text);
-#endif
-                return;
-            }
-
-            lblTextToSpeech.IsVisible = true;
-            imgbtnTextToSpeech.IsVisible = true;
-            Globals.bLanguageLocalesExist = true;
-
-            // Put the locales in the array and sort the array
-            Globals.cLanguageLocales = new string[nTotalItems];
-            int nItem = 0;
-
-            foreach (Locale l in Globals.locales)
-            {
-                Globals.cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
-                nItem++;
-            }
-
-            Array.Sort(Globals.cLanguageLocales);
-
-            // Search for the language after a first start or reset of the application
-            if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-            {
-                SearchArrayWithSpeechLanguages(cCultureName);
-            }
-
-            lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
-        }
-
-        /// <summary>
-        /// Search for the language after a first start or reset of the application
-        /// </summary>
-        /// <param name="cCultureName"></param>
-        private static void SearchArrayWithSpeechLanguages(string cCultureName)
-        {
-            try
-            {
-                if (Globals.cLanguageLocales is not null)
-                {
-                    int nTotalItems = Globals.cLanguageLocales.Length;
-
-                    if (!string.IsNullOrEmpty(cCultureName))
-                    {
-                        for (int nItem = 0; nItem < nTotalItems; nItem++)
-                        {
-                            if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
-                            {
-                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                                break;
-                            }
-                        }
-                    }
-
-                    // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
-                    if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-                    {
-                        for (int nItem = 0; nItem < nTotalItems; nItem++)
-                        {
-                            if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
-                            {
-                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                // If the language is still not found use the first language in the array
-                if (string.IsNullOrEmpty(Globals.cLanguageSpeech))
-                {
-                    Globals.cLanguageSpeech = Globals.cLanguageLocales![0];
-                }
-            }
-            catch (Exception ex)
-            {
-#if DEBUG
-                Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
-#endif
-            }
         }
 
         /// <summary>
@@ -621,7 +515,7 @@ namespace ImageOcrText
             // Cancel the text to speech
             if (Globals.bTextToSpeechIsBusy)
             {
-                imgbtnTextToSpeech.Source = Globals.CancelTextToSpeech();
+                imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
                 return;
             }
 
@@ -629,7 +523,7 @@ namespace ImageOcrText
             /* CsWinRT1030 Type 'Microsoft.Maui.Controls.ImageButton' implements generic WinRT interfaces which requires generated
                code using unsafe for trimming and AOT compatibility if passed across the WinRT ABI.
                Project needs to be updated with '<AllowUnsafeBlocks>true</AllowUnsafeBlocks>'.ImageOcrText(net9.0 - windows10.0.19041.0) */
-            _ = Globals.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtOcrResult.Text);
+            _ = ClassSpeech.ConvertTextToSpeechAsync(imgbtnTextToSpeech, edtOcrResult.Text);
         }
     }
 }
