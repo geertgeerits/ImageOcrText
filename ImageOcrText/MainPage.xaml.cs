@@ -183,7 +183,7 @@ namespace ImageOcrText
             base.OnAppearing();
 #if IOS
             // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
-            AppDelegate.CurrentPage = "MainPage";
+            //AppDelegate.CurrentPage = "MainPage";
 #endif
             // Initialize the OCR plugin
             await OcrPlugin.Default.InitAsync();
@@ -221,13 +221,13 @@ namespace ImageOcrText
         /// <summary>
         /// // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
         /// </summary>
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-#if IOS
-            AppDelegate.CurrentPage = string.Empty;
-#endif
-        }
+//        protected override void OnDisappearing()
+//        {
+//            base.OnDisappearing();
+//#if IOS
+//            AppDelegate.CurrentPage = string.Empty;
+//#endif
+//        }
 
         /// <summary>
         /// Initialize supported OCR languages for the OCR plugin

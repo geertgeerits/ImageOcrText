@@ -1,12 +1,12 @@
 ﻿using Foundation;
-using UIKit;
+//using UIKit;
 
 namespace ImageOcrText
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate
     {
-        public static string CurrentPage { get; set; } = "MainPage";
+        //public static string CurrentPage { get; set; } = "MainPage";
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 
@@ -17,14 +17,14 @@ namespace ImageOcrText
         /// <param name="application"></param>
         /// <param name="forWindow"></param>
         /// <returns></returns>
-        [Export("application:supportedInterfaceOrientationsForWindow:")]
-        public UIInterfaceOrientationMask GetSupportedInterfaceOrientations(UIApplication application, IntPtr forWindow)
-        {
-            if (CurrentPage == "MainPage")
-            {
-                return UIInterfaceOrientationMask.Portrait;
-            }
-            return UIInterfaceOrientationMask.All;
-        }
+        //[Export("application:supportedInterfaceOrientationsForWindow:")]
+        //public UIInterfaceOrientationMask GetSupportedInterfaceOrientations(UIApplication application, IntPtr forWindow)
+        //{
+        //    if (CurrentPage == "MainPage")
+        //    {
+        //        return UIInterfaceOrientationMask.Portrait;
+        //    }
+        //    return UIInterfaceOrientationMask.All;
+        //}
     }
 }
