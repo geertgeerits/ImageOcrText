@@ -29,6 +29,7 @@
 		<ApplicationId>com.companyname.imageocrtext</ApplicationId>
 
 		<!-- Versions -->
+		<PackageVersion>1.0.8</PackageVersion>
 		<ApplicationDisplayVersion>1.0.8</ApplicationDisplayVersion>
 		<ApplicationVersion>8</ApplicationVersion>
 
