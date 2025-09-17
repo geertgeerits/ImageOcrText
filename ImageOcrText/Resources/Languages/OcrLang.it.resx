@@ -281,6 +281,11 @@ La suddetta nota di copyright e questa nota di autorizzazione (incluso il paragr
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Testo in voce</value>
   </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store e il logo dell'App Store sono marchi di Apple Inc., registrati negli Stati Uniti e in altri paesi e regioni.
+Google, Google Play, il logo di Google Play e Android sono marchi di Google LLC.
+Microsoft, Microsoft Store, il logo di Microsoft Store e Windows sono marchi di Microsoft Corporation.</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Versione:</value>
   </data>

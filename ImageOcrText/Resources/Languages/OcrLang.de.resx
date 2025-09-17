@@ -283,6 +283,11 @@ Die Nutzung dieses Programms erfolgt ausschließlich auf Ihr eigenes Risiko.</va
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text zu Sprache</value>
   </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store und das App Store-Logo sind Marken von Apple Inc. und in den USA sowie anderen Ländern und Regionen eingetragen.
+Google, Google Play, das Google Play-Logo und Android sind Marken von Google LLC.
+Microsoft, Microsoft Store, das Microsoft Store-Logo und Windows sind Marken der Microsoft Corporation.</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Ausführung:</value>
   </data>

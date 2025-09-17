@@ -283,6 +283,11 @@ Käytä tätä ohjelmaa täysin omalla vastuullasi.</value>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Teksti puheeksi</value>
   </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store ja App Store -logo ovat Apple Inc:n tavaramerkkejä, jotka on rekisteröity Yhdysvalloissa ja muissa maissa ja alueilla.
+Google, Google Play, Google Play -logo ja Android ovat Google LLC:n tavaramerkkejä.
+Microsoft, Microsoft Store, Microsoft Store -logo ja Windows ovat Microsoft Corporationin tavaramerkkejä.</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Versio:</value>
   </data>

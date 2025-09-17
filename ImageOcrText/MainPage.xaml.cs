@@ -1,8 +1,8 @@
 ﻿/* Program .....: ImageOcrText.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2025
- * Version .....: 1.0.10
- * Date ........: 2025-07-31 (YYYY-MM-DD)
+ * Version .....: 1.0.11
+ * Date ........: 2025-09-17 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)

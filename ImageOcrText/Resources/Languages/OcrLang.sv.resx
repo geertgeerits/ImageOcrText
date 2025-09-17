@@ -283,6 +283,11 @@ Använd detta program helt på egen risk.</value>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text till tal</value>
   </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store och App Store-logotypen är varumärken som tillhör Apple Inc., registrerade i USA och andra länder och regioner.
+Google, Google Play, Google Play-logotypen och Android är varumärken som tillhör Google LLC.
+Microsoft, Microsoft Store, Microsoft Store-logotypen och Windows är varumärken som tillhör Microsoft Corporation.</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>
   </data>

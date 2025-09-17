@@ -283,6 +283,11 @@ Bruk dette programmet helt på egen risiko.</value>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Tekst til tale</value>
   </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store og App Store-logoen er varemerker for Apple Inc., registrert i USA og andre land og regioner.
+Google, Google Play, Google Play-logoen og Android er varemerker for Google LLC.
+Microsoft, Microsoft Store, Microsoft Store-logoen og Windows er varemerker for Microsoft Corporation.</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Versjon:</value>
   </data>

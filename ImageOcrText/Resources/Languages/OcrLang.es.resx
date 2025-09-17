@@ -283,6 +283,11 @@ Utilice este programa bajo su propio riesgo.</value>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Texto a voz</value>
   </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store y el logotipo de App Store son marcas comerciales de Apple Inc., registradas en EE. UU. y otros países y regiones.
+Google, Google Play, el logotipo de Google Play y Android son marcas comerciales de Google LLC.
+Microsoft, Microsoft Store, el logotipo de Microsoft Store y Windows son marcas comerciales de Microsoft Corporation.</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Versión:</value>
   </data>

@@ -283,6 +283,11 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
   <data name="ToolTipTextToSpeech_Text" xml:space="preserve">
     <value>Text na řeč</value>
   </data>
+  <data name="Trademarks_Text" xml:space="preserve">
+    <value>Apple, App Store a logo App Store jsou ochranné známky společnosti Apple Inc., registrované v USA a dalších zemích a regionech.
+Google, Google Play, logo Google Play a Android jsou ochranné známky společnosti Google LLC.
+Microsoft, Microsoft Store, logo Microsoft Store a Windows jsou ochranné známky společnosti Microsoft Corporation.</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Verze:</value>
   </data>
