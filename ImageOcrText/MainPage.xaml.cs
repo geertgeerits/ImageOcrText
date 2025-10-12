@@ -368,8 +368,13 @@ namespace ImageOcrText
 
             try
             {
-                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();
-                
+                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();  // ERROR IN ANDROID !!!BUG!!! Object reference not set to an instance of an object
+
+                if (fileResults == null || fileResults.Count == 0)
+                {
+                    return;
+                }
+
                 string allText = "";
                 
                 OcrOptions options = new OcrOptions.Builder()
@@ -402,7 +407,7 @@ namespace ImageOcrText
             catch (Exception ex)
             {
 #if DEBUG
-                await DisplayAlertAsync("Error", ex.Message, "OK");
+                await DisplayAlertAsync("Error", $"{ex.Message}\n\n{ex.StackTrace}", "OK");
 #endif
             }
 
@@ -422,16 +427,16 @@ namespace ImageOcrText
 
             try
             {
-                FileResult? pickResult = await MediaPicker.Default.CapturePhotoAsync();
+                FileResult? CaptureResult = await MediaPicker.Default.CapturePhotoAsync();
 
                 OcrOptions options = new OcrOptions.Builder()
                 .SetLanguage(Globals.cLanguageOcr)
                 .SetTryHard(true)
                 .Build();
 
-                if (pickResult != null)
+                if (CaptureResult != null)
                 {
-                    using Stream imageAsStream = await pickResult.OpenReadAsync();
+                    using Stream imageAsStream = await CaptureResult.OpenReadAsync();
                     byte[] imageAsBytes = new byte[imageAsStream.Length];
                     await imageAsStream.ReadExactlyAsync(imageAsBytes);
 
@@ -448,7 +453,9 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                await DisplayAlertAsync("Error", ex.Message, "OK");
+#if DEBUG
+                await DisplayAlertAsync("Error", $"{ex.Message}\n\n{ex.StackTrace}", "OK");
+#endif
             }
 
             activityIndicator.IsRunning = false;
