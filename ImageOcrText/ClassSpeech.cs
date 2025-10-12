@@ -46,7 +46,7 @@ namespace ImageOcrText
             {
 #if DEBUG
                 Debug.WriteLine($"Error in InitializeTextToSpeechAsync: {ex.Message}");
-                await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, $"{ex.Message}\n\n{OcrLang.TextToSpeechError_Text}", OcrLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(OcrLang.ErrorTitle_Text, $"{ex.Message}\n\n{OcrLang.TextToSpeechError_Text}", OcrLang.ButtonClose_Text);
 #endif
                 return false;
             }
@@ -146,7 +146,7 @@ namespace ImageOcrText
             catch (Exception ex)
             {
 #if DEBUG
-                Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                Application.Current!.Windows[0].Page!.DisplayAlertAsync(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
             }
 
@@ -220,7 +220,7 @@ namespace ImageOcrText
                 catch (Exception ex)
                 {
 #if DEBUG
-                    await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", OcrLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(OcrLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", OcrLang.ButtonClose_Text);
 #endif
                 }
 

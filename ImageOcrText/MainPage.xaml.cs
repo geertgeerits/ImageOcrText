@@ -1,9 +1,9 @@
 ﻿/* Program .....: ImageOcrText.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
- * Copyright ...: (C) 2024-2025
+ * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.11
- * Date ........: 2025-09-17 (YYYY-MM-DD)
- * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
+ * Date ........: 2025-10-12 (YYYY-MM-DD)
+ * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
  * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.0.15 - by kfrancis - https://github.com/kfrancis/ocr
@@ -28,7 +28,7 @@ namespace ImageOcrText
             catch (Exception ex)
             {
 #if DEBUG
-                DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: MainPage", ex.Message, "OK");
 #endif
                 return;
             }
@@ -217,18 +217,20 @@ namespace ImageOcrText
 
             lblLanguageOcr.Text = Globals.cLanguageOcr;
         }
-
+        
+        /*
         /// <summary>
         /// // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
         /// </summary>
-//        protected override void OnDisappearing()
-//        {
-//            base.OnDisappearing();
-//#if IOS
-//            AppDelegate.CurrentPage = string.Empty;
-//#endif
-//        }
-
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+#if IOS
+            AppDelegate.CurrentPage = string.Empty;
+#endif
+        }
+        */
+        
         /// <summary>
         /// Initialize supported OCR languages for the OCR plugin
         /// </summary>
@@ -257,14 +259,14 @@ namespace ImageOcrText
                 else
                 {
 #if DEBUG
-                    await DisplayAlert(OcrLang.ErrorTitle_Text, OcrLang.LanguageOcrError_Text, OcrLang.ButtonClose_Text);
+                    await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.LanguageOcrError_Text, OcrLang.ButtonClose_Text);
 #endif
                 }
             }
             catch (Exception ex)
             {
 #if DEBUG
-                await DisplayAlert("Error", ex.Message, "OK");
+                await DisplayAlertAsync("Error", ex.Message, "OK");
 #endif
             }
         }
@@ -311,7 +313,7 @@ namespace ImageOcrText
             // Show license
             if (Globals.bLicense == false)
             {
-                Globals.bLicense = await DisplayAlert(OcrLang.LicenseTitle_Text, cLicense, OcrLang.Agree_Text, OcrLang.Disagree_Text);
+                Globals.bLicense = await DisplayAlertAsync(OcrLang.LicenseTitle_Text, cLicense, OcrLang.Agree_Text, OcrLang.Disagree_Text);
 
                 if (Globals.bLicense)
                 {
@@ -330,7 +332,7 @@ namespace ImageOcrText
                     imgbtnShare.IsEnabled = false;
                     imgbtnClear.IsEnabled = false;
 
-                    await DisplayAlert(OcrLang.LicenseTitle_Text, OcrLang.CloseApplication_Text, OcrLang.ButtonClose_Text);
+                    await DisplayAlertAsync(OcrLang.LicenseTitle_Text, OcrLang.CloseApplication_Text, OcrLang.ButtonClose_Text);
 #else
                     Application.Current?.Quit();
 #endif
@@ -366,7 +368,9 @@ namespace ImageOcrText
 
             try
             {
-                FileResult? pickResult = await MediaPicker.Default.PickPhotoAsync();
+                //FileResult? pickResult = await MediaPicker.Default.PickPhotoAsync();
+                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();
+                FileResult? pickResult = fileResults[0];
 
                 OcrOptions options = new OcrOptions.Builder()
                 .SetLanguage(Globals.cLanguageOcr)
@@ -383,7 +387,7 @@ namespace ImageOcrText
 
                     if (!ocrResult.Success)
                     {
-                        await DisplayAlert(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
+                        await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
                         return;
                     }
 
@@ -392,7 +396,7 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "OK");
+                await DisplayAlertAsync("Error", ex.Message, "OK");
             }
 
             activityIndicator.IsRunning = false;
@@ -428,7 +432,7 @@ namespace ImageOcrText
 
                     if (!ocrResult.Success)
                     {
-                        await DisplayAlert(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
+                        await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
                         return;
                     }
 
@@ -437,7 +441,7 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.Message, "OK");
+                await DisplayAlertAsync("Error", ex.Message, "OK");
             }
 
             activityIndicator.IsRunning = false;
@@ -460,7 +464,7 @@ namespace ImageOcrText
             catch (Exception ex)
             {
 #if DEBUG
-                await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
             }
         }

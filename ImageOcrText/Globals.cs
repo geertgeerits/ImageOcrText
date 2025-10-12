@@ -1,9 +1,4 @@
-﻿//// Global usings
-global using ImageOcrText.Resources.Languages;
-global using System.Globalization;
-global using System.Diagnostics;
-
-namespace ImageOcrText
+﻿namespace ImageOcrText
 {
     //// Global variables and methods
     internal static class Globals

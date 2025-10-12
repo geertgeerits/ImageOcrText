@@ -10,7 +10,7 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                DisplayAlert("InitializeComponent: PageInfo", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: PageInfo", ex.Message, "OK");
                 return;
             }
 #if WINDOWS
@@ -19,7 +19,7 @@ namespace ImageOcrText
 #endif
             //// Put text in the chosen language in the controls and variables
             lblVersion.Text = $"{OcrLang.Version_Text} 1.0.11";
-            lblCopyright.Text = $"{OcrLang.Copyright_Text} © 2024-2025 Geert Geerits";
+            lblCopyright.Text = $"{OcrLang.Copyright_Text} © 2024-2026 Geert Geerits";
             lblPrivacyPolicy.Text = $"\n{OcrLang.PrivacyPolicyTitle_Text} {OcrLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{OcrLang.LicenseTitle_Text}: {OcrLang.License_Text}";
             lblExplanation.Text = $"\n{OcrLang.InfoExplanation_Text}";
@@ -100,7 +100,7 @@ namespace ImageOcrText
                 }
                 catch (Exception ex)
                 {
-                    await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
                 }
             }
         }
@@ -125,7 +125,7 @@ namespace ImageOcrText
             }
             catch (Exception ex)
             {
-                await Application.Current!.Windows[0].Page!.DisplayAlert(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlertAsync(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
             }
         }
     }

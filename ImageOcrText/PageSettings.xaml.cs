@@ -13,7 +13,7 @@
             }
             catch (Exception ex)
             {
-                DisplayAlert("InitializeComponent: PageSettings", ex.Message, "OK");
+                DisplayAlertAsync("InitializeComponent: PageSettings", ex.Message, "OK");
                 return;
             }
 #if WINDOWS
