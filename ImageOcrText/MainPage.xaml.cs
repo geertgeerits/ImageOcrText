@@ -368,35 +368,42 @@ namespace ImageOcrText
 
             try
             {
-                //FileResult? pickResult = await MediaPicker.Default.PickPhotoAsync();
                 List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();
-                FileResult? pickResult = fileResults[0];
-
+                
+                string allText = "";
+                
                 OcrOptions options = new OcrOptions.Builder()
                 .SetLanguage(Globals.cLanguageOcr)
                 .SetTryHard(true)
                 .Build();
 
-                if (pickResult != null)
+                foreach (FileResult pickResult in fileResults)
                 {
-                    using Stream imageAsStream = await pickResult.OpenReadAsync();
-                    byte[] imageAsBytes = new byte[imageAsStream.Length];
-                    _ = await imageAsStream.ReadAsync(imageAsBytes);
-
-                    OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
-
-                    if (!ocrResult.Success)
+                    if (pickResult != null)
                     {
-                        await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
-                        return;
-                    }
+                        using Stream imageAsStream = await pickResult.OpenReadAsync();
+                        byte[] imageAsBytes = new byte[imageAsStream.Length];
+                        _ = await imageAsStream.ReadAsync(imageAsBytes);
 
-                    edtOcrResult.Text = ocrResult.AllText;
+                        OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
+
+                        if (!ocrResult.Success)
+                        {
+                            await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
+                            return;
+                        }
+
+                        allText += ocrResult.AllText + "\n\n";
+                    }
                 }
+
+                edtOcrResult.Text = allText;
             }
             catch (Exception ex)
             {
+#if DEBUG
                 await DisplayAlertAsync("Error", ex.Message, "OK");
+#endif
             }
 
             activityIndicator.IsRunning = false;
