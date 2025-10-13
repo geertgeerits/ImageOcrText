@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.11
- * Date ........: 2025-10-12 (YYYY-MM-DD)
+ * Date ........: 2025-10-13 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -354,11 +354,28 @@ namespace ImageOcrText
         }
 
         /// <summary>
-        /// Click event: Pick an image from the gallery
+        /// Click event: Pick one or more images from the gallery
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [Obsolete]
         private async void OnPickImageClicked(object sender, EventArgs e)
+        {
+#if ANDROID
+            //!!!BUG!!! Error on Android 16 .NET 10 Object reference not set to an instance of an object            
+            OnPickImageClickedOneImage(sender, e);
+#else
+            OnPickImageClickedMultipleImages(sender, e);
+#endif
+        }
+
+        /// <summary>
+        /// Click event: Pick one image from the gallery
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        [Obsolete]
+        private async void OnPickImageClickedOneImage(object sender, EventArgs e)
         {
             activityIndicator.IsRunning = true;
 
@@ -368,7 +385,56 @@ namespace ImageOcrText
 
             try
             {
-                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();  // ERROR IN ANDROID !!!BUG!!! Object reference not set to an instance of an object
+                FileResult? pickResult = await MediaPicker.Default.PickPhotoAsync();
+
+                OcrOptions options = new OcrOptions.Builder()
+                .SetLanguage(Globals.cLanguageOcr)
+                .SetTryHard(true)
+                .Build();
+
+                if (pickResult != null)
+                {
+                    using Stream imageAsStream = await pickResult.OpenReadAsync();
+                    byte[] imageAsBytes = new byte[imageAsStream.Length];
+                    _ = await imageAsStream.ReadAsync(imageAsBytes);
+
+                    OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
+
+                    if (!ocrResult.Success)
+                    {
+                        await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
+                        return;
+                    }
+
+                    edtOcrResult.Text = ocrResult.AllText;
+                }
+            }
+            catch (Exception ex)
+            {
+#if DEBUG
+                await DisplayAlertAsync("Error", $"{ex.Message}\n\n{ex.StackTrace}", "OK");
+#endif
+            }
+
+            activityIndicator.IsRunning = false;
+        }
+
+        /// <summary>
+        /// Click event: Pick Multiple images from the gallery
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnPickImageClickedMultipleImages(object sender, EventArgs e)
+        {
+            activityIndicator.IsRunning = true;
+
+            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
+
+            Debug.WriteLine("Mainpage OnPickImageClicked: " + Globals.cLanguageOcr);  // For testing
+
+            try
+            {
+                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();  //!!!BUG!!! Error on Android 16 .NET 10 Object reference not set to an instance of an object
 
                 if (fileResults == null || fileResults.Count == 0)
                 {
