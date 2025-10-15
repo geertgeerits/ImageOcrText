@@ -362,9 +362,10 @@ namespace ImageOcrText
         private async void OnPickImageClicked(object sender, EventArgs e)
         {
 #if ANDROID
-            //!!!BUG!!! Error on Android 16 .NET 10 Object reference not set to an instance of an object            
+            // Picks one image on Android - !!!BUG!!! If picking multiple images then: Error on Android 16 .NET 10 Object reference not set to an instance of an object            
             OnPickImageClickedOneImage(sender, e);
 #else
+            // Picks multiple images on Windows - Picks one image on iOS
             OnPickImageClickedMultipleImages(sender, e);
 #endif
         }
