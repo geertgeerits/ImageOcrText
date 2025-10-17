@@ -211,7 +211,7 @@ namespace ImageOcrText
 
                     SpeechOptions options = new()
                     {
-                        Locale = locales?.Single(static l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                     };
 
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
@@ -220,7 +220,8 @@ namespace ImageOcrText
                 catch (Exception ex)
                 {
 #if DEBUG
-                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync(OcrLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", OcrLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlertAsync("ConvertTextToSpeechAsync", $"{ex.Message}\n{ex.StackTrace}", OcrLang.ButtonClose_Text);
+                    Debug.WriteLine($"Method ConvertTextToSpeechAsync:\n{ex.Message}\n{ex.StackTrace}");
 #endif
                 }
 
