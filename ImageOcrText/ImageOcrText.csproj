@@ -114,7 +114,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0-rc.2.25504.7" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-rc.2.25502.107" />
-		<PackageReference Include="Plugin.Maui.OCR" Version="1.0.15" />
+		<PackageReference Include="Plugin.Maui.OCR" Version="1.1.1" />
 		<!--<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 			<Version>1.7.0.2</Version>
 		</PackageReference>-->

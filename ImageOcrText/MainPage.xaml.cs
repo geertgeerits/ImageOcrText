@@ -2,11 +2,11 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.11
- * Date ........: 2025-10-17 (YYYY-MM-DD)
+ * Date ........: 2025-10-23 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
- * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.0.15 - by kfrancis - https://github.com/kfrancis/ocr
+ * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.1.1 - by kfrancis - https://github.com/kfrancis/ocr
  * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
 
