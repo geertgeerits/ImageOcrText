@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:resx="clr-namespace:ImageOcrText.Resources.Languages"
              xmlns:link="clr-namespace:ImageOcrText"
              x:Class="ImageOcrText.PageInfo">
 
@@ -9,7 +8,7 @@
         <Label
             x:Name="lblTitlePage"
             Style="{StaticResource labelStyleTitleView}"
-            Text="{x:Static resx:OcrLang.Info_Text}">
+            Text="{Translate Info_Text}">
         </Label>
     </Shell.TitleView>
 
@@ -22,13 +21,13 @@
                 <VerticalStackLayout>
                     <Label
                         Style="{StaticResource labelStyleInfo}"
-                        Text="{x:Static resx:OcrLang.NameProgram_Text}"
+                        Text="{Translate NameProgram_Text}"
                         FontSize="18">
                     </Label>
 
                     <Label
                         Style="{StaticResource labelStyleInfo}"
-                        Text="{x:Static resx:OcrLang.Description_Text}">
+                        Text="{Translate Description_Text}">
                     </Label>
 
                     <Label
@@ -45,7 +44,7 @@
                         Style="{StaticResource labelStyleInfo}">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="{x:Static resx:OcrLang.Email_Text}"
+                                <Span Text="{Translate Email_Text}"
                                       FontFamily="OpenSansRegular"
                                       FontAttributes="Bold"
                                       FontSize="16" />
@@ -59,7 +58,7 @@
                         Style="{StaticResource labelStyleInfo}">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="{x:Static resx:OcrLang.Website_Text}"
+                                <Span Text="{Translate Website_Text}"
                                       FontFamily="OpenSansRegular"
                                       FontAttributes="Bold"
                                       FontSize="16" />
@@ -81,7 +80,7 @@
 
                     <Label
                         Style="{StaticResource labelStyleInfo}"
-                        Text="{x:Static resx:OcrLang.LicenseMit2_Text}">
+                        Text="{Translate LicenseMit2_Text}">
                     </Label>
 
                     <Label

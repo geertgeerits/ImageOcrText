@@ -179,6 +179,13 @@
 		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
 	</PropertyGroup>
 
+
+	<!--Enable XAML implicit xmlns declarations and preview features-->
+	<PropertyGroup>
+		<DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants>
+		<EnablePreviewFeatures>true</EnablePreviewFeatures>
+	</PropertyGroup>
+
 	<!--From .NET 9 on the following is needed due an error in the build process:
 	Samsung Galaxy A3 (2017) SM-A320FL Android 8.0.0 -> Error ADB0020: Mono.AndroidTools.IncompatibleCpuAbiException:
 	The package does not support the CPU architecture of this device.-->

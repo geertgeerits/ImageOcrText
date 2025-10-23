@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="ImageOcrText.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ImageOcrText"
+    x:Class="ImageOcrText.AppShell"
     Shell.FlyoutBehavior="Disabled"
     Title="ImageOcrText">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate MainPage}"
         Route="MainPage" />
 
 </Shell>

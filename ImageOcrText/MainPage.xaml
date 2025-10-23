@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ImageOcrText"
              x:Class="ImageOcrText.MainPage"
              Loaded="OnPageLoaded"
              Appearing="OnPageAppearing"
@@ -21,8 +20,8 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
-                SemanticProperties.Description="{local:Translate Info_Text}"
-                ToolTipProperties.Text="{local:Translate Info_Text}"
+                SemanticProperties.Description="{Translate Info_Text}"
+                ToolTipProperties.Text="{Translate Info_Text}"
                 Clicked="OnPageAboutClicked">
             </ImageButton>
 
@@ -31,7 +30,7 @@
                 Style="{StaticResource labelStyleTitleView}"
                 Grid.Column="1"
                 FontSize="18"
-                Text="{local:Translate NameProgram_Text}">
+                Text="{Translate NameProgram_Text}">
             </Label>
 
             <ActivityIndicator
@@ -52,8 +51,8 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
-                SemanticProperties.Description="{local:Translate Settings_Text}"
-                ToolTipProperties.Text="{local:Translate Settings_Text}"
+                SemanticProperties.Description="{Translate Settings_Text}"
+                ToolTipProperties.Text="{Translate Settings_Text}"
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
         </Grid>
@@ -79,8 +78,8 @@
                 HorizontalOptions="Start"
                 Margin="0,6,0,0"
                 Source="ic_action_picture_text.png" 
-                SemanticProperties.Description="{local:Translate ToolTipImage_Text}"
-                ToolTipProperties.Text="{local:Translate ToolTipImage_Text}"
+                SemanticProperties.Description="{Translate ToolTipImage_Text}"
+                ToolTipProperties.Text="{Translate ToolTipImage_Text}"
                 Clicked="OnPickImageClicked">
             </ImageButton>
 
@@ -90,8 +89,8 @@
                 HorizontalOptions="Center"
                 Margin="0,6,0,0"
                 Source="ic_action_camera.png"
-                SemanticProperties.Description="{local:Translate ToolTipPicture_Text}"
-                ToolTipProperties.Text="{local:Translate ToolTipPicture_Text}"
+                SemanticProperties.Description="{Translate ToolTipPicture_Text}"
+                ToolTipProperties.Text="{Translate ToolTipPicture_Text}"
                 Clicked="OnTakePictureClicked">
             </ImageButton>
 
@@ -128,8 +127,8 @@
                 Style="{StaticResource imageButtonStyleDefault}"
                 VerticalOptions="Start"
                 Source="ic_action_volume_up.png"
-                SemanticProperties.Description="{local:Translate ToolTipTextToSpeech_Text}"
-                ToolTipProperties.Text="{local:Translate ToolTipTextToSpeech_Text}"
+                SemanticProperties.Description="{Translate ToolTipTextToSpeech_Text}"
+                ToolTipProperties.Text="{Translate ToolTipTextToSpeech_Text}"
                 IsVisible="False"
                 Clicked="OnTextToSpeechClicked">
             </ImageButton>
@@ -171,8 +170,8 @@
             HorizontalOptions="Start"
             Margin="10,0,0,0"
             Source="ic_action_copy.png"
-            SemanticProperties.Description="{local:Translate ToolTipCopy_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipCopy_Text}"
+            SemanticProperties.Description="{Translate ToolTipCopy_Text}"
+            ToolTipProperties.Text="{Translate ToolTipCopy_Text}"
             Clicked="OnCopyToClipboardClicked">
         </ImageButton>
 
@@ -183,8 +182,8 @@
             Grid.Column="1"
             HorizontalOptions="Center"
             Source="ic_action_share.png"
-            SemanticProperties.Description="{local:Translate ToolTipShare_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipShare_Text}"
+            SemanticProperties.Description="{Translate ToolTipShare_Text}"
+            ToolTipProperties.Text="{Translate ToolTipShare_Text}"
             Clicked="OnShareClicked">
         </ImageButton>
 
@@ -196,8 +195,8 @@
             HorizontalOptions="End"
             Margin="0,0,10,0"
             Source="ic_action_trash.png"
-            SemanticProperties.Description="{local:Translate ToolTipClear_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipClear_Text}"
+            SemanticProperties.Description="{Translate ToolTipClear_Text}"
+            ToolTipProperties.Text="{Translate ToolTipClear_Text}"
             Clicked="OnClearClicked">
         </ImageButton>        
     

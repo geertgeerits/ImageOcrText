@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui/global"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ImageOcrText"
              x:Class="ImageOcrText.PageSettings">
 
     <Shell.TitleView>
         <Label
             x:Name="lblTitlePage"
             Style="{StaticResource labelStyleTitleView}"
-            Text="{local:Translate Settings_Text}">
+            Text="{Translate Settings_Text}">
         </Label>
     </Shell.TitleView>
 
@@ -35,7 +34,7 @@
                     <Label
                         x:Name="lblExplanation"
                         Style="{StaticResource labelStyleExplanation}"
-                        Text="{local:Translate SettingsSaved_Text}">
+                        Text="{Translate SettingsSaved_Text}">
                     </Label>
                 </Border>
 
@@ -43,7 +42,7 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="1"
                     Grid.Column="0"
-                    Text="{local:Translate Language_Text}">
+                    Text="{Translate Language_Text}">
                 </Label>
 
                 <Border
@@ -83,7 +82,7 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="2"
                     Grid.Column="0"
-                    Text="{local:Translate LanguageSpeech_Text}">
+                    Text="{Translate LanguageSpeech_Text}">
                 </Label>
 
                 <Border
@@ -104,7 +103,7 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="3"
                     Grid.Column="0"
-                    Text="{local:Translate LanguageOcr_Text}">
+                    Text="{Translate LanguageOcr_Text}">
                 </Label>
 
                 <Border
@@ -125,7 +124,7 @@
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="4"
                     Grid.Column="0"
-                    Text="{local:Translate Theme_Text}">
+                    Text="{Translate Theme_Text}">
                 </Label>
 
                 <Border
@@ -158,9 +157,9 @@
             Grid.Row="2"
             HorizontalOptions="Start"
             WidthRequest="{OnIdiom 170, Phone=170, Tablet=270, Desktop=270}"
-            Text="{local:Translate SettingsSave_Text}"
-            SemanticProperties.Description="{local:Translate TooltipSettingsSaved_Text}"
-            ToolTipProperties.Text="{local:Translate TooltipSettingsSaved_Text}"
+            Text="{Translate SettingsSave_Text}"
+            SemanticProperties.Description="{Translate TooltipSettingsSaved_Text}"
+            ToolTipProperties.Text="{Translate TooltipSettingsSaved_Text}"
             Clicked="OnSettingsSaveClicked">
         </Button>
 
@@ -169,9 +168,9 @@
             Grid.Row="2"
             HorizontalOptions="End"
             WidthRequest="{OnIdiom 170, Phone=170, Tablet=270, Desktop=270}"
-            Text="{local:Translate SettingsReset_Text}"
-            SemanticProperties.Description="{local:Translate ToolTipSettingsReset_Text}"
-            ToolTipProperties.Text="{local:Translate ToolTipSettingsReset_Text}"
+            Text="{Translate SettingsReset_Text}"
+            SemanticProperties.Description="{Translate ToolTipSettingsReset_Text}"
+            ToolTipProperties.Text="{Translate ToolTipSettingsReset_Text}"
             Clicked="OnSettingsResetClicked">
         </Button>
 
