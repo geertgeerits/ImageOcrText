@@ -54,7 +54,7 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label
+                    <!--<Label
                         Style="{StaticResource labelStyleInfo}">
                         <Label.FormattedText>
                             <FormattedString>
@@ -66,7 +66,7 @@
                                                     Url="https://geertgeerits.wixsite.com/geertgeerits/image-to-text" />
                             </FormattedString>
                         </Label.FormattedText>
-                    </Label>
+                    </Label>-->
 
                     <Label
                         x:Name="lblPrivacyPolicy"
