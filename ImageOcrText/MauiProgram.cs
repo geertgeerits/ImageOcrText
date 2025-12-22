@@ -34,16 +34,6 @@ namespace ImageOcrText
                 events.AddWindows(windows => windows
                     .OnVisibilityChanged((window, args) => ProcessEvent(nameof(WindowsLifecycle.OnVisibilityChanged))));
 #endif
-
-                 static bool ProcessEvent(string eventName, string? type = null)
-                 {
-                     //System.Diagnostics.Debug.WriteLine($"Lifecycle event: {eventName}{(type is null ? string.Empty : $" ({type})")}");
-
-                     // Cancel speech
-                     ClassSpeech.CancelTextToSpeech();
-
-                     return true;
-                 }
              });
 
 #if DEBUG
@@ -51,6 +41,22 @@ namespace ImageOcrText
 #endif
 
             return builder.Build();
+        }
+
+        /// <summary>
+        /// Process lifecycle event
+        /// </summary>
+        /// <param name="eventName"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        private static bool ProcessEvent(string eventName, string? type = null)
+        {
+            Debug.WriteLine($"Lifecycle event: {eventName}{(type is null ? string.Empty : $" ({type})")}");
+
+            // Cancel speech
+            ClassSpeech.CancelTextToSpeech();
+
+            return true;
         }
     }
 }

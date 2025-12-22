@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace ImageOcrText
+﻿namespace ImageOcrText
 {
     internal sealed class ClassSpeech
     {
