@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.11
- * Date ........: 2025-12-22 (YYYY-MM-DD)
+ * Date ........: 2025-12-23 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -154,7 +154,13 @@ namespace ImageOcrText
             {
                 Globals.cLanguageSpeech = "en-US";
             }
-
+#if IOS
+            // Use one of the normal voices for en-US (Reed, Samantha and Shelley) instead of the ridiculous voices in iOS
+            if (Globals.cLanguageSpeech == "en-US")
+            {
+                Globals.cLanguageSpeech = "en-US- Samantha";
+            }
+#endif
             // Initialize text to speech
             Globals.bTextToSpeechAvailable = await ClassSpeech.InitializeTextToSpeechAsync();
 

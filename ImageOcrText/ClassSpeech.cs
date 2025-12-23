@@ -34,6 +34,7 @@
                 {
                     cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
                     nItem++;
+                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name}");
                 }
 
                 Array.Sort(cLanguageLocales);
