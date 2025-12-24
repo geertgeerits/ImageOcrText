@@ -8,7 +8,9 @@
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
-        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        /// Android: .Language = ko - .Country = KR  .Name = Korean (South Korea)  .Id = ko-kr-x-ism-local
+        /// iOS:     .Language = ko - .Country = KR - .Name = Yuna  .Id = com.apple.voice.compact.ko-KR.Yuna
+        /// Windows: .Language = ko - .Country = KR - .Name = Microsoft David  .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
         /// </summary>
         public static async Task<bool> InitializeTextToSpeechAsync()
         {
@@ -17,7 +19,6 @@
                 // Initialize text to speech
                 locales = await TextToSpeech.Default.GetLocalesAsync();
                 int nTotalItems = locales.Count();
-
                 Debug.WriteLine($"Number of locales retrieved: {nTotalItems}");
 
                 if (nTotalItems == 0)
@@ -26,17 +27,24 @@
                     return false;
                 }
 
-                // Populate and sort locales
+                // Populate and sort the locales
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
-
+#if WINDOWS
                 foreach (var l in locales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
+                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} - {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}";
                     nItem++;
-                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name}");
+                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} - {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}");
                 }
-
+#else
+                foreach (var l in locales)
+                {
+                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} - {l.Id}";
+                    nItem++;
+                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} - {l.Id}");
+                }
+#endif
                 Array.Sort(cLanguageLocales);
 
                 return true;
@@ -207,12 +215,17 @@
                 try
                 {
                     cts = new CancellationTokenSource();
-
+#if WINDOWS
                     SpeechOptions options = new()
                     {
-                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name} - {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}" == Globals.cLanguageSpeech)
                     };
-
+#else
+                    SpeechOptions options = new()
+                    {
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name} - {l.Id}" == Globals.cLanguageSpeech)
+                    };
+#endif
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
                     Globals.bTextToSpeechIsBusy = false;
                 }
