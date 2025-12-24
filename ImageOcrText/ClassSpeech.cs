@@ -5,15 +5,19 @@
         private static string[]? cLanguageLocales;
         private static IEnumerable<Locale>? locales;
         private static CancellationTokenSource? cts;
+        
+        //private static Dictionary<string, string> cLanguageLocalesDic = [];
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
-        /// Android: .Language = ko - .Country = KR  .Name = Korean (South Korea)  .Id = ko-kr-x-ism-local
-        /// iOS:     .Language = ko - .Country = KR - .Name = Yuna  .Id = com.apple.voice.compact.ko-KR.Yuna
-        /// Windows: .Language = ko - .Country = KR - .Name = Microsoft David  .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
+        /// Android: .Language = ko- .Country = KR  .Name = Korean (South Korea)  .Id = ko-kr-x-ism-local
+        /// iOS:     .Language = ko- .Country = KR- .Name = Yuna  .Id = com.apple.voice.compact.ko-KR.Yuna
+        /// Windows: .Language = ko- .Country = KR- .Name = Microsoft David  .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
         /// </summary>
         public static async Task<bool> InitializeTextToSpeechAsync()
         {
+            Dictionary<string, string> cLanguageLocalesDicTemp = [];
+
             try
             {
                 // Initialize text to speech
@@ -43,9 +47,20 @@
                     cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} - {l.Id}";
                     nItem++;
                     //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} - {l.Id}");
+
+                    cLanguageLocalesDicTemp.Add(l.Id, $"{l.Language}-{l.Country} {l.Name}");
+                    Debug.WriteLine($"locales Dic: {l.Id} = {l.Language}-{l.Country} {l.Name}");
                 }
 #endif
                 Array.Sort(cLanguageLocales);
+
+                //List<KeyValuePair<string, string>> cLanguageLocalesDic = cLanguageLocalesDicTemp.OrderBy(x => x.Value).ToList();
+                IOrderedEnumerable<KeyValuePair<string, string>> cLanguageLocalesDic = from entry in cLanguageLocalesDicTemp orderby entry.Value ascending select entry;
+
+                //foreach (var kvp in cLanguageLocalesDic)
+                //{
+                //    Debug.WriteLine($"cLanguageLocalesDic Key: {kvp.Key}, Value: {kvp.Value}");
+                //}
 
                 return true;
             }
