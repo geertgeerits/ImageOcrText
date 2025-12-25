@@ -9,9 +9,9 @@
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
-        /// Android: .Language = ko- .Country = KR  .Name = Korean (South Korea) ! .Id = ko-kr-x-ism-local
-        /// iOS:     .Language = ko- .Country = KR- .Name = Yuna ! .Id = com.apple.voice.compact.ko-KR.Yuna
-        /// Windows: .Language = ko- .Country = KR- .Name = Microsoft David ! .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
+        /// Android: .Language = ko- .Country = KR  .Name = Korean (South Korea) : .Id = ko-kr-x-ism-local
+        /// iOS:     .Language = ko- .Country = KR- .Name = Yuna : .Id = com.apple.voice.compact.ko-KR.Yuna
+        /// Windows: .Language = ko- .Country = KR- .Name = Microsoft David : .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM
         /// </summary>
         public static async Task<bool> InitializeTextToSpeechAsync()
         {
@@ -48,6 +48,11 @@
 #endif
                 // Sort the locales
                 Array.Sort(cLanguageLocales);
+                
+                //foreach (string item in cLanguageLocales)
+                //{
+                //    Debug.WriteLine($"Sorted locales: {item}");
+                //}
 
                 return true;
             }
@@ -144,7 +149,7 @@
                             Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName NEW to OLD: " + cCultureName);
                         }
 
-                        // Search for the speech language as 'en-US ! Microsoft David'
+                        // Search for the speech language as 'en-US : Microsoft David'
                         index = Array.BinarySearch(cLanguageLocales, cCultureName, StringComparer.Ordinal);
                         if (index >= 0)
                         {
@@ -220,8 +225,8 @@
         {
             /* If you do not wait long enough to press the arrow key in the Task 'MakeExplainTurnAsync()',
                an error message will sometimes appear: 'The operation was canceled'.
-               This only occurs if the 'Explained by speech' setting is enabled.
-               The error occurs in the method 'ConvertTextToSpeechAsync()'. */
+               This only occurs if 'text to speech' is available and busy.
+               The error occurs in this method. */
 
             // Cancel the text to speech
             if (Globals.bTextToSpeechIsBusy)
