@@ -5,7 +5,8 @@
         private static string[]? cLanguageLocales;
         private static IEnumerable<Locale>? locales;
         private static CancellationTokenSource? cts;
-        
+        private static readonly string IdSeparator = " : ";
+
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
         /// Android: .Language = ko- .Country = KR  .Name = Korean (South Korea) ! .Id = ko-kr-x-ism-local
@@ -33,16 +34,16 @@
 #if WINDOWS
                 foreach (var l in locales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} ! {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}";
+                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id[(l.Id.LastIndexOf('\\') + 1)..]}";
                     nItem++;
-                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} ! {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}");
+                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id[(l.Id.LastIndexOf('\\') + 1)..]}");
                 }
 #else
                 foreach (var l in locales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} ! {l.Id}";
+                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id}";
                     nItem++;
-                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} ! {l.Id}");
+                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id}");
                 }
 #endif
                 // Sort the locales
@@ -77,9 +78,10 @@
             for (int nItem = 0; nItem < cLanguageLocales.Length; nItem++)
             {
 #if ANDROID
+                //picker.Items.Add(cLanguageLocales[nItem].Split(IdSeparator)[0]);  // Some strange results on Android !!!
                 picker.Items.Add(cLanguageLocales[nItem]);
 #else
-                picker.Items.Add(cLanguageLocales[nItem].Split(" ! ")[0]);  // Some strange results on Android !!!
+                picker.Items.Add(cLanguageLocales[nItem].Split(IdSeparator)[0]);
 #endif
                 //Debug.WriteLine(picker.Items[nItem].ToString());
             }
@@ -249,12 +251,12 @@
 #if WINDOWS
                     SpeechOptions options = new()
                     {
-                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name} ! {l.Id[(l.Id.LastIndexOf('\\') + 1)..]}" == Globals.cLanguageSpeech)
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id[(l.Id.LastIndexOf('\\') + 1)..]}" == Globals.cLanguageSpeech)
                     };
 #else
                     SpeechOptions options = new()
                     {
-                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name} ! {l.Id}" == Globals.cLanguageSpeech)
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id}" == Globals.cLanguageSpeech)
                     };
 #endif
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
