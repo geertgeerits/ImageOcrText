@@ -153,13 +153,7 @@
         /// <param name="e"></param>
         private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
         {
-            Picker picker = (Picker)sender;
-            int selectedIndex = picker.SelectedIndex;
-
-            if (selectedIndex != -1)
-            {
-                Globals.cLanguageSpeech = picker.Items[selectedIndex];
-            }
+            ClassSpeech.PickerLanguageSpeechChanged(sender, e);
         }
 
         /// <summary>
