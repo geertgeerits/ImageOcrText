@@ -171,7 +171,7 @@ namespace ImageOcrText
                 lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
                 // Search the selected language in the cLanguageLocales array
-                ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
+                int item = ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
 
                 // Save the speech language
                 Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);

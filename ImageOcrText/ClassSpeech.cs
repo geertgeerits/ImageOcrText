@@ -42,7 +42,7 @@
                 {
                     cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} ! {l.Id}";
                     nItem++;
-                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} ! {l.Id}");
+                    Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} ! {l.Id}");
                 }
 #endif
                 // Sort the locales
@@ -76,7 +76,12 @@
             // Populate the picker with the Language, Country and Name (without the Id) from the sorted locales array
             for (int nItem = 0; nItem < cLanguageLocales.Length; nItem++)
             {
-                picker.Items.Add(cLanguageLocales[nItem].Split(" ! ")[0]);
+#if ANDROID
+                picker.Items.Add(cLanguageLocales[nItem]);
+#else
+                picker.Items.Add(cLanguageLocales[nItem].Split(" ! ")[0]);  // Some strange results on Android !!!
+#endif
+                //Debug.WriteLine(picker.Items[nItem].ToString());
             }
 
             // Select the saved language
@@ -93,13 +98,12 @@
         public static void PickerLanguageSpeechChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
-            int selectedIndex = picker.SelectedIndex;
 
-            if (selectedIndex != -1)
+            if (picker.SelectedIndex != -1)
             {
-                if (cLanguageLocales != null && selectedIndex < cLanguageLocales.Length)
+                if (cLanguageLocales != null && picker.SelectedIndex < cLanguageLocales.Length)
                 {
-                    Globals.cLanguageSpeech = cLanguageLocales[selectedIndex];
+                    Globals.cLanguageSpeech = cLanguageLocales[picker.SelectedIndex];
                 }
             }
         }
@@ -115,6 +119,7 @@
             try
             {
                 int nTotalItems = cLanguageLocales?.Length ?? 0;
+                int index;
 
                 if (cLanguageLocales is not null)
                 {
@@ -124,14 +129,13 @@
                         // Android generating old/wrong language codes - https://stackoverflow.com/questions/44245959/android-generating-wrong-language-code-for-indonesia
                         if (cCultureName.StartsWith("id") || cCultureName.StartsWith("he") || cCultureName.StartsWith("yi"))
                         {
-                            for (int nItem = 0; nItem < nTotalItems; nItem++)
+                            index = Array.FindIndex(cLanguageLocales, s => s.StartsWith(cCultureName, StringComparison.Ordinal));
+                            if (index >= 0)
                             {
-                                if (cLanguageLocales[nItem].StartsWith(cCultureName))
-                                {
-                                    Globals.cLanguageSpeech = cLanguageLocales[nItem];
-                                    return nItem;
-                                }
+                                Globals.cLanguageSpeech = cLanguageLocales[index];
+                                return index;
                             }
+                            Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName OLD found: " + cCultureName);
 
                             // Map new language codes to old codes
                             cCultureName = GetCurrentLanguageTag(cCultureName);
@@ -139,37 +143,34 @@
                         }
 
                         // Search for the speech language as 'en-US ! Microsoft David'
-                        for (int nItem = 0; nItem < nTotalItems; nItem++)
+                        index = Array.BinarySearch(cLanguageLocales, cCultureName, StringComparer.Ordinal);
+                        if (index >= 0)
                         {
-                            if (cLanguageLocales[nItem] == (cCultureName))
-                            {
-                                Globals.cLanguageSpeech = cLanguageLocales[nItem];
-                                return nItem;
-                            }
+                            Globals.cLanguageSpeech = cLanguageLocales[index];
+                            return index;
                         }
+                        //Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName 'FULL' not found: " + cCultureName);
 
                         // Search for the speech language as 'en-US'
-                        for (int nItem = 0; nItem < nTotalItems; nItem++)
+                        index = Array.FindIndex(cLanguageLocales, s => s.StartsWith(cCultureName, StringComparison.Ordinal));
+                        if (index >= 0)
                         {
-                            if (cLanguageLocales[nItem].StartsWith(cCultureName))
-                            {
-                                Globals.cLanguageSpeech = cLanguageLocales[nItem];
-                                return nItem;
-                            }
+                            Globals.cLanguageSpeech = cLanguageLocales[index];
+                            return index;
                         }
+                        //Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName 'en-US' not found: " + cCultureName);
 
                         // Select the characters before the first hyphen if there is a hyphen in the string
                         cCultureName = cCultureName.Split('-')[0];
 
                         // Search for the speech language as 'en'
-                        for (int nItem = 0; nTotalItems > nItem; nItem++)
+                        index = Array.FindIndex(cLanguageLocales, s => s.StartsWith(cCultureName, StringComparison.Ordinal));
+                        if (index >= 0)
                         {
-                            if (cLanguageLocales[nItem].StartsWith(cCultureName))
-                            {
-                                Globals.cLanguageSpeech = cLanguageLocales[nItem];
-                                return nItem;
-                            }
+                            Globals.cLanguageSpeech = cLanguageLocales[index];
+                            return index;
                         }
+                        //Debug.WriteLine("SearchArrayWithSpeechLanguages - cCultureName 'en' found: " + cCultureName);
                     }
                 }
 
