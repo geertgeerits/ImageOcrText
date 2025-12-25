@@ -42,7 +42,7 @@
                 {
                     cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name} ! {l.Id}";
                     nItem++;
-                    Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} ! {l.Id}");
+                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name} ! {l.Id}");
                 }
 #endif
                 // Sort the locales
