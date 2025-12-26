@@ -223,7 +223,7 @@
         /// <returns></returns>
         public static async Task ConvertTextToSpeechAsync(object sender, string cText)
         {
-            /* If you do not wait long enough to press the arrow key in the Task 'MakeExplainTurnAsync()',
+            /* If there is too rapid switching between starting and stopping speech,
                an error message will sometimes appear: 'The operation was canceled'.
                This only occurs if 'text to speech' is available and busy.
                The error occurs in this method. */
