@@ -7,7 +7,7 @@
         private static CancellationTokenSource? cts;
 
         /// <summary>
-        /// Initialize text to speech and fill the the array with the speech languages
+        /// Initialize text to speech and fill the the array with the speech languages ( : is separator before the Id)
         /// Android: .Language = ko- .Country = KR  .Name = Korean (South Korea) : .Id = ko-kr-x-ism-local
         /// iOS:     .Language = ko- .Country = KR- .Name = Yuna : .Id = com.apple.voice.compact.ko-KR.Yuna
         /// Windows: .Language = ko- .Country = KR- .Name = Microsoft David : .Id = HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_enUS_DavidM

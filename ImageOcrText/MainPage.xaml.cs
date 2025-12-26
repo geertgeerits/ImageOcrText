@@ -154,13 +154,7 @@ namespace ImageOcrText
             {
                 Globals.cLanguageSpeech = "en-US";
             }
-#if IOS
-            // Use one of the normal voices for en-US (Reed, Samantha and Shelley) instead of the ridiculous voices in iOS
-            if (Globals.cLanguageSpeech == "en-US")
-            {
-                Globals.cLanguageSpeech = "en-US- Samantha";
-            }
-#endif
+
             // Initialize text to speech
             Globals.bTextToSpeechAvailable = await ClassSpeech.InitializeTextToSpeechAsync();
 
