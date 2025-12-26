@@ -5,7 +5,6 @@
         private static string[]? cLanguageLocales;
         private static IEnumerable<Locale>? locales;
         private static CancellationTokenSource? cts;
-        private static readonly string IdSeparator = " : ";
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
@@ -31,24 +30,31 @@
                 // Populate the locales
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
-#if WINDOWS
+
                 foreach (var l in locales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id[(l.Id.LastIndexOf('\\') + 1)..]}";
+                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
                     nItem++;
-                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id[(l.Id.LastIndexOf('\\') + 1)..]}");
                 }
-#else
-                foreach (var l in locales)
+
+                // Remove the items in the array where the 5 first characters are duplicates of the first occurring 5 characters
+                var uniqueLocales = new List<string>();
+                var seenPrefixes = new HashSet<string>();
+
+                foreach (var item in cLanguageLocales)
                 {
-                    cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id}";
-                    nItem++;
-                    //Debug.WriteLine($"locales: {l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id}");
+                    var prefix = item[..5];
+                    if (seenPrefixes.Add(prefix))
+                    {
+                        uniqueLocales.Add(item);
+                    }
                 }
-#endif
+
+                cLanguageLocales = [.. uniqueLocales];
+
                 // Sort the locales
                 Array.Sort(cLanguageLocales);
-                
+
                 //foreach (string item in cLanguageLocales)
                 //{
                 //    Debug.WriteLine($"Sorted locales: {item}");
@@ -80,15 +86,9 @@
             }
 
             // Populate the picker with the Language, Country and Name (without the Id) from the sorted locales array
-            for (int nItem = 0; nItem < cLanguageLocales.Length; nItem++)
+            foreach (var locale in cLanguageLocales)
             {
-#if ANDROID
-                //picker.Items.Add(cLanguageLocales[nItem].Split(IdSeparator)[0]);  // Some strange results on Android !!!
-                picker.Items.Add(cLanguageLocales[nItem]);
-#else
-                picker.Items.Add(cLanguageLocales[nItem].Split(IdSeparator)[0]);
-#endif
-                //Debug.WriteLine(picker.Items[nItem].ToString());
+                picker.Items.Add(locale);
             }
 
             // Select the saved language
@@ -253,20 +253,15 @@
                 try
                 {
                     cts = new CancellationTokenSource();
-#if WINDOWS
+
                     SpeechOptions options = new()
                     {
-                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id[(l.Id.LastIndexOf('\\') + 1)..]}" == Globals.cLanguageSpeech)
+                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}" == Globals.cLanguageSpeech)
                     };
-#else
-                    SpeechOptions options = new()
-                    {
-                        Locale = locales?.FirstOrDefault(static l => $"{l.Language}-{l.Country} {l.Name}{IdSeparator}{l.Id}" == Globals.cLanguageSpeech)
-                    };
-#endif
+
                     await TextToSpeech.Default.SpeakAsync(cText, options, cancelToken: cts.Token);
                     Globals.bTextToSpeechIsBusy = false;
-                }
+                } 
                 catch (Exception ex)
                 {
 #if DEBUG
