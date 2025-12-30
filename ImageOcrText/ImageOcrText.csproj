@@ -29,9 +29,9 @@
 		<ApplicationId>com.companyname.imageocrtext</ApplicationId>
 
 		<!-- Versions -->
-		<PackageVersion>1.0.11</PackageVersion>
-		<ApplicationDisplayVersion>1.0.11</ApplicationDisplayVersion>
-		<ApplicationVersion>11</ApplicationVersion>
+		<PackageVersion>1.0.12</PackageVersion>
+		<ApplicationDisplayVersion>1.0.12</ApplicationDisplayVersion>
+		<ApplicationVersion>12</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">13.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -160,8 +160,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.11</ApplicationDisplayVersion>
-		<ApplicationVersion>11</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.12</ApplicationDisplayVersion>
+		<ApplicationVersion>12</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
 	</PropertyGroup>
 
@@ -174,8 +174,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.11</ApplicationDisplayVersion>
-		<ApplicationVersion>11</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.12</ApplicationDisplayVersion>
+		<ApplicationVersion>12</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
 	</PropertyGroup>
 

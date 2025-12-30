@@ -6,7 +6,7 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="maui-package-name-placeholder" Publisher="CN=User Name" Version="1.0.11.0" />
+  <Identity Name="maui-package-name-placeholder" Publisher="CN=User Name" Version="1.0.12.0" />
 
   <mp:PhoneIdentity PhoneProductId="36273B46-98F8-43A3-AD8C-A732C0726D23" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -21,10 +21,28 @@
     <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
   </Dependencies>
 
-  <Resources>
+  <!--<Resources>
     <Resource Language="x-generate" />
-  </Resources>
+  </Resources>-->
 
+  <Resources>
+	<Resource Language="en-US" />
+	<Resource Language="cs-CZ" />
+	<Resource Language="da-DK" />
+	<Resource Language="de-DE" />
+	<Resource Language="es-ES" />
+	<Resource Language="fi-FI" />
+	<Resource Language="fr-FR" />
+	<Resource Language="hu-HU" />
+	<Resource Language="it-IT" />
+	<Resource Language="nb-NO" />
+	<Resource Language="nl-NL" />
+	<Resource Language="pl-PL" />
+	<Resource Language="pt-BR" />
+	<Resource Language="ro-RO" />
+	<Resource Language="sv-SE" />
+  </Resources>
+	
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
       <uap:VisualElements

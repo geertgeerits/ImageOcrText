@@ -18,7 +18,7 @@ namespace ImageOcrText
             lblTitlePage.Margin = new Thickness(70, 5, 0, 0);
 #endif
             //// Put text in the chosen language in the controls and variables
-            lblVersion.Text = $"{OcrLang.Version_Text} 1.0.11";
+            lblVersion.Text = $"{OcrLang.Version_Text} 1.0.12";
             lblCopyright.Text = $"{OcrLang.Copyright_Text} © 2024-2026 Geert Geerits";
             lblPrivacyPolicy.Text = $"\n{OcrLang.PrivacyPolicyTitle_Text} {OcrLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{OcrLang.LicenseTitle_Text}: {OcrLang.License_Text}";
