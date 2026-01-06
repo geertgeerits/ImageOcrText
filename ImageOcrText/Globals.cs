@@ -13,8 +13,8 @@
         public static int nLanguageOcrIndex;
         public static string cLanguageOcr = "";
         public static List<string> supportedLanguagesOcr = [];
-        public static string cImageTextToSpeech = "ic_action_volume_up.png";
-        public static string cImageTextToSpeechCancel = "ic_action_volume_mute.png";
+        public static readonly string cImageTextToSpeech = "ic_action_volume_up.png";
+        public static readonly string cImageTextToSpeechCancel = "ic_action_volume_mute.png";
         public static bool bLicense;
 
         //// Global methods
