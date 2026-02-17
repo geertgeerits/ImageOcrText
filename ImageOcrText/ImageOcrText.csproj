@@ -22,6 +22,12 @@
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
+		<!--XAML Source Generation - stored in Dependencies-net10.0xxx-Analyzers-Microsoft.Maui.Controls.SourceGen-->
+		<MauiXamlInflator>SourceGen</MauiXamlInflator>
+		<!--Optional (for Visual Studio Code)-->
+		<!--<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>C:\x</CompilerGeneratedFilesOutputPath>-->
+
 		<!-- Display name -->
 		<ApplicationTitle>Image to Text (OCR)</ApplicationTitle>
 
@@ -112,8 +118,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.20" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.40" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.3" />
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.1.1" />
 		<!--<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 			<Version>1.7.0.2</Version>
