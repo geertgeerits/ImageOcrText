@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.12
- * Date ........: 2026-04-11 (YYYY-MM-DD)
+ * Date ........: 2026-06-29 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
@@ -165,7 +165,7 @@ namespace ImageOcrText
                 lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
 
                 // Search the selected language in the cLanguageLocales array
-                int item = ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
+                _ = ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
 
                 // Save the speech language
                 Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
@@ -358,27 +358,10 @@ namespace ImageOcrText
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        [Obsolete]
         private async void OnPickImageClicked(object sender, EventArgs e)
         {
-#if ANDROID
-            // Picks one image on Android - !!!BUG!!! If picking multiple images then: Error on Android 16 .NET 10 Object reference not set to an instance of an object            
-            OnPickImageClickedOneImage(sender, e);
-#else
-            // Picks multiple images on Windows - Picks one image on iOS
-            OnPickImageClickedMultipleImages(sender, e);
-#endif
-        }
-
-        /// <summary>
-        /// Click event: Pick one image from the gallery
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        [Obsolete]
-        private async void OnPickImageClickedOneImage(object sender, EventArgs e)
-        {
             activityIndicator.IsRunning = true;
+            activityIndicator.IsVisible = true;
 
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
 
@@ -386,56 +369,7 @@ namespace ImageOcrText
 
             try
             {
-                FileResult? pickResult = await MediaPicker.Default.PickPhotoAsync();
-
-                OcrOptions options = new OcrOptions.Builder()
-                .SetLanguage(Globals.cLanguageOcr)
-                .SetTryHard(true)
-                .Build();
-
-                if (pickResult != null)
-                {
-                    using Stream imageAsStream = await pickResult.OpenReadAsync();
-                    byte[] imageAsBytes = new byte[imageAsStream.Length];
-                    _ = await imageAsStream.ReadAsync(imageAsBytes);
-
-                    OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
-
-                    if (!ocrResult.Success)
-                    {
-                        await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
-                        return;
-                    }
-
-                    edtOcrResult.Text = ocrResult.AllText;
-                }
-            }
-            catch (Exception ex)
-            {
-#if DEBUG
-                await DisplayAlertAsync("Error", $"{ex.Message}\n\n{ex.StackTrace}", "OK");
-#endif
-            }
-
-            activityIndicator.IsRunning = false;
-        }
-
-        /// <summary>
-        /// Click event: Pick Multiple images from the gallery
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnPickImageClickedMultipleImages(object sender, EventArgs e)
-        {
-            activityIndicator.IsRunning = true;
-
-            imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
-
-            Debug.WriteLine("Mainpage OnPickImageClicked: " + Globals.cLanguageOcr);  // For testing
-
-            try
-            {
-                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();  //!!!BUG!!! Error on Android 16 .NET 10 Object reference not set to an instance of an object
+                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();
 
                 if (fileResults == null || fileResults.Count == 0)
                 {
@@ -443,7 +377,7 @@ namespace ImageOcrText
                 }
 
                 string allText = "";
-                
+
                 OcrOptions options = new OcrOptions.Builder()
                 .SetLanguage(Globals.cLanguageOcr)
                 .SetTryHard(true)
@@ -459,17 +393,21 @@ namespace ImageOcrText
 
                         OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
-                        if (!ocrResult.Success)
+                        if (ocrResult.Success)
                         {
-                            await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
-                            return;
+                            allText += ocrResult.AllText + "\n\n";
                         }
-
-                        allText += ocrResult.AllText + "\n\n";
                     }
                 }
 
-                edtOcrResult.Text = allText;
+                if (!string.IsNullOrEmpty(allText))
+                {
+                    edtOcrResult.Text = allText;
+                }
+                else
+                {
+                    edtOcrResult.Text = OcrLang.ImageToTextError_Text;
+                }
             }
             catch (Exception ex)
             {
@@ -479,6 +417,7 @@ namespace ImageOcrText
             }
 
             activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;
         }
 
         /// <summary>
@@ -489,6 +428,7 @@ namespace ImageOcrText
         private async void OnTakePictureClicked(object sender, EventArgs e)
         {
             activityIndicator.IsRunning = true;
+            activityIndicator.IsVisible = true;
 
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
 
@@ -509,13 +449,14 @@ namespace ImageOcrText
 
                     OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
-                    if (!ocrResult.Success)
+                    if (ocrResult.Success)
                     {
-                        await DisplayAlertAsync(OcrLang.ErrorTitle_Text, OcrLang.ImageToTextError_Text, OcrLang.ButtonClose_Text);
-                        return;
+                        edtOcrResult.Text = ocrResult.AllText;
                     }
-
-                    edtOcrResult.Text = ocrResult.AllText;
+                    else
+                    {
+                        edtOcrResult.Text = OcrLang.ImageToTextError_Text;
+                    }
                 }
             }
             catch (Exception ex)
@@ -526,6 +467,7 @@ namespace ImageOcrText
             }
 
             activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;
         }
 
         /// <summary>
