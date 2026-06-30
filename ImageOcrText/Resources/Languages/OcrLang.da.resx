@@ -163,7 +163,7 @@
     <value>Optisk tegngenkendelse</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Intet billede til tekst muligt.</value>
+    <value>Der blev ikke fundet nogen tekst i billedet.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Billede til tekst: teksten kan redigeres, kopieres, deles og læses højt.

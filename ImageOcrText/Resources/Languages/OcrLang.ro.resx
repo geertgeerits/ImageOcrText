@@ -163,7 +163,7 @@
     <value>Recunoaștere optică a caracterelor</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Nu este posibilă nicio imagine în text.</value>
+    <value>Nu a fost detectat text în imagine.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Imagine în text: textul poate fi editat, copiat, partajat și citit cu voce tare.

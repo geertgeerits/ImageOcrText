@@ -2,7 +2,7 @@
 {
     public sealed partial class PageSettings : ContentPage
     {
-        //// Local variables
+        // Local variables
         private readonly Stopwatch stopWatch = new();
 
         public PageSettings()
@@ -17,13 +17,13 @@
                 return;
             }
 #if WINDOWS
-            //// Set the margins for the controls in the title bar for Windows
+            // Set the margins for the controls in the title bar for Windows
             lblTitlePage.Margin = new Thickness(70, 5, 0, 0);
 #endif
-            //// Put text in the chosen language in the controls and variables
+            // Put text in the chosen language in the controls and variables
             SetLanguage();
 
-            //// Set the current language in the picker
+            // Set the current language in the picker
             pckLanguage.SelectedIndex = Globals.cLanguage switch
             {
                 "cs" => 0,      // Čeština - Czech
@@ -43,10 +43,10 @@
                 _ => 3,         // English
             };
 
-            //// Fill the picker with the speech languages and select the saved language in the picker
+            // Fill the picker with the speech languages and select the saved language in the picker
             ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
 
-            //// Fill the picker with the OCR languages and set the saved language in the picker
+            // Fill the picker with the OCR languages and set the saved language in the picker
             FillPickerWithOcrLanguages();
 
             // Start the stopWatch for resetting all the settings

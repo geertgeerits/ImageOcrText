@@ -163,7 +163,7 @@
     <value>Optische Zeichenerkennung</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Keine Bild-zu-Text-Konvertierung möglich.</value>
+    <value>Im Bild wurde kein Text erkannt.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Bild zu Text: Der Text kann bearbeitet, kopiert, geteilt und vorgelesen werden.

@@ -163,7 +163,7 @@
     <value>Riconoscimento ottico dei caratteri</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Impossibile convertire l'immagine in testo.</value>
+    <value>Nell'immagine non è stato rilevato alcun testo.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Immagine in testo: il testo può essere modificato, copiato, condiviso e letto ad alta voce. Non tutte le lingue sono supportate, questo dipende dal dispositivo e dalle lingue installate. Anche il font, la dimensione, il contrasto e la qualità sono importanti. Non vi è alcuna garanzia che il testo convertito sia corretto.

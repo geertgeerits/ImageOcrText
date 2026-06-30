@@ -163,7 +163,7 @@
     <value>Optikai karakter felismerés</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Képből szöveg nem lehetséges.</value>
+    <value>Nem észlelhető szöveg a képen.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Kép szöveggé: a szöveg szerkeszthető, másolható, megosztható és felolvasható.

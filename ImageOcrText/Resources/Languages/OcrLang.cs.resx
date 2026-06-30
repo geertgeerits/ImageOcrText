@@ -163,7 +163,7 @@
     <value>Optické rozpoznávání znaků</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>No es posible convertir imagen a texto.</value>
+    <value>Na obrázku nebyl detekován žádný text.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Obrázek na text: text lze upravovat, kopírovat, sdílet a číst nahlas.

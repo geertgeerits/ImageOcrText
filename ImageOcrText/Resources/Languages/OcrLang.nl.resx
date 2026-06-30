@@ -163,7 +163,7 @@
     <value>Optische karakter herkenning</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Geen afbeelding naar tekst mogelijk.</value>
+    <value>Er werd geen tekst in de afbeelding gedetecteerd.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Afbeelding naar tekst: de tekst kan worden bewerkt, gekopieerd, gedeeld en voorgelezen.

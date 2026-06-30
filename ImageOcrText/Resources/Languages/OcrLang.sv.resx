@@ -163,7 +163,7 @@
     <value>Optisk teckenigenkänning</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Ingen bild till text möjlig.</value>
+    <value>Ingen text upptäcktes i bilden.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Bild till text: texten kan redigeras, kopieras, delas och läsas upp.

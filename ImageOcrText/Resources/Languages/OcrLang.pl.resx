@@ -163,7 +163,7 @@
     <value>Optyczne rozpoznawanie znaków</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Nie ma możliwości zamiany obrazu na tekst.</value>
+    <value>Na obrazie nie wykryto tekstu.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Obraz na tekst: tekst można edytować, kopiować, udostępniać i czytać na głos.

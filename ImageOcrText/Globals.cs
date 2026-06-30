@@ -1,9 +1,9 @@
 ﻿namespace ImageOcrText
 {
-    //// Global variables and methods
+    // Global variables and methods
     internal static class Globals
     {
-        //// Global variables
+        // Global variables
         public static string cTheme = "";
         public static string cLanguage = "";
         public static bool bLanguageChanged;
@@ -17,7 +17,7 @@
         public static readonly string cImageTextToSpeechCancel = "ic_action_volume_mute.png";
         public static bool bLicense;
 
-        //// Global methods
+        // Global methods
 
         /// <summary>
         /// Set the theme

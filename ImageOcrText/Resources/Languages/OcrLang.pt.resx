@@ -163,7 +163,7 @@
     <value>Reconhecimento Óptico de Caracteres</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Não é possível converter imagem em texto.</value>
+    <value>Nenhum texto foi detectado na imagem.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Imagem para texto: o texto pode ser editado, copiado, compartilhado e lido em voz alta.

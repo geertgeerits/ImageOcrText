@@ -2,11 +2,11 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.12
- * Date ........: 2026-06-29 (YYYY-MM-DD)
+ * Date ........: 2026-06-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
- * Dependencies : NuGet Package: Plugin.Maui.OCR Version 1.1.1 - by kfrancis - https://github.com/kfrancis/ocr
+ * Dependencies : NuGet Package: Plugin.Maui.OCR by kfrancis - https://github.com/kfrancis/ocr
  * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI
  *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
 
@@ -16,7 +16,7 @@ namespace ImageOcrText
 {
     public sealed partial class MainPage : ContentPage
     {
-        //// Local variables
+        // Local variables
         private string cLicense = "";
 
         public MainPage()
@@ -33,32 +33,25 @@ namespace ImageOcrText
                 return;
             }
 #if WINDOWS
-            //// Set the margins for the controls in the title bar for Windows
+            // Set the margins for the controls in the title bar for Windows
             imgbtnAbout.Margin = new Thickness(20, 0, 0, 0);
             lblTitle.Margin = new Thickness(20, 10, 0, 0);
 #endif
 #if IOS
-            //// AutoSize has to be disabled for iOS
+            // AutoSize has to be disabled for iOS
             edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
 
-            //// Set the scale of the activity indicator for iOS
+            // Set the scale of the activity indicator for iOS
             activityIndicator.Scale = 2;
-
-            //// Workaround for the !!!BUG!!! in iOS
-            //// VerticalOptions in editor is not working when going from portrait to landscape
-            //DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged!;
-
-            //// Disable the default behavior of automatically scrolling the view when the keyboard appears
-            //DisconnectKeyboardAutoScroll();
 #endif
-            //// Get the saved settings
+            // Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.nLanguageOcrIndex = Preferences.Default.Get("SettingLanguageOcrIndex", 0);
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
-            //// The height of the title bar is lower when an iPhone is in horizontal position
+            // The height of the title bar is lower when an iPhone is in horizontal position
             if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
                 imgbtnAbout.VerticalOptions = LayoutOptions.Start;
@@ -67,7 +60,7 @@ namespace ImageOcrText
                 imgbtnSettings.VerticalOptions = LayoutOptions.Start;
             }
 
-            //// Set the info button to the Center position in the title bar for iOS
+            // Set the info button to the Center position in the title bar for iOS
             if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
                 imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
@@ -84,17 +77,17 @@ namespace ImageOcrText
                 }
             }
 
-            //// !!!BUG!!! in Windows - The vertical allignment of the language labels is wrong in WinUI
+            // !!!BUG!!! in Windows - The vertical allignment of the language labels is wrong in WinUI
             if (DeviceInfo.Platform == DevicePlatform.WinUI)
             {
                 lblLanguageOcr.Padding = new Thickness(0, 10, 0, 0);
                 lblTextToSpeech.Padding = new Thickness(0, 10, 0, 0);
             }
 
-            //// Set the theme
+            // Set the theme
             Globals.SetTheme();
 
-            //// Get and set the user interface language after a first start or reset of the application
+            // Get and set the user interface language after a first start or reset of the application
             try
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
@@ -119,19 +112,19 @@ namespace ImageOcrText
                 Debug.WriteLine("MainPage - Globals.cLanguage: " + Globals.cLanguage);
             }
 
-            //// Set the text language
+            // Set the text language
             SetTextLanguage();
 
-            //// Initialize text to speech and get and set the speech language
+            // Initialize text to speech and get and set the speech language
             InitializeTextToSpeechAsync();
 
-            //// Set the language for the OCR plugin to 'All supported languages', necessary after a reset of the application
+            // Set the language for the OCR plugin to 'All supported languages', necessary after a reset of the application
             Globals.cLanguageOcr = "";
 
-            //// Clear the clipboard
+            // Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
 
-            //// Set focus to the editor
+            // Set focus to the editor
             edtOcrResult.Focus();
         }
 
@@ -181,10 +174,7 @@ namespace ImageOcrText
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-#if IOS
-            // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
-            //AppDelegate.CurrentPage = "MainPage";
-#endif
+
             // Initialize the OCR plugin
             await OcrPlugin.Default.InitAsync();
 #if !ANDROID
@@ -217,19 +207,6 @@ namespace ImageOcrText
 
             lblLanguageOcr.Text = Globals.cLanguageOcr;
         }
-        
-        /*
-        /// <summary>
-        /// // Prevent the app from rotating when the MainPage is displayed (!!!BUG!!! in iOS for the editor)
-        /// </summary>
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-#if IOS
-            AppDelegate.CurrentPage = string.Empty;
-#endif
-        }
-        */
         
         /// <summary>
         /// Initialize supported OCR languages for the OCR plugin
@@ -340,7 +317,7 @@ namespace ImageOcrText
             }
         }
 
-        //// TitleView buttons clicked events
+        // TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
@@ -354,7 +331,7 @@ namespace ImageOcrText
         }
 
         /// <summary>
-        /// Click event: Pick one or more images from the gallery
+        /// Click event: Pick an image from the gallery
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -364,15 +341,25 @@ namespace ImageOcrText
             activityIndicator.IsVisible = true;
 
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
+            edtOcrResult.Text = string.Empty;
 
             Debug.WriteLine("Mainpage OnPickImageClicked: " + Globals.cLanguageOcr);  // For testing
 
             try
             {
-                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync();
+                List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
+                {
+                    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                    RotateImage = true,
+                    PreserveMetaData = true,
+                    CompressionQuality = 100
+                });
 
                 if (fileResults == null || fileResults.Count == 0)
                 {
+                    activityIndicator.IsRunning = false;
+                    activityIndicator.IsVisible = false;
+                    
                     return;
                 }
 
@@ -400,13 +387,14 @@ namespace ImageOcrText
                     }
                 }
 
-                if (!string.IsNullOrEmpty(allText))
+                if (string.IsNullOrEmpty(allText) || allText == "\n\n")
                 {
-                    edtOcrResult.Text = allText;
+                    edtOcrResult.Text = OcrLang.ImageToTextError_Text;
                 }
                 else
                 {
-                    edtOcrResult.Text = OcrLang.ImageToTextError_Text;
+                    // Remove the problematic line - let default styling handle text color
+                    edtOcrResult.Text = allText;
                 }
             }
             catch (Exception ex)
@@ -431,6 +419,7 @@ namespace ImageOcrText
             activityIndicator.IsVisible = true;
 
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
+            edtOcrResult.Text = string.Empty;
 
             try
             {
@@ -449,7 +438,7 @@ namespace ImageOcrText
 
                     OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
-                    if (ocrResult.Success)
+                    if (ocrResult.Success && !string.IsNullOrEmpty(ocrResult.AllText))
                     {
                         edtOcrResult.Text = ocrResult.AllText;
                     }

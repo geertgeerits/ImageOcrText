@@ -136,7 +136,6 @@
             </ImageButton>
         </HorizontalStackLayout>
 
-        <!--// https://stackoverflow.com/questions/72839872/expandable-editor-in-scrollview-cutting-text-in-maui-->
         <Border
             Style="{StaticResource borderStyleDefault}"
             Grid.Row="1"

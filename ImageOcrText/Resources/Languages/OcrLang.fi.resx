@@ -163,7 +163,7 @@
     <value>Optinen hahmon tunnistus</value>
   </data>
   <data name="ImageToTextError_Text" xml:space="preserve">
-    <value>Kuva tekstiksi ei ole mahdollista.</value>
+    <value>Kuvasta ei löytynyt tekstiä.</value>
   </data>
   <data name="InfoExplanation_Text" xml:space="preserve">
     <value>Kuva tekstiksi: tekstiä voidaan muokata, kopioida, jakaa ja lukea ääneen.
