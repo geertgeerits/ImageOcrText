@@ -5,10 +5,9 @@
  * Date ........: 2026-06-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
- * Note ........: Only portrait mode is supported for iOS (!!!BUG!!! problems with the editor in iOS when turning from landscape to portrait)
+ * Note ........: 
  * Dependencies : NuGet Package: Plugin.Maui.OCR by kfrancis - https://github.com/kfrancis/ocr
- * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI
- *                https://www.youtube.com/watch?v=alY_6Qn0_60 */
+ * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI - https://www.youtube.com/watch?v=alY_6Qn0_60 */
 
 using Plugin.Maui.OCR;
 
@@ -33,13 +32,29 @@ namespace ImageOcrText
                 return;
             }
 #if WINDOWS
+            // !!!BUG!!! in Windows - The vertical alignment of the language labels is wrong in WinUI
+            lblLanguageOcr.Padding = new Thickness(0, 10, 0, 0);
+            lblTextToSpeech.Padding = new Thickness(0, 10, 0, 0);
+            
             // Set the margins for the controls in the title bar for Windows
             imgbtnAbout.Margin = new Thickness(20, 0, 0, 0);
             lblTitle.Margin = new Thickness(20, 10, 0, 0);
 #endif
 #if IOS
-            // AutoSize has to be disabled for iOS
+            // !!!BUG!!! in iOS.  AutoSize has to be disabled for iOS, otherwise scrolling is more difficult when in landscape mode.
             edtOcrResult.AutoSize = EditorAutoSizeOption.Disabled;
+
+            // Set the info button to the horizontal center position in the title bar
+            imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
+
+            // The height of the title bar is lower when an iPhone is in landscape position
+            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+            {
+                imgbtnAbout.VerticalOptions = LayoutOptions.Start;
+                lblTitle.VerticalOptions = LayoutOptions.Start;
+                lblTitle.VerticalTextAlignment = TextAlignment.Start;
+                imgbtnSettings.VerticalOptions = LayoutOptions.Start;
+            }
 
             // Set the scale of the activity indicator for iOS
             activityIndicator.Scale = 2;
@@ -50,39 +65,6 @@ namespace ImageOcrText
             Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
             Globals.nLanguageOcrIndex = Preferences.Default.Get("SettingLanguageOcrIndex", 0);
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
-
-            // The height of the title bar is lower when an iPhone is in horizontal position
-            if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Phone)
-            {
-                imgbtnAbout.VerticalOptions = LayoutOptions.Start;
-                lblTitle.VerticalOptions = LayoutOptions.Start;
-                lblTitle.VerticalTextAlignment = TextAlignment.Start;
-                imgbtnSettings.VerticalOptions = LayoutOptions.Start;
-            }
-
-            // Set the info button to the Center position in the title bar for iOS
-            if (DeviceInfo.Platform == DevicePlatform.iOS)
-            {
-                imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
-
-                // !!!BUG!!! in iOS from Maui 8.0.21+?
-                // The width of the editor has to be set otherwise the editor is a vertical line
-                if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                {
-                    edtOcrResult.MinimumWidthRequest = 320;
-                }
-                else
-                {
-                    edtOcrResult.MinimumWidthRequest = 700;
-                }
-            }
-
-            // !!!BUG!!! in Windows - The vertical allignment of the language labels is wrong in WinUI
-            if (DeviceInfo.Platform == DevicePlatform.WinUI)
-            {
-                lblLanguageOcr.Padding = new Thickness(0, 10, 0, 0);
-                lblTextToSpeech.Padding = new Thickness(0, 10, 0, 0);
-            }
 
             // Set the theme
             Globals.SetTheme();
@@ -342,6 +324,7 @@ namespace ImageOcrText
 
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             edtOcrResult.Text = string.Empty;
+            edtOcrResult.Placeholder = string.Empty;
 
             Debug.WriteLine("Mainpage OnPickImageClicked: " + Globals.cLanguageOcr);  // For testing
 
@@ -389,11 +372,10 @@ namespace ImageOcrText
 
                 if (string.IsNullOrEmpty(allText) || allText == "\n\n")
                 {
-                    edtOcrResult.Text = OcrLang.ImageToTextError_Text;
+                    edtOcrResult.Placeholder = OcrLang.ImageToTextError_Text;
                 }
                 else
                 {
-                    // Remove the problematic line - let default styling handle text color
                     edtOcrResult.Text = allText;
                 }
             }
@@ -420,6 +402,7 @@ namespace ImageOcrText
 
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
             edtOcrResult.Text = string.Empty;
+            edtOcrResult.Placeholder = string.Empty;
 
             try
             {
@@ -444,7 +427,7 @@ namespace ImageOcrText
                     }
                     else
                     {
-                        edtOcrResult.Text = OcrLang.ImageToTextError_Text;
+                        edtOcrResult.Placeholder = OcrLang.ImageToTextError_Text;
                     }
                 }
             }
