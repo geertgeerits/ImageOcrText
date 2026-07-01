@@ -31,19 +31,19 @@
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
 
-                foreach (var l in locales)
+                foreach (Locale l in locales)
                 {
                     cLanguageLocales[nItem] = $"{l.Language}-{l.Country} {l.Name}";
                     nItem++;
                 }
 
                 // Remove the items in the array where the 5 first characters are duplicates of the first occurring 5 characters
-                var uniqueLocales = new List<string>();
-                var seenPrefixes = new HashSet<string>();
+                List<string> uniqueLocales = [];
+                HashSet<string> seenPrefixes = [];
 
-                foreach (var item in cLanguageLocales)
+                foreach (string item in cLanguageLocales)
                 {
-                    var prefix = item[..5];
+                    string prefix = item[..5];
                     if (seenPrefixes.Add(prefix))
                     {
                         uniqueLocales.Add(item);
@@ -86,7 +86,7 @@
             }
 
             // Populate the picker with the Language, Country and Name (without the Id) from the sorted locales array
-            foreach (var locale in cLanguageLocales)
+            foreach (string locale in cLanguageLocales)
             {
                 picker.Items.Add(locale);
             }
@@ -239,7 +239,7 @@
                 cts.Cancel();
             }
 
-            var imageButton = (ImageButton)sender;
+            ImageButton imageButton = (ImageButton)sender;
 
             // Start with the text to speech
             Debug.WriteLine("ConvertTextToSpeechAsync + cText: " + cText);

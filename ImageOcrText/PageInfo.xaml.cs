@@ -86,7 +86,7 @@ namespace ImageOcrText
                 string body = "";
                 string[] recipients = [url];
 
-                var message = new EmailMessage
+                EmailMessage message = new()
                 {
                     Subject = subject,
                     Body = body,
