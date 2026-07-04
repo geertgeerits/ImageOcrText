@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.12
- * Date ........: 2026-07-01 (YYYY-MM-DD)
+ * Date ........: 2026-07-04 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -16,7 +16,7 @@ namespace ImageOcrText
     public sealed partial class MainPage : ContentPage
     {
         // Local variables
-        private string cLicense = "";
+        private string cLicense = string.Empty;
 
         public MainPage()
         {
@@ -61,8 +61,8 @@ namespace ImageOcrText
 #endif
             // Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
-            Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
-            Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
+            Globals.cLanguage = Preferences.Default.Get("SettingLanguage", string.Empty);
+            Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", string.Empty);
             Globals.nLanguageOcrIndex = Preferences.Default.Get("SettingLanguageOcrIndex", 0);
             Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
@@ -101,7 +101,7 @@ namespace ImageOcrText
             InitializeTextToSpeechAsync();
 
             // Set the language for the OCR plugin to 'All supported languages', necessary after a reset of the application
-            Globals.cLanguageOcr = "";
+            Globals.cLanguageOcr = string.Empty;
 
             // Clear the clipboard
             //Clipboard.Default.SetTextAsync(null);  // For testing
@@ -184,7 +184,7 @@ namespace ImageOcrText
             {
                 Globals.supportedLanguagesOcr.Add(OcrLang.LanguageOcrAll_Text);
                 Globals.nLanguageOcrIndex = 0;
-                Globals.cLanguageOcr = "";
+                Globals.cLanguageOcr = string.Empty;
             }
 
             lblLanguageOcr.Text = Globals.cLanguageOcr;
@@ -313,7 +313,7 @@ namespace ImageOcrText
         }
 
         /// <summary>
-        /// Click event: Pick an image from the gallery
+        /// Click event: Pick one or more images from the gallery
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -332,7 +332,7 @@ namespace ImageOcrText
             {
                 List<FileResult> fileResults = await MediaPicker.Default.PickPhotosAsync(new MediaPickerOptions
                 {
-                    SelectionLimit = 1,             // Default is 1; set to 0 for no limit
+                    SelectionLimit = 0,             // Default is 1; set to 0 for no limit
                     RotateImage = true,
                     PreserveMetaData = true,
                     CompressionQuality = 100
@@ -346,12 +346,14 @@ namespace ImageOcrText
                     return;
                 }
 
-                string allText = "";
+                string allText = string.Empty;
 
                 OcrOptions options = new OcrOptions.Builder()
                 .SetLanguage(Globals.cLanguageOcr)
                 .SetTryHard(true)
                 .Build();
+
+                int nImageNumber = 0;
 
                 foreach (FileResult pickResult in fileResults)
                 {
@@ -363,14 +365,19 @@ namespace ImageOcrText
 
                         OcrResult ocrResult = await OcrPlugin.Default.RecognizeTextAsync(imageAsBytes, options);
 
-                        if (ocrResult.Success)
+                        if (ocrResult.Success && !string.IsNullOrEmpty(ocrResult.AllText))
                         {
-                            allText += ocrResult.AllText + "\n\n";
+                            nImageNumber++;
+                            allText += $"----- {OcrLang.Image_Text} {nImageNumber} -----\n{ocrResult.AllText}\n\n";
                         }
+
+                        // The file name after each image is processed
+                        // This is not the original file name, but the name of the image in the cache folder of the application, which is a random name
+                        Debug.WriteLine($"File name: {pickResult.FileName}");  // For testing
                     }
                 }
 
-                if (string.IsNullOrEmpty(allText) || allText == "\n\n")
+                if (string.IsNullOrEmpty(allText))
                 {
                     edtOcrResult.Placeholder = OcrLang.ImageToTextError_Text;
                 }
@@ -451,7 +458,7 @@ namespace ImageOcrText
         {
             try
             {
-                if (edtOcrResult.Text != "")
+                if (!string.IsNullOrEmpty(edtOcrResult.Text))
                 {
                     await Clipboard.Default.SetTextAsync(edtOcrResult.Text);
                 }
@@ -471,7 +478,7 @@ namespace ImageOcrText
         /// <param name="e"></param>
         private async void OnShareClicked(object sender, EventArgs e)
         {
-            if (edtOcrResult.Text != "")
+            if (!string.IsNullOrEmpty(edtOcrResult.Text))
             {
                 await Share.Default.RequestAsync(new ShareTextRequest
                 {
@@ -489,7 +496,7 @@ namespace ImageOcrText
         private void OnClearClicked(object sender, EventArgs e)
         {
             imgbtnTextToSpeech.Source = ClassSpeech.CancelTextToSpeech();
-            edtOcrResult.Text = "";
+            edtOcrResult.Text = string.Empty;
         }
 
         /// <summary>

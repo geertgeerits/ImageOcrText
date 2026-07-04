@@ -106,15 +106,6 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image.
-        /// </summary>
-        internal static string ButtonImage_Text {
-            get {
-                return ResourceManager.GetString("ButtonImage_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Picture.
         /// </summary>
         internal static string ButtonPicture_Text {
@@ -183,6 +174,15 @@ namespace ImageOcrText.Resources.Languages {
         internal static string ErrorTitle_Text {
             get {
                 return ResourceManager.GetString("ErrorTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string Image_Text {
+            get {
+                return ResourceManager.GetString("Image_Text", resourceCulture);
             }
         }
         
