@@ -20,6 +20,20 @@ namespace ImageOcrText
 
         public MainPage()
         {
+#if ANDROID
+            // !!!BUG!!! On some Android versions the software keyboard covers the UI when it is opened and the editor is focused
+            // Workaround: set WindowSoftInputModeAdjust.Resize in MainActivity and here in the constructor of the MainPage
+            // Setting WindowSoftInputModeAdjust.Resize on app start (without it - soft keyboard covers UI)
+            // https://github.com/dotnet/maui/issues/33922#issuecomment-4338782788
+            Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific.Application.SetWindowSoftInputModeAdjust(
+                App.Current,
+                Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize
+            );
+
+            // MainActivity set ConfigChanges.Density, without it on some android versions still software keyboard covers UI
+            //Android.Views.SoftInput WindowSoftInputMode = Android.Views.SoftInput.AdjustNothing;
+            // On ContentPage "SafeAreaEdges" = "All"
+#endif
             try
             {
                 InitializeComponent();
