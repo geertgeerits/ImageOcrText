@@ -266,7 +266,7 @@ Die Nutzung dieses Programms erfolgt ausschließlich auf Ihr eigenes Risiko.</va
     <value>Text in die Zwischenablage kopieren</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Ein Bild öffnen</value>
+    <value>Wählen Sie ein oder mehrere Bilder aus</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Ein Foto machen</value>

@@ -266,7 +266,7 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
     <value>Zkopírujte text do schránky</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Otevřete obrázek</value>
+    <value>Vyberte jeden nebo více obrázků</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Vyfotit</value>

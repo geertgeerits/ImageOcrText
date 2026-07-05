@@ -266,7 +266,7 @@ Använd detta program helt på egen risk.</value>
     <value>Kopiera text till urklipp</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Öppna en bild</value>
+    <value>Välj en eller flera bilder</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Ta ett foto</value>

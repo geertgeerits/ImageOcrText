@@ -266,7 +266,7 @@ Use this program entirely at your own risk.</value>
     <value>Copy the text to the clipboard</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Open an image</value>
+    <value>Pick one or more images</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Take a picture</value>

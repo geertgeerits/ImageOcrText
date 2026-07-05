@@ -474,7 +474,7 @@ namespace ImageOcrText.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open an image.
+        ///   Looks up a localized string similar to Pick one or more images.
         /// </summary>
         internal static string ToolTipImage_Text {
             get {

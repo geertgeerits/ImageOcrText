@@ -266,7 +266,7 @@ Utilice este programa bajo su propio riesgo.</value>
     <value>Copie el texto en el portapapeles</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Abrir una imagen</value>
+    <value>Seleccione una o más imágenes</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Tomar una fotografía</value>

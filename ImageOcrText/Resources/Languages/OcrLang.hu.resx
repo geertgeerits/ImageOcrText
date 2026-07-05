@@ -266,7 +266,7 @@ Ezt a programot kizárólag saját felelősségére használja.</value>
     <value>Szöveg másolása a vágólapra</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Nyisson meg egy képet</value>
+    <value>Válasszon ki egy vagy több képet</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Fotózd le</value>

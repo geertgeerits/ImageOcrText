@@ -266,7 +266,7 @@ Käytä tätä ohjelmaa täysin omalla vastuullasi.</value>
     <value>Kopioi teksti leikepöydälle</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Avaa kuva</value>
+    <value>Valitse yksi tai useampi kuva</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Ottaa valokuva</value>

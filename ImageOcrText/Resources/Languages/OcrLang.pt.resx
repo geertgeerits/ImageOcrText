@@ -266,7 +266,7 @@ Use este programa inteiramente por sua conta e risco.</value>
     <value>Copie o texto para a área de transferência</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Abra uma imagem</value>
+    <value>Selecione uma ou mais imagens.</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Tire uma foto</value>

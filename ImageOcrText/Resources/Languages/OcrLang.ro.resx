@@ -266,7 +266,7 @@ Utilizați acest program în întregime pe propriul risc.</value>
     <value>Copiați textul în clipboard</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Deschide o imagine</value>
+    <value>Alegeți una sau mai multe imagini</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Fa o fotografie</value>

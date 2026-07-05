@@ -266,7 +266,7 @@ Brug dette program helt på egen risiko.</value>
     <value>Kopier tekst til udklipsholderen</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Åbn et billede</value>
+    <value>Vælg et eller flere billeder</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Tag et foto</value>

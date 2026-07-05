@@ -266,7 +266,7 @@ Używaj tego programu całkowicie na własne ryzyko.</value>
     <value>Skopiuj tekst do schowka</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Otwórz obraz</value>
+    <value>Wybierz jeden lub więcej obrazów</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Zrób zdjęcie</value>

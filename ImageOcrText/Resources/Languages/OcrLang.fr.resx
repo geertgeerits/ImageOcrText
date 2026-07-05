@@ -266,7 +266,7 @@ Utilisez ce programme entièrement à vos propres risques.</value>
     <value>Copiez le texte dans le presse-papiers</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Ouvrir une image</value>
+    <value>Sélectionnez une ou plusieurs images</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Prendre une photo</value>

@@ -264,7 +264,7 @@ La suddetta nota di copyright e questa nota di autorizzazione (incluso il paragr
     <value>Copia il testo negli appunti</value>
   </data>
   <data name="ToolTipImage_Text" xml:space="preserve">
-    <value>Apri un'immagine</value>
+    <value>Seleziona una o più immagini</value>
   </data>
   <data name="ToolTipPicture_Text" xml:space="preserve">
     <value>Scatta una foto</value>
