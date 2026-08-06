@@ -41,7 +41,7 @@
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.12</string>
+	<string>1.0.13</string>
 
 	<key>CFBundleLocalizations</key>
 	<array>
