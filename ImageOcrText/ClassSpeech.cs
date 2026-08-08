@@ -179,7 +179,6 @@
 
             try
             {
-                int nTotalItems = cLanguageLocales?.Length ?? 0;
                 int index;
 
                 if (cLanguageLocales is not null)
@@ -236,8 +235,12 @@
                 }
 
                 // If the language is not found use the first language in the array
-                if (string.IsNullOrEmpty(Globals.cLanguageSpeech) && nTotalItems > 0)
+                if (cLanguageLocales?.Length > 0)
                 {
+                    // Show a popup message to the user
+                    Application.Current!.Windows[0].Page!.DisplayAlertAsync("", OcrLang.TextToSpeechError_Text, OcrLang.ButtonClose_Text);
+
+                    // Select the first language in the array
                     Globals.cLanguageSpeech = cLanguageLocales![0];
                     return 0;
                 }
