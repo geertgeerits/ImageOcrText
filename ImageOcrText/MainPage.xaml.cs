@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.13
- * Date ........: 2026-08-08 (YYYY-MM-DD)
+ * Date ........: 2026-08-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -88,7 +88,7 @@ namespace ImageOcrText
             {
                 if (string.IsNullOrEmpty(Globals.cLanguage))
                 {
-                    Globals.cLanguage = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+                    Globals.cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
 
                     // Chinese needs the language code as zh-CN and zh-TW
                     if (Globals.cLanguage == "zh")
