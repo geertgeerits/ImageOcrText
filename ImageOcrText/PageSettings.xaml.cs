@@ -94,6 +94,9 @@
                 // Set the current UI culture of the selected language
                 Globals.SetCultureSelectedLanguage(Globals.cLanguage);
 
+                // Fill the picker with the speech languages and select the current language in the picker
+                ClassSpeech.FillPickerWithSpeechLanguages(pckLanguageSpeech);
+
                 // Put text in the chosen language in the controls and variables
                 SetLanguage();
 

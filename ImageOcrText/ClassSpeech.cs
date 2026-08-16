@@ -2,9 +2,10 @@
 {
     internal sealed class ClassSpeech
     {
-        private static string[]? cLanguageLocales;
-        private static IEnumerable<Locale>? locales;
-        private static CancellationTokenSource? cts;
+        private static string[]? cLanguageLocales;                  // Array to hold the speech languages (Language-Country Name : Id)
+        private static IEnumerable<Locale>? locales;                // Collection of available locales for text-to-speech
+        private static CancellationTokenSource? cts;                // CancellationTokenSource for managing cancellation of text-to-speech operations
+        private static bool bTextToSpeechLanguageSelected;          // Flag to indicate if a text-to-speech language has been selected
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages ( : is separator before the Id)
@@ -27,15 +28,14 @@
                     return false;
                 }
 
-                // Populate the locales
+                // Populate the array with the selected speech languages (Language-Country Name : Id)
+                // Create an array to hold the speech languages (Language-Country Name : Id)
                 cLanguageLocales = new string[nTotalItems];
                 int nItem = 0;
 
-                // Define a set of allowed languages to filter the locales
-                HashSet<string> allowedLanguages =
-                [
-                    with(StringComparer.OrdinalIgnoreCase), "cs","da","de","en","es","fi","fr","hu","it","nb","nl","pl","pt","ro","sv"
-                ];
+                // Define the allowed language to filter the locales
+                // Get the primary language code from the UI language (e.g., "en" from "en-US")
+                string allowedLanguages = Globals.cLanguage.Split(['-', '_'], StringSplitOptions.RemoveEmptyEntries)[0];
 
 #if ANDROID
                 // Populate the locales with the Id for Android because the Id is needed to select the correct voice for text-to-speech
@@ -132,17 +132,41 @@
         /// <param name="picker"></param>
         public static void FillPickerWithSpeechLanguages(Picker picker)
         {
+            // Initialize text to speech and fill the array with the selected speech languages
+            _ = InitializeTextToSpeechAsync();
+
             // If there are no locales, disable the picker and return
             if (cLanguageLocales is null)
             {
                 picker.IsEnabled = false;
+                bTextToSpeechLanguageSelected = false;
                 return;
             }
 
-            // Populate the picker with the Language, Country and Name (without the Id) from the sorted locales array
+            // Clear the picker items
+            picker.Items.Clear();
+
+            // Populate the picker with the Language, Country, Name, (Id) from the sorted locales array
             foreach (string locale in cLanguageLocales)
             {
                 picker.Items.Add(locale);
+            }
+
+            // If there are no languages in the picker, disable the picker and return
+            if (picker.Items.Count == 0)
+            {
+                picker.IsEnabled = false;
+                bTextToSpeechLanguageSelected = false;
+
+                // Show a popup message to the user
+                Application.Current!.Windows[0].Page!.DisplayAlertAsync("", OcrLang.TextToSpeechError_Text, OcrLang.ButtonClose_Text);
+
+                return;
+            }
+            else
+            {
+                picker.IsEnabled = true;
+                bTextToSpeechLanguageSelected = true;
             }
 
             // Select the saved language
@@ -237,9 +261,6 @@
                 // If the language is not found use the first language in the array
                 if (cLanguageLocales?.Length > 0)
                 {
-                    // Show a popup message to the user
-                    Application.Current!.Windows[0].Page!.DisplayAlertAsync("", OcrLang.TextToSpeechError_Text, OcrLang.ButtonClose_Text);
-
                     // Select the first language in the array
                     Globals.cLanguageSpeech = cLanguageLocales![0];
                     return 0;
