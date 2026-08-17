@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
  * Version .....: 1.0.13
- * Date ........: 2026-08-16 (YYYY-MM-DD)
+ * Date ........: 2026-08-17 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
@@ -151,7 +151,7 @@ namespace ImageOcrText
             {
                 lblTextToSpeech.IsVisible = true;
                 imgbtnTextToSpeech.IsVisible = true;
-                lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+                lblTextToSpeech.Text = ClassSpeech.GetIsoLanguageSpeechCode();
 
                 // Search the selected language in the cLanguageLocales array
                 _ = ClassSpeech.SearchArrayWithSpeechLanguages(Globals.cLanguageSpeech);
@@ -259,7 +259,7 @@ namespace ImageOcrText
             }
 
             // Set the speech language
-            lblTextToSpeech.Text = Globals.GetIsoLanguageCode();
+            lblTextToSpeech.Text = ClassSpeech.GetIsoLanguageSpeechCode();
         }
 
         /// <summary>

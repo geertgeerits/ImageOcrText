@@ -47,22 +47,5 @@
                 // Do nothing
             }
         }
-
-        /// <summary>
-        /// Get ISO language (and country) code from locales
-        /// </summary>
-        /// <returns></returns>
-        public static string GetIsoLanguageCode()
-        {
-            // Split before first space and remove last character '-' if there
-            string cLanguageIso = cLanguageSpeech.Split(' ').First();
-
-            if (cLanguageIso.EndsWith('-'))
-            {
-                cLanguageIso = cLanguageIso[..^1];
-            }
-
-            return cLanguageIso;
-        }
     }
 }

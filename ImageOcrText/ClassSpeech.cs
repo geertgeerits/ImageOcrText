@@ -5,7 +5,7 @@
         private static string[]? cLanguageLocales;                  // Array to hold the speech languages (Language-Country Name : Id)
         private static IEnumerable<Locale>? locales;                // Collection of available locales for text-to-speech
         private static CancellationTokenSource? cts;                // CancellationTokenSource for managing cancellation of text-to-speech operations
-        private static bool bTextToSpeechLanguageSelected;          // Flag to indicate if a text-to-speech language has been selected
+        private static bool bTextToSpeechLanguageExist = true;      // Flag to indicate if a text-to-speech language exist
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages ( : is separator before the Id)
@@ -139,7 +139,7 @@
             if (cLanguageLocales is null)
             {
                 picker.IsEnabled = false;
-                bTextToSpeechLanguageSelected = false;
+                bTextToSpeechLanguageExist = false;
                 return;
             }
 
@@ -156,17 +156,17 @@
             if (picker.Items.Count == 0)
             {
                 picker.IsEnabled = false;
-                bTextToSpeechLanguageSelected = false;
+                bTextToSpeechLanguageExist = false;
 
                 // Show a popup message to the user
-                Application.Current!.Windows[0].Page!.DisplayAlertAsync("", OcrLang.TextToSpeechError_Text, OcrLang.ButtonClose_Text);
+                //Application.Current!.Windows[0].Page!.DisplayAlertAsync("", OcrLang.TextToSpeechError_Text, OcrLang.ButtonClose_Text);
 
                 return;
             }
             else
             {
                 picker.IsEnabled = true;
-                bTextToSpeechLanguageSelected = true;
+                bTextToSpeechLanguageExist = true;
             }
 
             // Select the saved language
@@ -203,6 +203,7 @@
 
             try
             {
+                bTextToSpeechLanguageExist = true;
                 int index;
 
                 if (cLanguageLocales is not null)
@@ -272,7 +273,9 @@
                 Application.Current!.Windows[0].Page!.DisplayAlertAsync(OcrLang.ErrorTitle_Text, ex.Message, OcrLang.ButtonClose_Text);
 #endif
             }
-
+            
+            bTextToSpeechLanguageExist = false;
+            Globals.cLanguageSpeech = string.Empty;
             return 0;
         }
 
@@ -328,7 +331,7 @@
             Debug.WriteLine("ConvertTextToSpeechAsync + cText: " + cText);
             Debug.WriteLine("ConvertTextToSpeechAsync + Globals.cLanguageSpeech: " + Globals.cLanguageSpeech);
 
-            if (!string.IsNullOrEmpty(cText))
+            if (!string.IsNullOrEmpty(cText) && bTextToSpeechLanguageExist)
             {
                 Globals.bTextToSpeechIsBusy = true;
                 imageButton.Source = Globals.cImageTextToSpeechCancel;
@@ -378,4 +381,22 @@
 
             return Globals.cImageTextToSpeech;
         }
-    }}
+
+        /// <summary>
+        /// Get ISO language (and country) code from locales
+        /// </summary>
+        /// <returns></returns>
+        public static string GetIsoLanguageSpeechCode()
+        {
+            // Split before first space and remove last character '-' if there
+            string cLanguageIso = Globals.cLanguageSpeech.Split(' ').First();
+
+            if (cLanguageIso.EndsWith('-'))
+            {
+                cLanguageIso = cLanguageIso[..^1];
+            }
+
+            return cLanguageIso;
+        }
+    }
+}
