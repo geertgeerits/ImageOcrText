@@ -35,11 +35,11 @@
 		<ApplicationId>com.companyname.imageocrtext</ApplicationId>
 
 		<!-- Versions -->
-		<PackageVersion>1.0.13</PackageVersion>
-		<ApplicationDisplayVersion>1.0.13</ApplicationDisplayVersion>
-		<ApplicationVersion>13</ApplicationVersion>
+		<PackageVersion>1.0.14</PackageVersion>
+		<ApplicationDisplayVersion>1.0.14</ApplicationDisplayVersion>
+		<ApplicationVersion>14</ApplicationVersion>
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">13.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
@@ -167,8 +167,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>1.0.13</ApplicationDisplayVersion>
-		<ApplicationVersion>13</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.14</ApplicationDisplayVersion>
+		<ApplicationVersion>14</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
 	</PropertyGroup>
 
@@ -181,8 +181,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>1.0.13</ApplicationDisplayVersion>
-		<ApplicationVersion>13</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.14</ApplicationDisplayVersion>
+		<ApplicationVersion>14</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.imageocrtext</ApplicationId>
 	</PropertyGroup>
 

@@ -1,8 +1,8 @@
 ﻿/* Program .....: ImageOcrText.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 2024-2026
- * Version .....: 1.0.13
- * Date ........: 2026-08-17 (YYYY-MM-DD)
+ * Version .....: 1.0.14
+ * Date ........: 2026-08-18 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2026: .NET MAUI 10 - C# 14.0
  * Description .: Convert text from an image or picture to raw text via OCR
  * Note ........: 
